@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.starQeem.qeemblog.mapper.BlogMapper">
+    <resultMap id="BaseResultMap" type="com.starQeem.qeemblog.pojo.Blog">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="title" column="title" jdbcType="VARCHAR"/>
+        <result property="content" column="content" jdbcType="VARCHAR"/>
+        <result property="description" column="description" jdbcType="VARCHAR"/>
+        <result property="firstPicture" column="first_picture" jdbcType="VARCHAR"/>
+        <result property="commentabled" column="commentabled" jdbcType="BIT"/>
+        <result property="published" column="published" jdbcType="BIT"/>
+        <result property="recommend" column="recommend" jdbcType="BIT"/>
+        <result property="shareStatement" column="share_statement" jdbcType="BIT"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="tagIds" column="tag_ids" jdbcType="TIMESTAMP"/>
+        <result property="views" column="views" jdbcType="INTEGER"/>
+        <association property="type" javaType="com.starQeem.qeemblog.pojo.Type">
+            <id property="id" column="type_id"/>
+            <result property="name" column="type_name"/>
+        </association>
+        <association property="tag" javaType="com.starQeem.qeemblog.pojo.Tag">
+            <id property="id" column="tag_id"/>
+            <result property="name" column="tag_name"/>
+        </association>
+    </resultMap>
+    <select id="getBlogById" resultMap="BaseResultMap">
+        select b.id,b.title,b.content,b.first_picture,b.commentabled,b.published,b.recommend,b.description,
+               b.share_statement,b.create_time,b.update_time,
+               b.views,t.id type_id,b.tag_ids
+        from t_blog b
+        join t_type t on b.type_id = t.id
+        where b.id = #{id}
+    </select>
+    <select id="getBlogsPage" resultMap="BaseResultMap">
+        select id, title, description, published, recommend, update_time, type_id,views,first_picture
+        from t_blog
+    </select>
+    <insert id="insertBlog">
+        insert into t_blog
+        (id, title, content,
+         first_picture, commentabled,
+         published, recommend, description,
+         share_statement, create_time,
+         update_time, views, type_id,tag_ids )
+        values (#{id,jdbcType=NUMERIC}, #{title,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR},
+                #{firstPicture,jdbcType=VARCHAR}, #{commentabled},
+                #{published}, #{recommend}, #{description},
+                #{shareStatement}, #{createTime,jdbcType=TIMESTAMP},
+                #{updateTime,jdbcType=TIMESTAMP}, #{views,jdbcType=NUMERIC},
+                #{type.id},#{tagIds})
+
+    </insert>
+    <select id="getBlogListByTypeId" resultMap="BaseResultMap">
+    select b.id,b.title,b.description,b.first_picture,b.commentabled,b.recommend,b.views,
+    b.update_time,b.type_id,t.name type_name
+    from t_blog b
+    join t_type t on b.type_id = t.id
+    where b.published = 1 and b.type_id = #{typeId}
+    </select>
+    <select id="getBlogListByTagId" resultMap="BaseResultMap">
+        SELECT b.id,b.title,b.description,b.first_picture,b.commentabled,b.recommend,b.views,b.update_time,t.name type_name
+        FROM t_blog b
+        join t_type t on b.type_id = t.id
+        JOIN t_tag t2 ON FIND_IN_SET(t2.id, b.tag_ids) > 0
+        WHERE b.published = 1 AND t2.id = #{tagId};
+    </select>
+    <select id="getArchivesList" resultMap="BaseResultMap">
+        select id, title, update_time,create_time ,first_picture
+        from t_blog order by update_time desc
+    </select>
+    <select id="getSearchList" resultMap="BaseResultMap">
+        select id, title, description, published, recommend, update_time, type_id,views,first_picture
+        from t_blog where title like concat('%',#{title},'%');
+    </select>
+    <select id="getBlogDetail" resultMap="BaseResultMap">
+        select id,title,content,description,first_picture,published,
+               recommend,share_statement,views,update_time,create_time,type_id,tag_ids
+        from t_blog
+        where id = #{id} and published = 1
+    </select>
+    <update id="updateBlogById">
+        update t_blog
+        set id              = #{id,jdbcType=NUMERIC},
+            title           = #{title,jdbcType=VARCHAR},
+            content         = #{content,jdbcType=VARCHAR},
+            first_picture   = #{firstPicture,jdbcType=VARCHAR},
+            commentabled    = #{commentabled},
+            published       = #{published},
+            recommend       = #{recommend},
+            description     = #{description},
+            share_statement = #{shareStatement},
+            create_time     = #{createTime,jdbcType=TIMESTAMP},
+            update_time     = #{updateTime,jdbcType=TIMESTAMP},
+            views           = #{views,jdbcType=NUMERIC},
+            type_id         = #{type.id},
+            tag_ids         = #{tagIds}
+        where id = #{id}
+    </update>
+    <update id="updateViews">
+        update t_blog
+        set views = views + 1
+        where id = #{blogId}
+    </update>
+    <select id="getViewCount" resultType="integer">
+        select SUM(views) from t_blog
+    </select>
+
+</mapper>

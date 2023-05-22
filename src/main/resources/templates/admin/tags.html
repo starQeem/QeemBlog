@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>标签管理</title>
+    <link href="../static/images/favicon.ico" th:href="@{/images/me.jpg}" rel="icon" type="image/x-ico">
+    <link rel="stylesheet" href="../../static/lib/semantic/dist/semantic.min.css"
+          th:href="@{/lib/semantic/dist/semantic.min.css}">
+    <link rel="stylesheet" href="../../static/css/me.css" th:href="@{/css/me.css}">
+</head>
+<body class="body">
+
+
+<!--导航栏-->
+<nav th:replace="admin/common :: navigate('tag')" class="ui inverted gird-header">
+    <div class="ui container">
+        <div class="ui inverted secondary stackable menu">
+            <h2 class="ui olive header item" style="font-family: STSong">管理后台</h2>
+            <a href="#" class="m-item item m-mobile-hide"><i class="home icon"></i>文章管理</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="clone outline icon"></i>分类管理</a>
+            <a href="#" class="active m-item item m-mobile-hide"><i class="coffee icon"></i>标签管理</a>
+            <div class="right m-item m-mobile-hide menu">
+                <div class="ui dropdown  item">
+                    <div class="text">
+                        <img class="ui avatar image" src="/static/images/me.jpg" th:src="@{${session.user.avatar}}">
+                        <span th:text="${session.user.nickname}">Qeem</span>
+                    </div>
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a href="#" th:href="@{/admin/logout}" class="item">注销</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="ui menu toggle black icon button m-right-top m-mobile-show">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!--中间内容-->
+<div class="m-padded-tb-big">
+    <div class="ui container">
+        <div class="ui success message" th:if="${message!=null}">
+            <i class="close icon"></i>
+            <div class="" th:text="'提示：'+${message}">提示：操作成功！</div>
+        </div>
+        <table class="ui compact teal table">
+            <thead>
+            <tr align="center">
+                <th>ID</th>
+                <th>名称</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr align="center" th:each="tag : ${page.list}">
+                <td th:text="${tag.id}">1</td>
+                <td th:text="${tag.name}">我的故事</td>
+                <td>
+                    <a href="#" th:href="@{/admin/tags/{id}/edit(id=${tag.id})}"
+                       class="ui mini teal basic button">编辑</a>
+                    <a href="#" th:href="@{/admin/tags/{id}/delete(id=${tag.id})}"
+                       onclick="return confirm('确定要删除该分类吗？三思啊! 删了可就没了！')"
+                       class="ui mini red basic button">删除</a>
+                </td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <th colspan="6">
+                    <div class="ui inverted divided stackable grid">
+                        <div class="three wide column" align="center">
+                            <a class="item" th:href="@{/admin/tags/{page}(page=${page.prePage})}"
+                               th:if="${page.hasPreviousPage}">上一页</a>
+                        </div>
+                        <div class="three wide column" align="center">
+                            <a class="item" th:href="@{/admin/tags/{page}(page=${page.nextPage})}"
+                               th:if="${page.hasNextPage}">下一页</a>
+                        </div>
+                    </div>
+                    <div align="center">
+                        <a href="#" th:href="@{/admin/tags/input}">
+                            <button type="button" class="ui teal button m-mobile-wide m-margin-top"><i
+                                    class="pencil icon"></i>新增
+                            </button>
+                        </a>
+                    </div>
+                </th>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<script src="../../static/lib/jquery-3.2.1/jquery-3.2.1.min.js"
+        th:src="@{/lib/jquery-3.2.1/jquery-3.2.1.min.js}"></script>
+<script src="../../static/lib/semantic/dist/semantic.min.js" th:src="@{/lib/semantic/dist/semantic.min.js}"></script>
+
+<script>
+
+    // $('#newblog-container').load(/*[[@{/footer/newblog}]]*/"/footer/newblog");
+
+    $('#blog-message').load(/*[[@{/footer/blogmessage}]]*/"/footer/blogmessage");
+
+
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+    $('.ui.dropdown').dropdown({
+        on: 'hover'
+    });
+
+    //消息提示关闭初始化
+    $('.message .close')
+        .on('click', function () {
+            $(this)
+                .closest('.message')
+                .transition('fade');
+        });
+
+</script>
+</body>
+</html>

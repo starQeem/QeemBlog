@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.starQeem.qeemblog.mapper.TagMapper">
+    <resultMap id="BaseResultMap" type="com.starQeem.qeemblog.pojo.Tag">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <collection property="blogList" ofType="com.starQeem.qeemblog.pojo.Blog">
+            <id property="id" column="b_id"/>
+        </collection>
+    </resultMap>
+    <select id="getTagList" resultMap="BaseResultMap">
+        select t.id,t.name,b.id b_id
+        from t_tag t left join t_blog b on FIND_IN_SET(t.id, b.tag_ids) > 0;
+    </select>
+</mapper>

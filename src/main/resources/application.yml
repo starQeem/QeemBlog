@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: wycmzxx888888..
+    url: jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8&rewriteBatchedStatements=true
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+  main:
+    allow-circular-references: true
+
+mybatis-plus:
+  type-aliases-package: com.strQeem.qeemblog.pojo
+  configuration:
+    call-setters-on-nulls: true #设置返回字段不为空，前端不报错
+    map-underscore-to-camel-case: true
+
+comment.avatar: /images/avatar.png
+message.avatar: /images/avatar.png

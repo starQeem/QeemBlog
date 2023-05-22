@@ -1,0 +1,2 @@
+打成war包:
+启动类加上@ServletComponentScan注解参考文章https://www.cnblogs.com/chinaifae/articles/10220242.html

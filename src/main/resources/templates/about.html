@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于我-Qeem</title>
+    <link href="../static/images/favicon.ico" th:href="@{/images/me.jpg}" rel="icon" type="image/x-ico">
+    <link rel="stylesheet" href="../static/lib/semantic/dist/semantic.min.css" th:href="@{/lib/semantic/dist/semantic.min.css}">
+    <link rel="stylesheet" href="../static/css/me.css" th:href="@{/css/me.css}">
+
+</head>
+<body>
+
+<!--导航-->
+<nav th:replace="common :: navigate('about')" class="gird-header">
+    <div class="ui m-container">
+        <div class="ui inverted secondary stackable menu ">
+            <a href="#" th:href="@{/}" style="max-width: 200px"><h2 class="ui olive header item" style="font-family: STSong">Qeem</h2></a>
+            <a href="#" th:href="@{/}" class=" m-item item m-mobile-hide"><i class="home icon"></i>首页</a>
+            <a href="#" th:href="@{/types}" class=" m-item item m-mobile-hide" target="_blank"><i class="clone outline icon"></i>分类</a>
+            <a href="#" th:href="@{/tags}" class=" m-item item m-mobile-hide" target="_blank"><i class="pencil alternate icon"></i>标签</a>
+            <a href="#" th:href="@{/archives}" class="m-item item m-mobile-hide" target="_blank"><i class="clock outline icon"></i>归档</a>
+            <a href="#" th:href="@{/about}" class="active m-item item m-mobile-hide" target="_blank"><i class="info icon"></i>关于我</a>
+        </div>
+    </div>
+    <a  class="ui menu toggle black icon button m-right-top m-mobile-show" >
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+
+
+<!--顶部背景图片-->
+<div class="m-bg-type_outer" style="width: 100%;height: 55%">
+    <img src="../static/images/60.jpg" th:src="@{/images/60.jpg}" alt="" class="ui m-bg image" style="width: 100%;height: 100%">
+    <div class="m-bg-class_cover">
+        <div class="ui container" style="position: relative ;bottom: -540px;">
+            <div class="m-font-size-title" align="center" style="font-family:'STXingkai'">关于我</div>
+        </div>
+    </div>
+</div>
+
+<!--个人资料描述-->
+<div class="m-container m-padded-tb-big">
+    <div class="ui container">
+        <!-- stackable:堆叠自适应(手机端大用) -->
+        <div class="ui stackable grid">
+
+            <div class="ui top attached segment">
+                <img th:src="@{/images/me.jpg}" alt="" class="ui rounded image m-container" style="width: 100px;">
+                <div class="ui center aligned header zt zt-maxx">Qeem</div>
+                <div class="ui center aligned bottom attached segment m-rgba">
+                    <a href="#" class="ui email circular icon button" data-content="2572277647@qq.com"><i class="envelope outline icon"></i></a>
+                    <a href="#" class="ui wechat circular icon button" id="wechat"><i class="weixin icon"></i></a>
+                    <a href="#" class="ui qq circular icon button" data-content="2572277647" data-position="bottom center"><i class="qq icon"></i></a>
+                    <a href="https://github.com/starQeem" target="_blank" class="ui github circular icon button" data-content="点击跳转GitHub" data-position="bottom center"><i class="github icon"></i></a>
+                </div>
+                <div class="ui center aligned attached segment m-rgba zt zt-max">
+                    <p>欢迎光临本站</p>
+                    <p>"我是Qeem&nbsp;摆烂人&nbsp;目前大三"</p>
+                    <p>热爱摆烂&nbsp;喜欢音乐&nbsp;喜欢打游戏&nbsp;是条咸鱼</p>
+                    <p>一名Ctrl-CV工程师</p>
+                    <p>自学半年Java的萌新</p>
+                    <p>希望在学习路上能够一起进步</p>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+
+
+                <div class="ui wechat-qr flowing popup transition hidden">
+                    <img th:src="@{/images/wechat.png}" alt="" class="ui rounded image" style="width: 100px">
+                </div>
+                <div class="ui git-qr flowing popup transition hidden">
+                    <img th:src="@{/images/qq.jpg}" alt="" class="ui rounded image" style="width: 100px">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!--置顶图标-->
+<div id="toolbar" class="m-padded-tb-large m-fixed m-right-bottom">
+    <a href="#" class="ui center aligned basic segment icon"><i class="ui medium m-teal chevron up icon"></i> </a>
+</div>
+
+  <br>
+  <br>
+
+<!--底部栏-->
+<footer class="ui inverted vertical segment m-padded-tb-massive m-opacity">
+    <!--容器-->
+    <div class="ui center aligned container">
+        <div class="ui inverted divided stackable grid">
+            <div class="four wide column">
+                <div style="font-size: large;font-weight: bold" class="ui inverted m-text-thin m-text-spaced m-margin-top-max" >联系我</div>
+                <div class="ui inverted link list">
+                    <div href="#" class="m-text-thin">Email：2572277647@qq.com</div>
+                    <div href="#" class="m-text-thin">QQ：2572277647</div>
+                </div>
+            </div>
+
+            <div class="four wide column" >
+                <div class="ui inverted link list">
+                    <div class="item">
+                        <!--微信二维码-->
+                        <div style="font-size: large;font-weight: bold" class="ui inverted m-text-thin m-text-spaced " >微信</div>
+                        <img src="../static/images/wechat.png" th:src="@{/images/wechat.png}"  class="ui m-margin-top rounded image" alt="" style="width: 110px">
+                    </div>
+                </div>
+            </div>
+
+            <div class="four wide column">
+                <div class="ui inverted link list">
+                    <div class="item">
+                        <!--qq维码-->
+                        <div style="font-size: large;font-weight: bold" class="ui inverted m-text-thin m-text-spaced " >QQ</div>
+                        <img src="../static/images/qq.jpg" th:src="@{/images/qq.jpg}"  class="ui m-margin-top rounded image" alt="" style="width: 110px">
+                    </div>
+                </div>
+            </div>
+            <div class="four wide column">
+                <div style="font-size: large;font-weight: bold" class="ui inverted m-text-thin m-text-spaced m-margin-top-max" >我的博客信息:</div>
+                <div class="ui inverted link list m-teal">
+                    <span class="item m-text-thin m-teal" style="font-size: 15px" th:text="|文章总数:${blogCount}|">
+                    </span>
+                    <span class="item m-text-thin m-teal" style="font-size: 15px" th:text="|浏览总数:${viewCount}|">
+                    </span>
+                    <span class="item m-text-thin m-teal" style="font-size: 15px" th:text="|评论总数:${commentCount}|">
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui inverted section divider"></div>
+    <p style="text-align: center">
+        <a rel="nofollow" href="http://www.beian.miit.gov.cn" target="_blank">桂ICP备2022011074号-1</a>
+    </p>
+
+
+</footer>
+<!--    动态线条-->
+<script type="text/javascript" color="47,79,79" opacity='0.7' zIndex="-2" count="150" src="https://cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<script src="../static/lib/jquery-3.2.1/jquery-3.2.1.min.js" th:src="@{/lib/jquery-3.2.1/jquery-3.2.1.min.js}"></script>
+<script src="../static/lib/semantic/dist/semantic.min.js" th:src="@{/lib/semantic/dist/semantic.min.js}"></script>
+
+  <script>
+      // $('#newblog-container').load(/*[[@{/footer/newblog}]]*/"/footer/newblog");
+
+      $('#blog-message').load(/*[[@{/footer/blogmessage}]]*/"/footer/blogmessage");
+
+
+    $('.menu.toggle').click(function () {
+      $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+    // 显示公众号
+    $('.tencent').popup({
+        popup : $('.tencent-qr'),
+        position: 'bottom center'
+    });
+
+    // 显示微信
+    $('.wechat').popup({
+        popup : $('.wechat-qr'),
+        position: 'bottom center'
+    });
+
+    <!-- 当鼠标放在qq图标上时:显示请求号码 -->
+      $('.qq').popup();
+
+    // 显示邮箱
+    $('.email').popup();
+
+    // 显示CSDN
+    $('.csdn').popup();
+
+      // 显示github
+      $('.github').popup();
+
+
+
+  </script>
+</body>
+</html>

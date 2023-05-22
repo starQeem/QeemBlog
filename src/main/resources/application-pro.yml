@@ -1,0 +1,6 @@
+logging:
+  level:
+    root: warn
+    com.starQeem.qeemblog: info
+  file:
+    path: log/blog-pro.log

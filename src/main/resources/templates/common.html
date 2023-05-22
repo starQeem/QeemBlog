@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--导航-->
+<nav th:fragment="navigate(active)" id="nav" class="gird-header">
+    <div class="ui m-container" >
+        <div class="ui inverted secondary stackable menu">
+            <a href="#" th:href="@{/}" style="max-width: 200px"><h2 class="ui olive header item" style="font-family: STSong">Qeem</h2></a>
+            <a href="#" th:href="@{/}" class=" m-item item m-mobile-hide" th:classappend="${active=='index'} ? active"><i class="home icon"></i>首页</a>
+            <a href="#" th:href="@{/types}" class="m-item item m-mobile-hide" th:classappend="${active=='type'} ? active" target="_blank"><i class="clone outline icon"></i>分类</a>
+            <a href="#" th:href="@{/tags}" class="m-item item m-mobile-hide" th:classappend="${active=='tag'} ? active" target="_blank"><i class="pencil alternate icon"></i>标签</a>
+            <a href="#" th:href="@{/archives}" class="m-item item m-mobile-hide" th:classappend="${active=='archives'} ? active" target="_blank"><i class="clock outline icon"></i>归档</a>
+            <a href="#" th:href="@{/about}" class="m-item item m-mobile-hide" th:classappend="${active=='about'} ? active" target="_blank"><i class="info icon"></i>关于我</a>
+            <a href="#" th:href="@{/admin}" class="right m-item item ui secondary basic button m-mobile-hide" target="_blank"><i class="sign in icon"></i>登录</a>
+        </div>
+    </div>
+    <a  class="ui menu toggle black icon button m-right-top m-mobile-show">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+
+</body>
+</html>

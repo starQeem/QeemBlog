@@ -1,0 +1,6 @@
+logging:
+  level:
+    root: info
+    com.starQeem.qeemblog: debug
+  file:
+    path: log/blog-dev.log
