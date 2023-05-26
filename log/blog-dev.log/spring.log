@@ -1,345 +1,766 @@
-2023-05-16 18:51:33.520  INFO 26720 --- [main] c.s.qeemblog.QeemBlogApplicationTests    : Starting QeemBlogApplicationTests using Java 1.8.0_281 on MSI with PID 26720 (started by muyiyi in D:\study\QeemBlog)
-2023-05-16 18:51:33.526 DEBUG 26720 --- [main] c.s.qeemblog.QeemBlogApplicationTests    : Running with Spring Boot v2.7.3, Spring v5.3.22
-2023-05-16 18:51:33.526  INFO 26720 --- [main] c.s.qeemblog.QeemBlogApplicationTests    : The following 1 profile is active: "dev"
-2023-05-16 18:51:36.628  INFO 26720 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2023-05-16 18:51:37.201  INFO 26720 --- [main] c.s.qeemblog.QeemBlogApplicationTests    : Started QeemBlogApplicationTests in 4.176 seconds (JVM running for 5.595)
-2023-05-16 18:51:37.579  INFO 26720 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-05-16 18:51:37.808  INFO 26720 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-05-16 18:51:37.817 DEBUG 26720 --- [main] c.s.q.mapper.BlogMapper.selectCount      : ==>  Preparing: SELECT COUNT( * ) FROM t_blog
-2023-05-16 18:51:37.850 DEBUG 26720 --- [main] c.s.q.mapper.BlogMapper.selectCount      : ==> Parameters: 
-2023-05-16 18:51:37.879 DEBUG 26720 --- [main] c.s.q.mapper.BlogMapper.selectCount      : <==      Total: 1
-2023-05-16 18:51:37.912  INFO 26720 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-05-16 18:51:37.921  INFO 26720 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-05-16 19:01:18.761  INFO 25656 --- [main] c.s.qeemblog.QeemBlogApplicationTests    : Starting QeemBlogApplicationTests using Java 1.8.0_281 on MSI with PID 25656 (started by muyiyi in D:\study\QeemBlog)
-2023-05-16 19:01:18.762 DEBUG 25656 --- [main] c.s.qeemblog.QeemBlogApplicationTests    : Running with Spring Boot v2.7.3, Spring v5.3.22
-2023-05-16 19:01:18.763  INFO 25656 --- [main] c.s.qeemblog.QeemBlogApplicationTests    : The following 1 profile is active: "dev"
-2023-05-16 19:01:21.949  INFO 25656 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2023-05-16 19:01:22.531  INFO 25656 --- [main] c.s.qeemblog.QeemBlogApplicationTests    : Started QeemBlogApplicationTests in 4.33 seconds (JVM running for 5.628)
-2023-05-16 19:05:15.061  INFO 14280 --- [main] c.s.qeemblog.QeemBlogApplicationTests    : Starting QeemBlogApplicationTests using Java 1.8.0_281 on MSI with PID 14280 (started by muyiyi in D:\study\QeemBlog)
-2023-05-16 19:05:15.062 DEBUG 14280 --- [main] c.s.qeemblog.QeemBlogApplicationTests    : Running with Spring Boot v2.7.3, Spring v5.3.22
-2023-05-16 19:05:15.063  INFO 14280 --- [main] c.s.qeemblog.QeemBlogApplicationTests    : The following 1 profile is active: "dev"
-2023-05-16 19:05:18.180  INFO 14280 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2023-05-16 19:05:18.734  INFO 14280 --- [main] c.s.qeemblog.QeemBlogApplicationTests    : Started QeemBlogApplicationTests in 4.244 seconds (JVM running for 5.545)
-2023-05-16 19:05:19.108  INFO 14280 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-05-16 19:05:19.394  INFO 14280 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-05-16 19:05:19.404 DEBUG 14280 --- [main] c.s.q.mapper.BlogMapper.getViewCount     : ==>  Preparing: select SUM(views) from t_blog
-2023-05-16 19:05:19.437 DEBUG 14280 --- [main] c.s.q.mapper.BlogMapper.getViewCount     : ==> Parameters: 
-2023-05-16 19:05:19.467 DEBUG 14280 --- [main] c.s.q.mapper.BlogMapper.getViewCount     : <==      Total: 1
-2023-05-16 19:05:19.510  INFO 14280 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-05-16 19:05:19.522  INFO 14280 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-05-16 19:07:17.952  INFO 24784 --- [main] c.s.qeemblog.QeemBlogApplicationTests    : Starting QeemBlogApplicationTests using Java 1.8.0_281 on MSI with PID 24784 (started by muyiyi in D:\study\QeemBlog)
-2023-05-16 19:07:17.953 DEBUG 24784 --- [main] c.s.qeemblog.QeemBlogApplicationTests    : Running with Spring Boot v2.7.3, Spring v5.3.22
-2023-05-16 19:07:17.953  INFO 24784 --- [main] c.s.qeemblog.QeemBlogApplicationTests    : The following 1 profile is active: "dev"
-2023-05-16 19:07:21.274  INFO 24784 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2023-05-16 19:07:21.958  INFO 24784 --- [main] c.s.qeemblog.QeemBlogApplicationTests    : Started QeemBlogApplicationTests in 4.649 seconds (JVM running for 6.045)
-2023-05-16 19:07:22.344  INFO 24784 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-05-16 19:07:22.640  INFO 24784 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-05-16 19:07:22.649 DEBUG 24784 --- [main] c.s.q.mapper.BlogMapper.getViewCount     : ==>  Preparing: select SUM(views) from t_blog
-2023-05-16 19:07:22.681 DEBUG 24784 --- [main] c.s.q.mapper.BlogMapper.getViewCount     : ==> Parameters: 
-2023-05-16 19:07:22.709 DEBUG 24784 --- [main] c.s.q.mapper.BlogMapper.getViewCount     : <==      Total: 1
-2023-05-16 19:07:22.747  INFO 24784 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-05-16 19:07:22.759  INFO 24784 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-05-16 19:08:22.305  INFO 16060 --- [main] c.s.qeemblog.QeemBlogApplicationTests    : Starting QeemBlogApplicationTests using Java 1.8.0_281 on MSI with PID 16060 (started by muyiyi in D:\study\QeemBlog)
-2023-05-16 19:08:22.306 DEBUG 16060 --- [main] c.s.qeemblog.QeemBlogApplicationTests    : Running with Spring Boot v2.7.3, Spring v5.3.22
-2023-05-16 19:08:22.307  INFO 16060 --- [main] c.s.qeemblog.QeemBlogApplicationTests    : The following 1 profile is active: "dev"
-2023-05-16 19:08:25.679  INFO 16060 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2023-05-16 19:08:26.234  INFO 16060 --- [main] c.s.qeemblog.QeemBlogApplicationTests    : Started QeemBlogApplicationTests in 4.546 seconds (JVM running for 5.947)
-2023-05-16 19:08:26.608  INFO 16060 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-05-16 19:08:26.845  INFO 16060 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-05-16 19:08:26.853 DEBUG 16060 --- [main] c.s.q.mapper.BlogMapper.getViewCount     : ==>  Preparing: select SUM(views) from t_blog
-2023-05-16 19:08:26.884 DEBUG 16060 --- [main] c.s.q.mapper.BlogMapper.getViewCount     : ==> Parameters: 
-2023-05-16 19:08:26.910 DEBUG 16060 --- [main] c.s.q.mapper.BlogMapper.getViewCount     : <==      Total: 1
-2023-05-16 19:08:26.939  INFO 16060 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-05-16 19:08:26.946  INFO 16060 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-05-16 19:12:01.538  INFO 23872 --- [main] c.s.qeemblog.QeemBlogApplicationTests    : Starting QeemBlogApplicationTests using Java 1.8.0_281 on MSI with PID 23872 (started by muyiyi in D:\study\QeemBlog)
-2023-05-16 19:12:01.540 DEBUG 23872 --- [main] c.s.qeemblog.QeemBlogApplicationTests    : Running with Spring Boot v2.7.3, Spring v5.3.22
-2023-05-16 19:12:01.541  INFO 23872 --- [main] c.s.qeemblog.QeemBlogApplicationTests    : The following 1 profile is active: "dev"
-2023-05-16 19:12:04.705  INFO 23872 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2023-05-16 19:12:05.261  INFO 23872 --- [main] c.s.qeemblog.QeemBlogApplicationTests    : Started QeemBlogApplicationTests in 4.24 seconds (JVM running for 5.61)
-2023-05-16 19:12:05.656  INFO 23872 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-05-16 19:12:05.907  INFO 23872 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-05-16 19:12:05.917 DEBUG 23872 --- [main] c.s.q.mapper.CommentMapper.selectCount   : ==>  Preparing: SELECT COUNT( * ) FROM t_comment
-2023-05-16 19:12:05.951 DEBUG 23872 --- [main] c.s.q.mapper.CommentMapper.selectCount   : ==> Parameters: 
-2023-05-16 19:12:05.986 DEBUG 23872 --- [main] c.s.q.mapper.CommentMapper.selectCount   : <==      Total: 1
-2023-05-16 19:12:06.021  INFO 23872 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-05-16 19:12:06.031  INFO 23872 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-05-16 19:16:44.879  INFO 26796 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Starting QeemBlogApplication using Java 1.8.0_281 on MSI with PID 26796 (D:\study\QeemBlog\target\classes started by muyiyi in D:\study\QeemBlog)
-2023-05-16 19:16:44.881 DEBUG 26796 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Running with Spring Boot v2.7.3, Spring v5.3.22
-2023-05-16 19:16:44.882  INFO 26796 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : The following 1 profile is active: "dev"
-2023-05-16 19:16:46.075  INFO 26796 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-05-16 19:16:46.084  INFO 26796 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-05-16 19:16:46.084  INFO 26796 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2023-05-16 19:16:46.240  INFO 26796 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-05-16 19:16:46.240  INFO 26796 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1312 ms
-2023-05-16 19:16:47.857  INFO 26796 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2023-05-16 19:16:48.079  WARN 26796 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
-2023-05-16 19:16:48.084  INFO 26796 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2023-05-16 19:16:48.094  INFO 26796 --- [main] ConditionEvaluationReportLoggingListener : 
+2023-05-24 14:08:03.058  INFO 25016 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Starting QeemBlogApplication using Java 1.8.0_281 on MSI with PID 25016 (D:\study\QeemBlog\target\classes started by muyiyi in D:\study\QeemBlog)
+2023-05-24 14:08:03.073 DEBUG 25016 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Running with Spring Boot v2.7.3, Spring v5.3.22
+2023-05-24 14:08:03.075  INFO 25016 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : The following 1 profile is active: "dev"
+2023-05-24 14:08:05.179  INFO 25016 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-24 14:08:05.190  INFO 25016 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-24 14:08:05.190  INFO 25016 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-05-24 14:08:05.406  INFO 25016 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-24 14:08:05.406  INFO 25016 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2203 ms
+2023-05-24 14:08:07.427  INFO 25016 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-05-24 14:08:07.732  INFO 25016 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-24 14:08:07.746  INFO 25016 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Started QeemBlogApplication in 5.926 seconds (JVM running for 8.24)
+2023-05-24 14:08:11.686  INFO 25016 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-24 14:08:11.687  INFO 25016 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-24 14:08:11.689  INFO 25016 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-05-24 14:08:11.799  INFO 25016 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-05-24 14:08:13.040 ERROR 25016 --- [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
 
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2023-05-16 19:16:48.108 ERROR 26796 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.30.jar:8.0.30]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.30.jar:8.0.30]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828) ~[mysql-connector-java-8.0.30.jar:8.0.30]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:448) ~[mysql-connector-java-8.0.30.jar:8.0.30]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241) ~[mysql-connector-java-8.0.30.jar:8.0.30]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198) ~[mysql-connector-java-8.0.30.jar:8.0.30]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476) [HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) [HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) [HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) [HikariCP-4.0.3.jar:na]
+	at com.github.pagehelper.page.PageAutoDialect.getUrl(PageAutoDialect.java:184) [pagehelper-5.2.0.jar:na]
+	at com.github.pagehelper.page.PageAutoDialect.getDialect(PageAutoDialect.java:210) [pagehelper-5.2.0.jar:na]
+	at com.github.pagehelper.page.PageAutoDialect.initDelegateDialect(PageAutoDialect.java:105) [pagehelper-5.2.0.jar:na]
+	at com.github.pagehelper.PageHelper.skip(PageHelper.java:69) [pagehelper-5.2.0.jar:na]
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:96) [pagehelper-5.2.0.jar:na]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:62) [mybatis-3.5.7.jar:3.5.7]
+	at com.sun.proxy.$Proxy85.query(Unknown Source) [na:na]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:151) [mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:145) [mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140) [mybatis-3.5.7.jar:3.5.7]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_281]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_281]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_281]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_281]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427) [mybatis-spring-2.0.6.jar:2.0.6]
+	at com.sun.proxy.$Proxy63.selectList(Unknown Source) [na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224) [mybatis-spring-2.0.6.jar:2.0.6]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:166) [mybatis-plus-core-3.5.1.jar:3.5.1]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:77) [mybatis-plus-core-3.5.1.jar:3.5.1]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148) [mybatis-plus-core-3.5.1.jar:3.5.1]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89) [mybatis-plus-core-3.5.1.jar:3.5.1]
+	at com.sun.proxy.$Proxy65.getSearchList(Unknown Source) [na:na]
+	at com.starQeem.qeemblog.service.Impl.BlogServiceImpl.getSearch(BlogServiceImpl.java:139) [classes/:na]
+	at com.starQeem.qeemblog.service.Impl.BlogServiceImpl.searchList(BlogServiceImpl.java:122) [classes/:na]
+	at com.starQeem.qeemblog.service.Impl.BlogServiceImpl$$FastClassBySpringCGLIB$$1e0f951b.invoke(<generated>) [classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) [spring-core-5.3.22.jar:5.3.22]
+	at org.springframework.aop.framework.CglibAopProxy.invokeMethod(CglibAopProxy.java:386) [spring-aop-5.3.22.jar:5.3.22]
+	at org.springframework.aop.framework.CglibAopProxy.access$000(CglibAopProxy.java:85) [spring-aop-5.3.22.jar:5.3.22]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:704) [spring-aop-5.3.22.jar:5.3.22]
+	at com.starQeem.qeemblog.service.Impl.BlogServiceImpl$$EnhancerBySpringCGLIB$$fc3893c1.searchList(<generated>) [classes/:na]
+	at com.starQeem.qeemblog.controller.IndexController.index(IndexController.java:31) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_281]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_281]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_281]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_281]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) [spring-web-5.3.22.jar:5.3.22]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) [spring-web-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) [spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) [spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) [spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) [spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1070) [spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) [spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.3.22.jar:5.3.22]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) [tomcat-embed-core-9.0.65.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.3.22.jar:5.3.22]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [tomcat-embed-core-9.0.65.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.3.22.jar:5.3.22]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.22.jar:5.3.22]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.3.22.jar:5.3.22]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.22.jar:5.3.22]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94) [spring-web-5.3.22.jar:5.3.22]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.22.jar:5.3.22]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.3.22.jar:5.3.22]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.22.jar:5.3.22]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_281]
 
-***************************
-APPLICATION FAILED TO START
-***************************
+2023-05-24 14:08:13.061 ERROR 25016 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: com.github.pagehelper.PageException: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+### Cause: com.github.pagehelper.PageException: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)] with root cause
 
-Description:
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.30.jar:8.0.30]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.30.jar:8.0.30]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828) ~[mysql-connector-java-8.0.30.jar:8.0.30]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:448) ~[mysql-connector-java-8.0.30.jar:8.0.30]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241) ~[mysql-connector-java-8.0.30.jar:8.0.30]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198) ~[mysql-connector-java-8.0.30.jar:8.0.30]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-4.0.3.jar:na]
+	at com.github.pagehelper.page.PageAutoDialect.getUrl(PageAutoDialect.java:184) ~[pagehelper-5.2.0.jar:na]
+	at com.github.pagehelper.page.PageAutoDialect.getDialect(PageAutoDialect.java:210) ~[pagehelper-5.2.0.jar:na]
+	at com.github.pagehelper.page.PageAutoDialect.initDelegateDialect(PageAutoDialect.java:105) ~[pagehelper-5.2.0.jar:na]
+	at com.github.pagehelper.PageHelper.skip(PageHelper.java:69) ~[pagehelper-5.2.0.jar:na]
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:96) ~[pagehelper-5.2.0.jar:na]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:62) ~[mybatis-3.5.7.jar:3.5.7]
+	at com.sun.proxy.$Proxy85.query(Unknown Source) ~[na:na]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:151) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:145) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140) ~[mybatis-3.5.7.jar:3.5.7]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_281]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_281]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_281]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_281]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427) ~[mybatis-spring-2.0.6.jar:2.0.6]
+	at com.sun.proxy.$Proxy63.selectList(Unknown Source) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224) ~[mybatis-spring-2.0.6.jar:2.0.6]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:166) ~[mybatis-plus-core-3.5.1.jar:3.5.1]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:77) ~[mybatis-plus-core-3.5.1.jar:3.5.1]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148) ~[mybatis-plus-core-3.5.1.jar:3.5.1]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89) ~[mybatis-plus-core-3.5.1.jar:3.5.1]
+	at com.sun.proxy.$Proxy65.getSearchList(Unknown Source) ~[na:na]
+	at com.starQeem.qeemblog.service.Impl.BlogServiceImpl.getSearch(BlogServiceImpl.java:139) ~[classes/:na]
+	at com.starQeem.qeemblog.service.Impl.BlogServiceImpl.searchList(BlogServiceImpl.java:122) ~[classes/:na]
+	at com.starQeem.qeemblog.service.Impl.BlogServiceImpl$$FastClassBySpringCGLIB$$1e0f951b.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.22.jar:5.3.22]
+	at org.springframework.aop.framework.CglibAopProxy.invokeMethod(CglibAopProxy.java:386) ~[spring-aop-5.3.22.jar:5.3.22]
+	at org.springframework.aop.framework.CglibAopProxy.access$000(CglibAopProxy.java:85) ~[spring-aop-5.3.22.jar:5.3.22]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:704) ~[spring-aop-5.3.22.jar:5.3.22]
+	at com.starQeem.qeemblog.service.Impl.BlogServiceImpl$$EnhancerBySpringCGLIB$$fc3893c1.searchList(<generated>) ~[classes/:na]
+	at com.starQeem.qeemblog.controller.IndexController.index(IndexController.java:31) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_281]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_281]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_281]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_281]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.22.jar:5.3.22]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1070) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) ~[tomcat-embed-core-9.0.65.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.65.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.22.jar:5.3.22]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.22.jar:5.3.22]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.22.jar:5.3.22]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.22.jar:5.3.22]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94) ~[spring-web-5.3.22.jar:5.3.22]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.22.jar:5.3.22]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.22.jar:5.3.22]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.22.jar:5.3.22]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_281]
 
-Web server failed to start. Port 8080 was already in use.
+2023-05-24 14:08:36.245  INFO 15040 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Starting QeemBlogApplication using Java 1.8.0_281 on MSI with PID 15040 (D:\study\QeemBlog\target\classes started by muyiyi in D:\study\QeemBlog)
+2023-05-24 14:08:36.253 DEBUG 15040 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Running with Spring Boot v2.7.3, Spring v5.3.22
+2023-05-24 14:08:36.254  INFO 15040 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : The following 1 profile is active: "dev"
+2023-05-24 14:08:38.304  INFO 15040 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-24 14:08:38.318  INFO 15040 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-24 14:08:38.319  INFO 15040 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-05-24 14:08:38.590  INFO 15040 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-24 14:08:38.590  INFO 15040 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2204 ms
+2023-05-24 14:08:40.519  INFO 15040 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-05-24 14:08:40.862  INFO 15040 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-24 14:08:40.877  INFO 15040 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Started QeemBlogApplication in 5.605 seconds (JVM running for 7.357)
+2023-05-24 14:08:43.684  INFO 15040 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-24 14:08:43.684  INFO 15040 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-24 14:08:43.687  INFO 15040 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-05-24 14:08:43.792  INFO 15040 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-05-24 14:08:43.966  INFO 15040 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-05-24 14:08:44.020 DEBUG 15040 --- [http-nio-8080-exec-1] c.s.q.m.BlogMapper.getSearchList_COUNT   : ==>  Preparing: SELECT count(0) FROM t_blog WHERE title LIKE concat('%', ?, '%')
+2023-05-24 14:08:44.049 DEBUG 15040 --- [http-nio-8080-exec-1] c.s.q.m.BlogMapper.getSearchList_COUNT   : ==> Parameters: (String)
+2023-05-24 14:08:44.107 DEBUG 15040 --- [http-nio-8080-exec-1] c.s.q.m.BlogMapper.getSearchList_COUNT   : <==      Total: 1
+2023-05-24 14:08:44.114 DEBUG 15040 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getSearchList    : ==>  Preparing: SELECT id, title, description, published, recommend, update_time, type_id, views, first_picture FROM t_blog WHERE title LIKE concat('%', ?, '%') order by create_time desc LIMIT ?
+2023-05-24 14:08:44.115 DEBUG 15040 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getSearchList    : ==> Parameters: (String), 8(Integer)
+2023-05-24 14:08:44.125 DEBUG 15040 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getSearchList    : <==      Total: 8
+2023-05-24 14:08:44.127 DEBUG 15040 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
+2023-05-24 14:08:44.128 DEBUG 15040 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 20(Long)
+2023-05-24 14:08:44.141 DEBUG 15040 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
+2023-05-24 14:08:44.142 DEBUG 15040 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
+2023-05-24 14:08:44.143 DEBUG 15040 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 18(Long)
+2023-05-24 14:08:44.144 DEBUG 15040 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
+2023-05-24 14:08:44.146 DEBUG 15040 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
+2023-05-24 14:08:44.146 DEBUG 15040 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 17(Long)
+2023-05-24 14:08:44.148 DEBUG 15040 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
+2023-05-24 14:08:44.149 DEBUG 15040 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
+2023-05-24 14:08:44.149 DEBUG 15040 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 17(Long)
+2023-05-24 14:08:44.150 DEBUG 15040 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
+2023-05-24 14:08:44.151 DEBUG 15040 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
+2023-05-24 14:08:44.152 DEBUG 15040 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 20(Long)
+2023-05-24 14:08:44.153 DEBUG 15040 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
+2023-05-24 14:08:44.154 DEBUG 15040 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
+2023-05-24 14:08:44.154 DEBUG 15040 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 21(Long)
+2023-05-24 14:08:44.155 DEBUG 15040 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
+2023-05-24 14:08:44.156 DEBUG 15040 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
+2023-05-24 14:08:44.156 DEBUG 15040 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 21(Long)
+2023-05-24 14:08:44.158 DEBUG 15040 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
+2023-05-24 14:08:44.159 DEBUG 15040 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
+2023-05-24 14:08:44.160 DEBUG 15040 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 21(Long)
+2023-05-24 14:08:44.162 DEBUG 15040 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
+2023-05-24 14:08:44.193 DEBUG 15040 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.selectCount      : ==>  Preparing: SELECT COUNT( * ) FROM t_blog
+2023-05-24 14:08:44.194 DEBUG 15040 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.selectCount      : ==> Parameters: 
+2023-05-24 14:08:44.195 DEBUG 15040 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.selectCount      : <==      Total: 1
+2023-05-24 14:08:44.196 DEBUG 15040 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : ==>  Preparing: select SUM(views) from t_blog
+2023-05-24 14:08:44.197 DEBUG 15040 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : ==> Parameters: 
+2023-05-24 14:08:44.198 DEBUG 15040 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : <==      Total: 1
+2023-05-24 14:08:44.209 DEBUG 15040 --- [http-nio-8080-exec-1] c.s.q.mapper.CommentMapper.selectCount   : ==>  Preparing: SELECT COUNT( * ) FROM t_comment
+2023-05-24 14:08:44.210 DEBUG 15040 --- [http-nio-8080-exec-1] c.s.q.mapper.CommentMapper.selectCount   : ==> Parameters: 
+2023-05-24 14:08:44.223 DEBUG 15040 --- [http-nio-8080-exec-1] c.s.q.mapper.CommentMapper.selectCount   : <==      Total: 1
+2023-05-24 14:08:44.878  WARN 15040 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "fghfg"]
+2023-05-24 14:08:50.784  WARN 15040 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "beian.miit.gov.cn"]
+2023-05-24 14:08:50.907  WARN 15040 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "favicon.ico"]
+2023-05-24 14:09:09.934  INFO 15040 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-05-24 14:09:09.948  INFO 15040 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-05-24 14:09:16.510  INFO 304 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Starting QeemBlogApplication using Java 1.8.0_281 on MSI with PID 304 (D:\study\QeemBlog\target\classes started by muyiyi in D:\study\QeemBlog)
+2023-05-24 14:09:16.513 DEBUG 304 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Running with Spring Boot v2.7.3, Spring v5.3.22
+2023-05-24 14:09:16.514  INFO 304 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : The following 1 profile is active: "dev"
+2023-05-24 14:09:17.702  INFO 304 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-24 14:09:17.710  INFO 304 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-24 14:09:17.711  INFO 304 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-05-24 14:09:17.838  INFO 304 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-24 14:09:17.838  INFO 304 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1273 ms
+2023-05-24 14:09:19.426  INFO 304 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-05-24 14:09:19.750  INFO 304 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-24 14:09:19.765  INFO 304 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Started QeemBlogApplication in 3.919 seconds (JVM running for 5.057)
+2023-05-24 14:09:22.164  INFO 304 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-24 14:09:22.164  INFO 304 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-24 14:09:22.165  INFO 304 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-05-24 14:09:22.249  INFO 304 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-05-24 14:09:22.392  INFO 304 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-05-24 14:09:22.399 DEBUG 304 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.selectCount      : ==>  Preparing: SELECT COUNT( * ) FROM t_blog
+2023-05-24 14:09:22.421 DEBUG 304 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.selectCount      : ==> Parameters: 
+2023-05-24 14:09:22.440 DEBUG 304 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.selectCount      : <==      Total: 1
+2023-05-24 14:09:22.444 DEBUG 304 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : ==>  Preparing: select SUM(views) from t_blog
+2023-05-24 14:09:22.445 DEBUG 304 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : ==> Parameters: 
+2023-05-24 14:09:22.446 DEBUG 304 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : <==      Total: 1
+2023-05-24 14:09:22.452 DEBUG 304 --- [http-nio-8080-exec-1] c.s.q.mapper.CommentMapper.selectCount   : ==>  Preparing: SELECT COUNT( * ) FROM t_comment
+2023-05-24 14:09:22.452 DEBUG 304 --- [http-nio-8080-exec-1] c.s.q.mapper.CommentMapper.selectCount   : ==> Parameters: 
+2023-05-24 14:09:22.454 DEBUG 304 --- [http-nio-8080-exec-1] c.s.q.mapper.CommentMapper.selectCount   : <==      Total: 1
+2023-05-24 14:10:10.758  WARN 304 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "beian.miit.gov.cn"]
+2023-05-24 14:10:10.830  WARN 304 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "favicon.ico"]
+2023-05-24 14:10:20.383  INFO 304 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-05-24 14:10:20.394  INFO 304 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-05-24 14:10:26.275  INFO 17040 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Starting QeemBlogApplication using Java 1.8.0_281 on MSI with PID 17040 (D:\study\QeemBlog\target\classes started by muyiyi in D:\study\QeemBlog)
+2023-05-24 14:10:26.278 DEBUG 17040 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Running with Spring Boot v2.7.3, Spring v5.3.22
+2023-05-24 14:10:26.279  INFO 17040 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : The following 1 profile is active: "dev"
+2023-05-24 14:10:27.444  INFO 17040 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-24 14:10:27.451  INFO 17040 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-24 14:10:27.452  INFO 17040 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-05-24 14:10:27.571  INFO 17040 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-24 14:10:27.572  INFO 17040 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1239 ms
+2023-05-24 14:10:28.780  INFO 17040 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-05-24 14:10:28.978  INFO 17040 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-24 14:10:28.988  INFO 17040 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Started QeemBlogApplication in 3.225 seconds (JVM running for 4.301)
+2023-05-24 14:10:33.736  INFO 17040 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-24 14:10:33.737  INFO 17040 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-24 14:10:33.738  INFO 17040 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-05-24 14:10:33.816  INFO 17040 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-05-24 14:10:33.940  INFO 17040 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-05-24 14:10:33.947 DEBUG 17040 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.selectCount      : ==>  Preparing: SELECT COUNT( * ) FROM t_blog
+2023-05-24 14:10:33.972 DEBUG 17040 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.selectCount      : ==> Parameters: 
+2023-05-24 14:10:33.995 DEBUG 17040 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.selectCount      : <==      Total: 1
+2023-05-24 14:10:34.000 DEBUG 17040 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : ==>  Preparing: select SUM(views) from t_blog
+2023-05-24 14:10:34.001 DEBUG 17040 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : ==> Parameters: 
+2023-05-24 14:10:34.002 DEBUG 17040 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : <==      Total: 1
+2023-05-24 14:10:34.011 DEBUG 17040 --- [http-nio-8080-exec-1] c.s.q.mapper.CommentMapper.selectCount   : ==>  Preparing: SELECT COUNT( * ) FROM t_comment
+2023-05-24 14:10:34.012 DEBUG 17040 --- [http-nio-8080-exec-1] c.s.q.mapper.CommentMapper.selectCount   : ==> Parameters: 
+2023-05-24 14:10:34.015 DEBUG 17040 --- [http-nio-8080-exec-1] c.s.q.mapper.CommentMapper.selectCount   : <==      Total: 1
+2023-05-24 14:10:49.099  INFO 17040 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-05-24 14:10:49.125  INFO 17040 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-05-24 14:10:53.939  INFO 25268 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Starting QeemBlogApplication using Java 1.8.0_281 on MSI with PID 25268 (D:\study\QeemBlog\target\classes started by muyiyi in D:\study\QeemBlog)
+2023-05-24 14:10:53.943 DEBUG 25268 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Running with Spring Boot v2.7.3, Spring v5.3.22
+2023-05-24 14:10:53.944  INFO 25268 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : The following 1 profile is active: "dev"
+2023-05-24 14:10:55.096  INFO 25268 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-24 14:10:55.102  INFO 25268 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-24 14:10:55.102  INFO 25268 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-05-24 14:10:55.219  INFO 25268 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-24 14:10:55.219  INFO 25268 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1211 ms
+2023-05-24 14:10:56.417  INFO 25268 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-05-24 14:10:56.623  INFO 25268 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-24 14:10:56.633  INFO 25268 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Started QeemBlogApplication in 3.269 seconds (JVM running for 4.321)
+2023-05-24 14:10:58.681  INFO 25268 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-24 14:10:58.682  INFO 25268 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-24 14:10:58.683  INFO 25268 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-05-24 14:10:58.786  INFO 25268 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-05-24 14:10:58.934  INFO 25268 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-05-24 14:10:58.942 DEBUG 25268 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.selectCount      : ==>  Preparing: SELECT COUNT( * ) FROM t_blog
+2023-05-24 14:10:58.967 DEBUG 25268 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.selectCount      : ==> Parameters: 
+2023-05-24 14:10:58.989 DEBUG 25268 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.selectCount      : <==      Total: 1
+2023-05-24 14:10:58.995 DEBUG 25268 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : ==>  Preparing: select SUM(views) from t_blog
+2023-05-24 14:10:58.995 DEBUG 25268 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : ==> Parameters: 
+2023-05-24 14:10:58.996 DEBUG 25268 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : <==      Total: 1
+2023-05-24 14:10:59.003 DEBUG 25268 --- [http-nio-8080-exec-1] c.s.q.mapper.CommentMapper.selectCount   : ==>  Preparing: SELECT COUNT( * ) FROM t_comment
+2023-05-24 14:10:59.003 DEBUG 25268 --- [http-nio-8080-exec-1] c.s.q.mapper.CommentMapper.selectCount   : ==> Parameters: 
+2023-05-24 14:10:59.005 DEBUG 25268 --- [http-nio-8080-exec-1] c.s.q.mapper.CommentMapper.selectCount   : <==      Total: 1
+2023-05-24 14:11:26.833  INFO 25268 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-05-24 14:11:26.842  INFO 25268 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-05-24 14:11:31.370  INFO 11312 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Starting QeemBlogApplication using Java 1.8.0_281 on MSI with PID 11312 (D:\study\QeemBlog\target\classes started by muyiyi in D:\study\QeemBlog)
+2023-05-24 14:11:31.374 DEBUG 11312 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Running with Spring Boot v2.7.3, Spring v5.3.22
+2023-05-24 14:11:31.375  INFO 11312 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : The following 1 profile is active: "dev"
+2023-05-24 14:11:32.444  INFO 11312 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-24 14:11:32.451  INFO 11312 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-24 14:11:32.451  INFO 11312 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-05-24 14:11:32.566  INFO 11312 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-24 14:11:32.566  INFO 11312 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1138 ms
+2023-05-24 14:11:33.632  INFO 11312 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-05-24 14:11:33.894  INFO 11312 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-24 14:11:33.903  INFO 11312 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Started QeemBlogApplication in 3.048 seconds (JVM running for 4.026)
+2023-05-24 14:11:36.381  INFO 11312 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-24 14:11:36.381  INFO 11312 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-24 14:11:36.383  INFO 11312 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-05-24 14:11:36.467  INFO 11312 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-05-24 14:11:36.608  INFO 11312 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-05-24 14:11:36.616 DEBUG 11312 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.selectCount      : ==>  Preparing: SELECT COUNT( * ) FROM t_blog
+2023-05-24 14:11:36.644 DEBUG 11312 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.selectCount      : ==> Parameters: 
+2023-05-24 14:11:36.667 DEBUG 11312 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.selectCount      : <==      Total: 1
+2023-05-24 14:11:36.672 DEBUG 11312 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : ==>  Preparing: select SUM(views) from t_blog
+2023-05-24 14:11:36.673 DEBUG 11312 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : ==> Parameters: 
+2023-05-24 14:11:36.675 DEBUG 11312 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : <==      Total: 1
+2023-05-24 14:11:36.683 DEBUG 11312 --- [http-nio-8080-exec-1] c.s.q.mapper.CommentMapper.selectCount   : ==>  Preparing: SELECT COUNT( * ) FROM t_comment
+2023-05-24 14:11:36.683 DEBUG 11312 --- [http-nio-8080-exec-1] c.s.q.mapper.CommentMapper.selectCount   : ==> Parameters: 
+2023-05-24 14:11:36.685 DEBUG 11312 --- [http-nio-8080-exec-1] c.s.q.mapper.CommentMapper.selectCount   : <==      Total: 1
+2023-05-24 14:11:54.886  INFO 11312 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-05-24 14:11:54.891  INFO 11312 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-05-24 14:11:59.740  INFO 23856 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Starting QeemBlogApplication using Java 1.8.0_281 on MSI with PID 23856 (D:\study\QeemBlog\target\classes started by muyiyi in D:\study\QeemBlog)
+2023-05-24 14:11:59.745 DEBUG 23856 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Running with Spring Boot v2.7.3, Spring v5.3.22
+2023-05-24 14:11:59.746  INFO 23856 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : The following 1 profile is active: "dev"
+2023-05-24 14:12:00.947  INFO 23856 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-24 14:12:00.954  INFO 23856 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-24 14:12:00.954  INFO 23856 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-05-24 14:12:01.071  INFO 23856 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-24 14:12:01.071  INFO 23856 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1259 ms
+2023-05-24 14:12:02.263  INFO 23856 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-05-24 14:12:02.510  INFO 23856 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-24 14:12:02.519  INFO 23856 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Started QeemBlogApplication in 3.335 seconds (JVM running for 4.358)
+2023-05-24 14:12:19.304  INFO 19436 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Starting QeemBlogApplication using Java 1.8.0_281 on MSI with PID 19436 (D:\study\QeemBlog\target\classes started by muyiyi in D:\study\QeemBlog)
+2023-05-24 14:12:19.308 DEBUG 19436 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Running with Spring Boot v2.7.3, Spring v5.3.22
+2023-05-24 14:12:19.309  INFO 19436 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : The following 1 profile is active: "dev"
+2023-05-24 14:12:20.461  INFO 19436 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-24 14:12:20.469  INFO 19436 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-24 14:12:20.469  INFO 19436 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-05-24 14:12:20.584  INFO 19436 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-24 14:12:20.584  INFO 19436 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1219 ms
+2023-05-24 14:12:21.698  INFO 19436 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-05-24 14:12:21.895  INFO 19436 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-24 14:12:21.905  INFO 19436 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Started QeemBlogApplication in 3.134 seconds (JVM running for 4.14)
+2023-05-24 14:12:24.342  INFO 19436 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-24 14:12:24.343  INFO 19436 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-24 14:12:24.344  INFO 19436 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-05-24 14:12:24.443  INFO 19436 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-05-24 14:12:24.581  INFO 19436 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-05-24 14:12:24.589 DEBUG 19436 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.selectCount      : ==>  Preparing: SELECT COUNT( * ) FROM t_blog
+2023-05-24 14:12:24.614 DEBUG 19436 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.selectCount      : ==> Parameters: 
+2023-05-24 14:12:24.635 DEBUG 19436 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.selectCount      : <==      Total: 1
+2023-05-24 14:12:24.639 DEBUG 19436 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : ==>  Preparing: select SUM(views) from t_blog
+2023-05-24 14:12:24.640 DEBUG 19436 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : ==> Parameters: 
+2023-05-24 14:12:24.642 DEBUG 19436 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : <==      Total: 1
+2023-05-24 14:12:24.650 DEBUG 19436 --- [http-nio-8080-exec-1] c.s.q.mapper.CommentMapper.selectCount   : ==>  Preparing: SELECT COUNT( * ) FROM t_comment
+2023-05-24 14:12:24.650 DEBUG 19436 --- [http-nio-8080-exec-1] c.s.q.mapper.CommentMapper.selectCount   : ==> Parameters: 
+2023-05-24 14:12:24.652 DEBUG 19436 --- [http-nio-8080-exec-1] c.s.q.mapper.CommentMapper.selectCount   : <==      Total: 1
+2023-05-24 14:12:24.872 ERROR 19436 --- [http-nio-8080-exec-1] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8080-exec-1] Exception processing template "about": An error happened during template parsing (template: "class path resource [templates/about.html]" - line 139, col 21)
 
-Action:
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/about.html]" - line 139, col 21)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:239) ~[thymeleaf-3.0.15.RELEASE.jar:3.0.15.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.15.RELEASE.jar:3.0.15.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:649) ~[thymeleaf-3.0.15.RELEASE.jar:3.0.15.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) [thymeleaf-3.0.15.RELEASE.jar:3.0.15.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) [thymeleaf-3.0.15.RELEASE.jar:3.0.15.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:366) [thymeleaf-spring5-3.0.15.RELEASE.jar:3.0.15.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:190) [thymeleaf-spring5-3.0.15.RELEASE.jar:3.0.15.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1404) [spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1148) [spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1087) [spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) [spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.3.22.jar:5.3.22]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) [tomcat-embed-core-9.0.65.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.3.22.jar:5.3.22]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [tomcat-embed-core-9.0.65.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.3.22.jar:5.3.22]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.22.jar:5.3.22]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.3.22.jar:5.3.22]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.22.jar:5.3.22]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94) [spring-web-5.3.22.jar:5.3.22]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.22.jar:5.3.22]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.3.22.jar:5.3.22]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.22.jar:5.3.22]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_281]
+Caused by: org.attoparser.ParseException: (Line = 139, Column = 21) Malformed markup: Attribute "href" appears more than once in element
+	at org.attoparser.MarkupEventProcessorHandler.handleAttribute(MarkupEventProcessorHandler.java:549) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.ParsingAttributeSequenceUtil.parseAttributeSequence(ParsingAttributeSequenceUtil.java:275) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:153) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.15.RELEASE.jar:3.0.15.RELEASE]
+	... 52 common frames omitted
 
-Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+2023-05-24 14:12:24.875 ERROR 19436 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/about.html]" - line 139, col 21)] with root cause
 
-2023-05-16 19:16:52.842  INFO 24696 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Starting QeemBlogApplication using Java 1.8.0_281 on MSI with PID 24696 (D:\study\QeemBlog\target\classes started by muyiyi in D:\study\QeemBlog)
-2023-05-16 19:16:52.844 DEBUG 24696 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Running with Spring Boot v2.7.3, Spring v5.3.22
-2023-05-16 19:16:52.845  INFO 24696 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : The following 1 profile is active: "dev"
-2023-05-16 19:16:53.977  INFO 24696 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
-2023-05-16 19:16:53.985  INFO 24696 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-05-16 19:16:53.985  INFO 24696 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2023-05-16 19:16:54.135  INFO 24696 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-05-16 19:16:54.135  INFO 24696 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1237 ms
-2023-05-16 19:16:55.357  INFO 24696 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2023-05-16 19:16:55.620  INFO 24696 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
-2023-05-16 19:16:55.631  INFO 24696 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Started QeemBlogApplication in 3.281 seconds (JVM running for 4.208)
-2023-05-16 19:17:06.259  INFO 24696 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-05-16 19:17:06.259  INFO 24696 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-05-16 19:17:06.260  INFO 24696 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2023-05-16 19:17:06.324  INFO 24696 --- [http-nio-8888-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-05-16 19:17:06.442  INFO 24696 --- [http-nio-8888-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-05-16 19:17:06.481 DEBUG 24696 --- [http-nio-8888-exec-1] c.s.q.m.BlogMapper.getSearchList_COUNT   : ==>  Preparing: SELECT count(0) FROM t_blog WHERE title LIKE concat('%', ?, '%')
-2023-05-16 19:17:06.506 DEBUG 24696 --- [http-nio-8888-exec-1] c.s.q.m.BlogMapper.getSearchList_COUNT   : ==> Parameters: (String)
-2023-05-16 19:17:06.528 DEBUG 24696 --- [http-nio-8888-exec-1] c.s.q.m.BlogMapper.getSearchList_COUNT   : <==      Total: 1
-2023-05-16 19:17:06.532 DEBUG 24696 --- [http-nio-8888-exec-1] c.s.q.mapper.BlogMapper.getSearchList    : ==>  Preparing: SELECT id, title, description, published, recommend, update_time, type_id, views, first_picture FROM t_blog WHERE title LIKE concat('%', ?, '%') order by create_time desc LIMIT ?
-2023-05-16 19:17:06.533 DEBUG 24696 --- [http-nio-8888-exec-1] c.s.q.mapper.BlogMapper.getSearchList    : ==> Parameters: (String), 8(Integer)
-2023-05-16 19:17:06.541 DEBUG 24696 --- [http-nio-8888-exec-1] c.s.q.mapper.BlogMapper.getSearchList    : <==      Total: 8
-2023-05-16 19:17:06.543 DEBUG 24696 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
-2023-05-16 19:17:06.543 DEBUG 24696 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 20(Long)
-2023-05-16 19:17:06.554 DEBUG 24696 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
-2023-05-16 19:17:06.556 DEBUG 24696 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
-2023-05-16 19:17:06.556 DEBUG 24696 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 18(Long)
-2023-05-16 19:17:06.557 DEBUG 24696 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
-2023-05-16 19:17:06.558 DEBUG 24696 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
-2023-05-16 19:17:06.558 DEBUG 24696 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 17(Long)
-2023-05-16 19:17:06.559 DEBUG 24696 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
-2023-05-16 19:17:06.560 DEBUG 24696 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
-2023-05-16 19:17:06.560 DEBUG 24696 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 17(Long)
-2023-05-16 19:17:06.561 DEBUG 24696 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
-2023-05-16 19:17:06.561 DEBUG 24696 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
-2023-05-16 19:17:06.562 DEBUG 24696 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 20(Long)
-2023-05-16 19:17:06.563 DEBUG 24696 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
-2023-05-16 19:17:06.563 DEBUG 24696 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
-2023-05-16 19:17:06.564 DEBUG 24696 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 21(Long)
-2023-05-16 19:17:06.565 DEBUG 24696 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
-2023-05-16 19:17:06.566 DEBUG 24696 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
-2023-05-16 19:17:06.566 DEBUG 24696 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 21(Long)
-2023-05-16 19:17:06.567 DEBUG 24696 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
-2023-05-16 19:17:06.568 DEBUG 24696 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
-2023-05-16 19:17:06.568 DEBUG 24696 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 21(Long)
-2023-05-16 19:17:06.571 DEBUG 24696 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
-2023-05-16 19:17:06.594 DEBUG 24696 --- [http-nio-8888-exec-1] c.s.q.mapper.BlogMapper.selectCount      : ==>  Preparing: SELECT COUNT( * ) FROM t_blog
-2023-05-16 19:17:06.594 DEBUG 24696 --- [http-nio-8888-exec-1] c.s.q.mapper.BlogMapper.selectCount      : ==> Parameters: 
-2023-05-16 19:17:06.595 DEBUG 24696 --- [http-nio-8888-exec-1] c.s.q.mapper.BlogMapper.selectCount      : <==      Total: 1
-2023-05-16 19:17:06.596 DEBUG 24696 --- [http-nio-8888-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : ==>  Preparing: select SUM(views) from t_blog
-2023-05-16 19:17:06.596 DEBUG 24696 --- [http-nio-8888-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : ==> Parameters: 
-2023-05-16 19:17:06.597 DEBUG 24696 --- [http-nio-8888-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : <==      Total: 1
-2023-05-16 19:17:06.606 DEBUG 24696 --- [http-nio-8888-exec-1] c.s.q.mapper.CommentMapper.selectCount   : ==>  Preparing: SELECT COUNT( * ) FROM t_comment
-2023-05-16 19:17:06.606 DEBUG 24696 --- [http-nio-8888-exec-1] c.s.q.mapper.CommentMapper.selectCount   : ==> Parameters: 
-2023-05-16 19:17:06.609 DEBUG 24696 --- [http-nio-8888-exec-1] c.s.q.mapper.CommentMapper.selectCount   : <==      Total: 1
-2023-05-16 19:17:07.051  WARN 24696 --- [http-nio-8888-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "fghfg"]
-2023-05-16 19:19:18.410  INFO 24696 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-05-16 19:19:18.420  INFO 24696 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-05-16 19:19:23.128  INFO 27676 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Starting QeemBlogApplication using Java 1.8.0_281 on MSI with PID 27676 (D:\study\QeemBlog\target\classes started by muyiyi in D:\study\QeemBlog)
-2023-05-16 19:19:23.131 DEBUG 27676 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Running with Spring Boot v2.7.3, Spring v5.3.22
-2023-05-16 19:19:23.132  INFO 27676 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : The following 1 profile is active: "dev"
-2023-05-16 19:19:24.264  INFO 27676 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
-2023-05-16 19:19:24.270  INFO 27676 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-05-16 19:19:24.270  INFO 27676 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2023-05-16 19:19:24.384  INFO 27676 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-05-16 19:19:24.385  INFO 27676 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1204 ms
-2023-05-16 19:19:25.568  INFO 27676 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2023-05-16 19:19:25.773  INFO 27676 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
-2023-05-16 19:19:25.783  INFO 27676 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Started QeemBlogApplication in 3.183 seconds (JVM running for 4.407)
-2023-05-16 19:19:29.694  INFO 27676 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-05-16 19:19:29.695  INFO 27676 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-05-16 19:19:29.696  INFO 27676 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2023-05-16 19:19:29.757  INFO 27676 --- [http-nio-8888-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-05-16 19:19:29.895  INFO 27676 --- [http-nio-8888-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-05-16 19:19:29.952 DEBUG 27676 --- [http-nio-8888-exec-1] c.s.q.m.BlogMapper.getSearchList_COUNT   : ==>  Preparing: SELECT count(0) FROM t_blog WHERE title LIKE concat('%', ?, '%')
-2023-05-16 19:19:29.978 DEBUG 27676 --- [http-nio-8888-exec-1] c.s.q.m.BlogMapper.getSearchList_COUNT   : ==> Parameters: (String)
-2023-05-16 19:19:30.003 DEBUG 27676 --- [http-nio-8888-exec-1] c.s.q.m.BlogMapper.getSearchList_COUNT   : <==      Total: 1
-2023-05-16 19:19:30.007 DEBUG 27676 --- [http-nio-8888-exec-1] c.s.q.mapper.BlogMapper.getSearchList    : ==>  Preparing: SELECT id, title, description, published, recommend, update_time, type_id, views, first_picture FROM t_blog WHERE title LIKE concat('%', ?, '%') order by create_time desc LIMIT ?
-2023-05-16 19:19:30.008 DEBUG 27676 --- [http-nio-8888-exec-1] c.s.q.mapper.BlogMapper.getSearchList    : ==> Parameters: (String), 8(Integer)
-2023-05-16 19:19:30.018 DEBUG 27676 --- [http-nio-8888-exec-1] c.s.q.mapper.BlogMapper.getSearchList    : <==      Total: 8
-2023-05-16 19:19:30.020 DEBUG 27676 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
-2023-05-16 19:19:30.020 DEBUG 27676 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 20(Long)
-2023-05-16 19:19:30.024 DEBUG 27676 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
-2023-05-16 19:19:30.025 DEBUG 27676 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
-2023-05-16 19:19:30.026 DEBUG 27676 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 18(Long)
-2023-05-16 19:19:30.027 DEBUG 27676 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
-2023-05-16 19:19:30.028 DEBUG 27676 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
-2023-05-16 19:19:30.028 DEBUG 27676 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 17(Long)
-2023-05-16 19:19:30.030 DEBUG 27676 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
-2023-05-16 19:19:30.031 DEBUG 27676 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
-2023-05-16 19:19:30.032 DEBUG 27676 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 17(Long)
-2023-05-16 19:19:30.033 DEBUG 27676 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
-2023-05-16 19:19:30.034 DEBUG 27676 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
-2023-05-16 19:19:30.034 DEBUG 27676 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 20(Long)
-2023-05-16 19:19:30.035 DEBUG 27676 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
-2023-05-16 19:19:30.036 DEBUG 27676 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
-2023-05-16 19:19:30.036 DEBUG 27676 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 21(Long)
-2023-05-16 19:19:30.038 DEBUG 27676 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
-2023-05-16 19:19:30.039 DEBUG 27676 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
-2023-05-16 19:19:30.040 DEBUG 27676 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 21(Long)
-2023-05-16 19:19:30.041 DEBUG 27676 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
-2023-05-16 19:19:30.041 DEBUG 27676 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
-2023-05-16 19:19:30.042 DEBUG 27676 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 21(Long)
-2023-05-16 19:19:30.043 DEBUG 27676 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
-2023-05-16 19:19:30.069 DEBUG 27676 --- [http-nio-8888-exec-1] c.s.q.mapper.BlogMapper.selectCount      : ==>  Preparing: SELECT COUNT( * ) FROM t_blog
-2023-05-16 19:19:30.069 DEBUG 27676 --- [http-nio-8888-exec-1] c.s.q.mapper.BlogMapper.selectCount      : ==> Parameters: 
-2023-05-16 19:19:30.070 DEBUG 27676 --- [http-nio-8888-exec-1] c.s.q.mapper.BlogMapper.selectCount      : <==      Total: 1
-2023-05-16 19:19:30.071 DEBUG 27676 --- [http-nio-8888-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : ==>  Preparing: select SUM(views) from t_blog
-2023-05-16 19:19:30.071 DEBUG 27676 --- [http-nio-8888-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : ==> Parameters: 
-2023-05-16 19:19:30.074 DEBUG 27676 --- [http-nio-8888-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : <==      Total: 1
-2023-05-16 19:19:30.083 DEBUG 27676 --- [http-nio-8888-exec-1] c.s.q.mapper.CommentMapper.selectCount   : ==>  Preparing: SELECT COUNT( * ) FROM t_comment
-2023-05-16 19:19:30.083 DEBUG 27676 --- [http-nio-8888-exec-1] c.s.q.mapper.CommentMapper.selectCount   : ==> Parameters: 
-2023-05-16 19:19:30.085 DEBUG 27676 --- [http-nio-8888-exec-1] c.s.q.mapper.CommentMapper.selectCount   : <==      Total: 1
-2023-05-16 19:19:30.532  WARN 27676 --- [http-nio-8888-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "fghfg"]
-2023-05-16 19:30:05.762  INFO 27676 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-05-16 19:30:05.768  INFO 27676 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-05-16 19:30:12.810  INFO 27380 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Starting QeemBlogApplication using Java 1.8.0_281 on MSI with PID 27380 (D:\study\QeemBlog\target\classes started by muyiyi in D:\study\QeemBlog)
-2023-05-16 19:30:12.813 DEBUG 27380 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Running with Spring Boot v2.7.3, Spring v5.3.22
-2023-05-16 19:30:12.813  INFO 27380 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : The following 1 profile is active: "dev"
-2023-05-16 19:30:14.645  INFO 27380 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
-2023-05-16 19:30:14.656  INFO 27380 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-05-16 19:30:14.656  INFO 27380 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2023-05-16 19:30:14.855  INFO 27380 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-05-16 19:30:14.855  INFO 27380 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1978 ms
-2023-05-16 19:30:16.717  INFO 27380 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2023-05-16 19:30:17.070  INFO 27380 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
-2023-05-16 19:30:17.085  INFO 27380 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Started QeemBlogApplication in 4.9 seconds (JVM running for 5.89)
-2023-05-16 19:30:24.143  INFO 27380 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-05-16 19:30:24.143  INFO 27380 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-05-16 19:30:24.145  INFO 27380 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2023-05-16 19:30:24.200  INFO 27380 --- [http-nio-8888-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-05-16 19:30:24.301  INFO 27380 --- [http-nio-8888-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-05-16 19:30:24.334 DEBUG 27380 --- [http-nio-8888-exec-1] c.s.q.m.BlogMapper.getSearchList_COUNT   : ==>  Preparing: SELECT count(0) FROM t_blog WHERE title LIKE concat('%', ?, '%')
-2023-05-16 19:30:24.352 DEBUG 27380 --- [http-nio-8888-exec-1] c.s.q.m.BlogMapper.getSearchList_COUNT   : ==> Parameters: (String)
-2023-05-16 19:30:24.370 DEBUG 27380 --- [http-nio-8888-exec-1] c.s.q.m.BlogMapper.getSearchList_COUNT   : <==      Total: 1
-2023-05-16 19:30:24.374 DEBUG 27380 --- [http-nio-8888-exec-1] c.s.q.mapper.BlogMapper.getSearchList    : ==>  Preparing: SELECT id, title, description, published, recommend, update_time, type_id, views, first_picture FROM t_blog WHERE title LIKE concat('%', ?, '%') order by create_time desc LIMIT ?
-2023-05-16 19:30:24.375 DEBUG 27380 --- [http-nio-8888-exec-1] c.s.q.mapper.BlogMapper.getSearchList    : ==> Parameters: (String), 8(Integer)
-2023-05-16 19:30:24.381 DEBUG 27380 --- [http-nio-8888-exec-1] c.s.q.mapper.BlogMapper.getSearchList    : <==      Total: 8
-2023-05-16 19:30:24.383 DEBUG 27380 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
-2023-05-16 19:30:24.383 DEBUG 27380 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 20(Long)
-2023-05-16 19:30:24.386 DEBUG 27380 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
-2023-05-16 19:30:24.387 DEBUG 27380 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
-2023-05-16 19:30:24.387 DEBUG 27380 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 18(Long)
-2023-05-16 19:30:24.388 DEBUG 27380 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
-2023-05-16 19:30:24.388 DEBUG 27380 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
-2023-05-16 19:30:24.388 DEBUG 27380 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 17(Long)
-2023-05-16 19:30:24.389 DEBUG 27380 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
-2023-05-16 19:30:24.390 DEBUG 27380 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
-2023-05-16 19:30:24.390 DEBUG 27380 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 17(Long)
-2023-05-16 19:30:24.391 DEBUG 27380 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
-2023-05-16 19:30:24.391 DEBUG 27380 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
-2023-05-16 19:30:24.391 DEBUG 27380 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 20(Long)
-2023-05-16 19:30:24.392 DEBUG 27380 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
-2023-05-16 19:30:24.393 DEBUG 27380 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
-2023-05-16 19:30:24.393 DEBUG 27380 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 21(Long)
-2023-05-16 19:30:24.394 DEBUG 27380 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
-2023-05-16 19:30:24.394 DEBUG 27380 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
-2023-05-16 19:30:24.394 DEBUG 27380 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 21(Long)
-2023-05-16 19:30:24.395 DEBUG 27380 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
-2023-05-16 19:30:24.395 DEBUG 27380 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
-2023-05-16 19:30:24.396 DEBUG 27380 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 21(Long)
-2023-05-16 19:30:24.397 DEBUG 27380 --- [http-nio-8888-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
-2023-05-16 19:30:24.414 DEBUG 27380 --- [http-nio-8888-exec-1] c.s.q.mapper.BlogMapper.selectCount      : ==>  Preparing: SELECT COUNT( * ) FROM t_blog
-2023-05-16 19:30:24.414 DEBUG 27380 --- [http-nio-8888-exec-1] c.s.q.mapper.BlogMapper.selectCount      : ==> Parameters: 
-2023-05-16 19:30:24.415 DEBUG 27380 --- [http-nio-8888-exec-1] c.s.q.mapper.BlogMapper.selectCount      : <==      Total: 1
-2023-05-16 19:30:24.416 DEBUG 27380 --- [http-nio-8888-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : ==>  Preparing: select SUM(views) from t_blog
-2023-05-16 19:30:24.416 DEBUG 27380 --- [http-nio-8888-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : ==> Parameters: 
-2023-05-16 19:30:24.417 DEBUG 27380 --- [http-nio-8888-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : <==      Total: 1
-2023-05-16 19:30:24.424 DEBUG 27380 --- [http-nio-8888-exec-1] c.s.q.mapper.CommentMapper.selectCount   : ==>  Preparing: SELECT COUNT( * ) FROM t_comment
-2023-05-16 19:30:24.425 DEBUG 27380 --- [http-nio-8888-exec-1] c.s.q.mapper.CommentMapper.selectCount   : ==> Parameters: 
-2023-05-16 19:30:24.427 DEBUG 27380 --- [http-nio-8888-exec-1] c.s.q.mapper.CommentMapper.selectCount   : <==      Total: 1
-2023-05-16 19:30:24.866  WARN 27380 --- [http-nio-8888-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "fghfg"]
-2023-05-16 19:30:44.587 DEBUG 27380 --- [http-nio-8888-exec-8] c.s.q.mapper.TypeMapper.getTypeList      : ==>  Preparing: select t.id,t.name,b.id b_id from t_type t left join t_blog b on t.id = b.type_id;
-2023-05-16 19:30:44.588 DEBUG 27380 --- [http-nio-8888-exec-8] c.s.q.mapper.TypeMapper.getTypeList      : ==> Parameters: 
-2023-05-16 19:30:44.595 DEBUG 27380 --- [http-nio-8888-exec-8] c.s.q.mapper.TypeMapper.getTypeList      : <==      Total: 11
-2023-05-16 19:30:44.606 DEBUG 27380 --- [http-nio-8888-exec-8] c.s.q.m.B.getBlogListByTypeId_COUNT      : ==>  Preparing: SELECT count(0) FROM t_blog b JOIN t_type t ON b.type_id = t.id WHERE b.published = 1 AND b.type_id = ?
-2023-05-16 19:30:44.607 DEBUG 27380 --- [http-nio-8888-exec-8] c.s.q.m.B.getBlogListByTypeId_COUNT      : ==> Parameters: 20(Long)
-2023-05-16 19:30:44.608 DEBUG 27380 --- [http-nio-8888-exec-8] c.s.q.m.B.getBlogListByTypeId_COUNT      : <==      Total: 1
-2023-05-16 19:30:44.612 DEBUG 27380 --- [http-nio-8888-exec-8] c.s.q.m.BlogMapper.getBlogListByTypeId   : ==>  Preparing: SELECT b.id, b.title, b.description, b.first_picture, b.commentabled, b.recommend, b.views, b.update_time, b.type_id, t.name type_name FROM t_blog b JOIN t_type t ON b.type_id = t.id WHERE b.published = 1 AND b.type_id = ? order by update_time desc LIMIT ?
-2023-05-16 19:30:44.613 DEBUG 27380 --- [http-nio-8888-exec-8] c.s.q.m.BlogMapper.getBlogListByTypeId   : ==> Parameters: 20(Long), 8(Integer)
-2023-05-16 19:30:44.619 DEBUG 27380 --- [http-nio-8888-exec-8] c.s.q.m.BlogMapper.getBlogListByTypeId   : <==      Total: 3
-2023-05-16 19:30:44.623 DEBUG 27380 --- [http-nio-8888-exec-8] c.s.q.mapper.BlogMapper.selectCount      : ==>  Preparing: SELECT COUNT( * ) FROM t_blog
-2023-05-16 19:30:44.623 DEBUG 27380 --- [http-nio-8888-exec-8] c.s.q.mapper.BlogMapper.selectCount      : ==> Parameters: 
-2023-05-16 19:30:44.625 DEBUG 27380 --- [http-nio-8888-exec-8] c.s.q.mapper.BlogMapper.selectCount      : <==      Total: 1
-2023-05-16 19:30:44.627 DEBUG 27380 --- [http-nio-8888-exec-8] c.s.q.mapper.BlogMapper.getViewCount     : ==>  Preparing: select SUM(views) from t_blog
-2023-05-16 19:30:44.627 DEBUG 27380 --- [http-nio-8888-exec-8] c.s.q.mapper.BlogMapper.getViewCount     : ==> Parameters: 
-2023-05-16 19:30:44.629 DEBUG 27380 --- [http-nio-8888-exec-8] c.s.q.mapper.BlogMapper.getViewCount     : <==      Total: 1
-2023-05-16 19:30:44.631 DEBUG 27380 --- [http-nio-8888-exec-8] c.s.q.mapper.CommentMapper.selectCount   : ==>  Preparing: SELECT COUNT( * ) FROM t_comment
-2023-05-16 19:30:44.631 DEBUG 27380 --- [http-nio-8888-exec-8] c.s.q.mapper.CommentMapper.selectCount   : ==> Parameters: 
-2023-05-16 19:30:44.633 DEBUG 27380 --- [http-nio-8888-exec-8] c.s.q.mapper.CommentMapper.selectCount   : <==      Total: 1
-2023-05-16 19:30:44.818  WARN 27380 --- [http-nio-8888-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "fghfg"]
-2023-05-16 19:30:47.044 DEBUG 27380 --- [http-nio-8888-exec-5] c.s.q.mapper.TagMapper.getTagList        : ==>  Preparing: select t.id,t.name,b.id b_id from t_tag t left join t_blog b on FIND_IN_SET(t.id, b.tag_ids) > 0;
-2023-05-16 19:30:47.045 DEBUG 27380 --- [http-nio-8888-exec-5] c.s.q.mapper.TagMapper.getTagList        : ==> Parameters: 
-2023-05-16 19:30:47.070 DEBUG 27380 --- [http-nio-8888-exec-5] c.s.q.mapper.TagMapper.getTagList        : <==      Total: 29
-2023-05-16 19:30:47.074 DEBUG 27380 --- [http-nio-8888-exec-5] c.s.q.m.B.getBlogListByTagId_COUNT       : ==>  Preparing: SELECT count(0) FROM t_blog b JOIN t_type t ON b.type_id = t.id JOIN t_tag t2 ON FIND_IN_SET(t2.id, b.tag_ids) > 0 WHERE b.published = 1 AND t2.id = ?
-2023-05-16 19:30:47.075 DEBUG 27380 --- [http-nio-8888-exec-5] c.s.q.m.B.getBlogListByTagId_COUNT       : ==> Parameters: 2(Long)
-2023-05-16 19:30:47.078 DEBUG 27380 --- [http-nio-8888-exec-5] c.s.q.m.B.getBlogListByTagId_COUNT       : <==      Total: 1
-2023-05-16 19:30:47.089 DEBUG 27380 --- [http-nio-8888-exec-5] c.s.q.m.BlogMapper.getBlogListByTagId    : ==>  Preparing: SELECT b.id, b.title, b.description, b.first_picture, b.commentabled, b.recommend, b.views, b.update_time, t.name type_name FROM t_blog b JOIN t_type t ON b.type_id = t.id JOIN t_tag t2 ON FIND_IN_SET(t2.id, b.tag_ids) > 0 WHERE b.published = 1 AND t2.id = ? order by update_time desc LIMIT ?
-2023-05-16 19:30:47.089 DEBUG 27380 --- [http-nio-8888-exec-5] c.s.q.m.BlogMapper.getBlogListByTagId    : ==> Parameters: 2(Long), 8(Integer)
-2023-05-16 19:30:47.099 DEBUG 27380 --- [http-nio-8888-exec-5] c.s.q.m.BlogMapper.getBlogListByTagId    : <==      Total: 8
-2023-05-16 19:30:47.101 DEBUG 27380 --- [http-nio-8888-exec-5] c.s.q.mapper.BlogMapper.selectCount      : ==>  Preparing: SELECT COUNT( * ) FROM t_blog
-2023-05-16 19:30:47.102 DEBUG 27380 --- [http-nio-8888-exec-5] c.s.q.mapper.BlogMapper.selectCount      : ==> Parameters: 
-2023-05-16 19:30:47.103 DEBUG 27380 --- [http-nio-8888-exec-5] c.s.q.mapper.BlogMapper.selectCount      : <==      Total: 1
-2023-05-16 19:30:47.105 DEBUG 27380 --- [http-nio-8888-exec-5] c.s.q.mapper.BlogMapper.getViewCount     : ==>  Preparing: select SUM(views) from t_blog
-2023-05-16 19:30:47.105 DEBUG 27380 --- [http-nio-8888-exec-5] c.s.q.mapper.BlogMapper.getViewCount     : ==> Parameters: 
-2023-05-16 19:30:47.106 DEBUG 27380 --- [http-nio-8888-exec-5] c.s.q.mapper.BlogMapper.getViewCount     : <==      Total: 1
-2023-05-16 19:30:47.108 DEBUG 27380 --- [http-nio-8888-exec-5] c.s.q.mapper.CommentMapper.selectCount   : ==>  Preparing: SELECT COUNT( * ) FROM t_comment
-2023-05-16 19:30:47.108 DEBUG 27380 --- [http-nio-8888-exec-5] c.s.q.mapper.CommentMapper.selectCount   : ==> Parameters: 
-2023-05-16 19:30:47.110 DEBUG 27380 --- [http-nio-8888-exec-5] c.s.q.mapper.CommentMapper.selectCount   : <==      Total: 1
-2023-05-16 19:30:47.243  WARN 27380 --- [http-nio-8888-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "fghfg"]
-2023-05-16 19:30:50.502 DEBUG 27380 --- [http-nio-8888-exec-10] c.s.q.mapper.BlogMapper.getArchivesList  : ==>  Preparing: select id, title, update_time,create_time ,first_picture from t_blog order by update_time desc
-2023-05-16 19:30:50.502 DEBUG 27380 --- [http-nio-8888-exec-10] c.s.q.mapper.BlogMapper.getArchivesList  : ==> Parameters: 
-2023-05-16 19:30:50.508 DEBUG 27380 --- [http-nio-8888-exec-10] c.s.q.mapper.BlogMapper.getArchivesList  : <==      Total: 11
-2023-05-16 19:30:50.509 DEBUG 27380 --- [http-nio-8888-exec-10] c.s.q.mapper.BlogMapper.selectCount      : ==>  Preparing: SELECT COUNT( * ) FROM t_blog
-2023-05-16 19:30:50.509 DEBUG 27380 --- [http-nio-8888-exec-10] c.s.q.mapper.BlogMapper.selectCount      : ==> Parameters: 
-2023-05-16 19:30:50.510 DEBUG 27380 --- [http-nio-8888-exec-10] c.s.q.mapper.BlogMapper.selectCount      : <==      Total: 1
-2023-05-16 19:30:50.511 DEBUG 27380 --- [http-nio-8888-exec-10] c.s.q.mapper.BlogMapper.getViewCount     : ==>  Preparing: select SUM(views) from t_blog
-2023-05-16 19:30:50.511 DEBUG 27380 --- [http-nio-8888-exec-10] c.s.q.mapper.BlogMapper.getViewCount     : ==> Parameters: 
-2023-05-16 19:30:50.512 DEBUG 27380 --- [http-nio-8888-exec-10] c.s.q.mapper.BlogMapper.getViewCount     : <==      Total: 1
-2023-05-16 19:30:50.513 DEBUG 27380 --- [http-nio-8888-exec-10] c.s.q.mapper.CommentMapper.selectCount   : ==>  Preparing: SELECT COUNT( * ) FROM t_comment
-2023-05-16 19:30:50.514 DEBUG 27380 --- [http-nio-8888-exec-10] c.s.q.mapper.CommentMapper.selectCount   : ==> Parameters: 
-2023-05-16 19:30:50.515 DEBUG 27380 --- [http-nio-8888-exec-10] c.s.q.mapper.CommentMapper.selectCount   : <==      Total: 1
-2023-05-16 19:30:50.673  WARN 27380 --- [http-nio-8888-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "fghfg"]
-2023-05-16 19:32:19.761  INFO 27380 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-05-16 19:32:19.769  INFO 27380 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-05-16 19:32:29.206  INFO 27924 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Starting QeemBlogApplication using Java 1.8.0_281 on MSI with PID 27924 (D:\study\QeemBlog\target\classes started by muyiyi in D:\study\QeemBlog)
-2023-05-16 19:32:29.210 DEBUG 27924 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Running with Spring Boot v2.7.3, Spring v5.3.22
-2023-05-16 19:32:29.211  INFO 27924 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : The following 1 profile is active: "dev"
-2023-05-16 19:32:30.851  INFO 27924 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
-2023-05-16 19:32:30.863  INFO 27924 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-05-16 19:32:30.864  INFO 27924 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2023-05-16 19:32:31.071  INFO 27924 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-05-16 19:32:31.072  INFO 27924 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1793 ms
-2023-05-16 19:32:32.915  INFO 27924 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2023-05-16 19:32:33.250  INFO 27924 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
-2023-05-16 19:32:33.265  INFO 27924 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Started QeemBlogApplication in 4.869 seconds (JVM running for 6.337)
-2023-05-16 19:32:33.395  INFO 27924 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-05-16 19:32:33.396  INFO 27924 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-05-16 19:32:33.397  INFO 27924 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2023-05-16 19:32:33.506  INFO 27924 --- [http-nio-8888-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-05-16 19:32:33.660  INFO 27924 --- [http-nio-8888-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-05-16 19:32:33.668 DEBUG 27924 --- [http-nio-8888-exec-1] c.s.q.mapper.BlogMapper.selectCount      : ==>  Preparing: SELECT COUNT( * ) FROM t_blog
-2023-05-16 19:32:33.693 DEBUG 27924 --- [http-nio-8888-exec-1] c.s.q.mapper.BlogMapper.selectCount      : ==> Parameters: 
-2023-05-16 19:32:33.715 DEBUG 27924 --- [http-nio-8888-exec-1] c.s.q.mapper.BlogMapper.selectCount      : <==      Total: 1
-2023-05-16 19:32:33.722 DEBUG 27924 --- [http-nio-8888-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : ==>  Preparing: select SUM(views) from t_blog
-2023-05-16 19:32:33.723 DEBUG 27924 --- [http-nio-8888-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : ==> Parameters: 
-2023-05-16 19:32:33.725 DEBUG 27924 --- [http-nio-8888-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : <==      Total: 1
-2023-05-16 19:32:33.734 DEBUG 27924 --- [http-nio-8888-exec-1] c.s.q.mapper.CommentMapper.selectCount   : ==>  Preparing: SELECT COUNT( * ) FROM t_comment
-2023-05-16 19:32:33.735 DEBUG 27924 --- [http-nio-8888-exec-1] c.s.q.mapper.CommentMapper.selectCount   : ==> Parameters: 
-2023-05-16 19:32:33.737 DEBUG 27924 --- [http-nio-8888-exec-1] c.s.q.mapper.CommentMapper.selectCount   : <==      Total: 1
-2023-05-16 19:36:06.951  INFO 27924 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-05-16 19:36:06.957  INFO 27924 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+org.attoparser.ParseException: (Line = 139, Column = 21) Malformed markup: Attribute "href" appears more than once in element
+	at org.attoparser.MarkupEventProcessorHandler.handleAttribute(MarkupEventProcessorHandler.java:549) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.ParsingAttributeSequenceUtil.parseAttributeSequence(ParsingAttributeSequenceUtil.java:275) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:153) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.15.RELEASE.jar:3.0.15.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.15.RELEASE.jar:3.0.15.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:649) ~[thymeleaf-3.0.15.RELEASE.jar:3.0.15.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) ~[thymeleaf-3.0.15.RELEASE.jar:3.0.15.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) ~[thymeleaf-3.0.15.RELEASE.jar:3.0.15.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:366) ~[thymeleaf-spring5-3.0.15.RELEASE.jar:3.0.15.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:190) ~[thymeleaf-spring5-3.0.15.RELEASE.jar:3.0.15.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1404) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1148) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1087) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) ~[tomcat-embed-core-9.0.65.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.65.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.22.jar:5.3.22]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.22.jar:5.3.22]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.22.jar:5.3.22]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.22.jar:5.3.22]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94) ~[spring-web-5.3.22.jar:5.3.22]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.22.jar:5.3.22]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.22.jar:5.3.22]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.22.jar:5.3.22]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_281]
+
+2023-05-24 14:12:44.675  INFO 19436 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-05-24 14:12:44.680  INFO 19436 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-05-24 14:12:49.809  INFO 21412 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Starting QeemBlogApplication using Java 1.8.0_281 on MSI with PID 21412 (D:\study\QeemBlog\target\classes started by muyiyi in D:\study\QeemBlog)
+2023-05-24 14:12:49.811 DEBUG 21412 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Running with Spring Boot v2.7.3, Spring v5.3.22
+2023-05-24 14:12:49.812  INFO 21412 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : The following 1 profile is active: "dev"
+2023-05-24 14:12:50.994  INFO 21412 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-24 14:12:51.001  INFO 21412 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-24 14:12:51.002  INFO 21412 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-05-24 14:12:51.132  INFO 21412 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-24 14:12:51.133  INFO 21412 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1272 ms
+2023-05-24 14:12:52.413  INFO 21412 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-05-24 14:12:52.689  INFO 21412 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-24 14:12:52.704  INFO 21412 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Started QeemBlogApplication in 3.496 seconds (JVM running for 4.831)
+2023-05-24 14:12:59.739  INFO 21412 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-24 14:12:59.740  INFO 21412 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-24 14:12:59.741  INFO 21412 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-05-24 14:12:59.809  INFO 21412 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-05-24 14:12:59.927  INFO 21412 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-05-24 14:12:59.933 DEBUG 21412 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.selectCount      : ==>  Preparing: SELECT COUNT( * ) FROM t_blog
+2023-05-24 14:12:59.951 DEBUG 21412 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.selectCount      : ==> Parameters: 
+2023-05-24 14:12:59.970 DEBUG 21412 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.selectCount      : <==      Total: 1
+2023-05-24 14:12:59.974 DEBUG 21412 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : ==>  Preparing: select SUM(views) from t_blog
+2023-05-24 14:12:59.974 DEBUG 21412 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : ==> Parameters: 
+2023-05-24 14:12:59.975 DEBUG 21412 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : <==      Total: 1
+2023-05-24 14:12:59.982 DEBUG 21412 --- [http-nio-8080-exec-1] c.s.q.mapper.CommentMapper.selectCount   : ==>  Preparing: SELECT COUNT( * ) FROM t_comment
+2023-05-24 14:12:59.982 DEBUG 21412 --- [http-nio-8080-exec-1] c.s.q.mapper.CommentMapper.selectCount   : ==> Parameters: 
+2023-05-24 14:12:59.984 DEBUG 21412 --- [http-nio-8080-exec-1] c.s.q.mapper.CommentMapper.selectCount   : <==      Total: 1
+2023-05-24 14:14:07.787  INFO 21412 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-05-24 14:14:07.792  INFO 21412 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-05-24 14:14:12.519  INFO 24548 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Starting QeemBlogApplication using Java 1.8.0_281 on MSI with PID 24548 (D:\study\QeemBlog\target\classes started by muyiyi in D:\study\QeemBlog)
+2023-05-24 14:14:12.522 DEBUG 24548 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Running with Spring Boot v2.7.3, Spring v5.3.22
+2023-05-24 14:14:12.523  INFO 24548 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : The following 1 profile is active: "dev"
+2023-05-24 14:14:13.614  INFO 24548 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-24 14:14:13.621  INFO 24548 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-24 14:14:13.621  INFO 24548 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-05-24 14:14:13.783  INFO 24548 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-24 14:14:13.783  INFO 24548 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1201 ms
+2023-05-24 14:14:14.850  INFO 24548 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-05-24 14:14:15.042  INFO 24548 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-24 14:14:15.051  INFO 24548 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Started QeemBlogApplication in 3.121 seconds (JVM running for 4.328)
+2023-05-24 14:14:18.191  INFO 24548 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-24 14:14:18.191  INFO 24548 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-24 14:14:18.193  INFO 24548 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-05-24 14:14:18.279  INFO 24548 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-05-24 14:14:18.425  INFO 24548 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-05-24 14:14:18.433 DEBUG 24548 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.selectCount      : ==>  Preparing: SELECT COUNT( * ) FROM t_blog
+2023-05-24 14:14:18.460 DEBUG 24548 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.selectCount      : ==> Parameters: 
+2023-05-24 14:14:18.482 DEBUG 24548 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.selectCount      : <==      Total: 1
+2023-05-24 14:14:18.487 DEBUG 24548 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : ==>  Preparing: select SUM(views) from t_blog
+2023-05-24 14:14:18.487 DEBUG 24548 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : ==> Parameters: 
+2023-05-24 14:14:18.488 DEBUG 24548 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : <==      Total: 1
+2023-05-24 14:14:18.496 DEBUG 24548 --- [http-nio-8080-exec-1] c.s.q.mapper.CommentMapper.selectCount   : ==>  Preparing: SELECT COUNT( * ) FROM t_comment
+2023-05-24 14:14:18.496 DEBUG 24548 --- [http-nio-8080-exec-1] c.s.q.mapper.CommentMapper.selectCount   : ==> Parameters: 
+2023-05-24 14:14:18.499 DEBUG 24548 --- [http-nio-8080-exec-1] c.s.q.mapper.CommentMapper.selectCount   : <==      Total: 1
+2023-05-24 14:15:43.205  INFO 24548 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-05-24 14:15:43.215  INFO 24548 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-05-24 14:15:50.988  INFO 16180 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Starting QeemBlogApplication using Java 1.8.0_281 on MSI with PID 16180 (D:\study\QeemBlog\target\classes started by muyiyi in D:\study\QeemBlog)
+2023-05-24 14:15:50.994 DEBUG 16180 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Running with Spring Boot v2.7.3, Spring v5.3.22
+2023-05-24 14:15:50.995  INFO 16180 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : The following 1 profile is active: "dev"
+2023-05-24 14:15:52.470  INFO 16180 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-24 14:15:52.478  INFO 16180 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-24 14:15:52.478  INFO 16180 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-05-24 14:15:52.612  INFO 16180 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-24 14:15:52.612  INFO 16180 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1525 ms
+2023-05-24 14:15:54.347  INFO 16180 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-05-24 14:15:54.643  INFO 16180 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-24 14:15:54.656  INFO 16180 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Started QeemBlogApplication in 4.667 seconds (JVM running for 6.538)
+2023-05-24 14:15:54.751  INFO 16180 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-24 14:15:54.751  INFO 16180 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-24 14:15:54.752  INFO 16180 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-05-24 14:15:54.822  INFO 16180 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-05-24 14:15:55.004  INFO 16180 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-05-24 14:15:55.066 DEBUG 16180 --- [http-nio-8080-exec-1] c.s.q.m.BlogMapper.getSearchList_COUNT   : ==>  Preparing: SELECT count(0) FROM t_blog WHERE title LIKE concat('%', ?, '%')
+2023-05-24 14:15:55.103 DEBUG 16180 --- [http-nio-8080-exec-1] c.s.q.m.BlogMapper.getSearchList_COUNT   : ==> Parameters: (String)
+2023-05-24 14:15:55.136 DEBUG 16180 --- [http-nio-8080-exec-1] c.s.q.m.BlogMapper.getSearchList_COUNT   : <==      Total: 1
+2023-05-24 14:15:55.143 DEBUG 16180 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getSearchList    : ==>  Preparing: SELECT id, title, description, published, recommend, update_time, type_id, views, first_picture FROM t_blog WHERE title LIKE concat('%', ?, '%') order by create_time desc LIMIT ?
+2023-05-24 14:15:55.145 DEBUG 16180 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getSearchList    : ==> Parameters: (String), 8(Integer)
+2023-05-24 14:15:55.157 DEBUG 16180 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getSearchList    : <==      Total: 8
+2023-05-24 14:15:55.160 DEBUG 16180 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
+2023-05-24 14:15:55.161 DEBUG 16180 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 20(Long)
+2023-05-24 14:15:55.163 DEBUG 16180 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
+2023-05-24 14:15:55.165 DEBUG 16180 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
+2023-05-24 14:15:55.166 DEBUG 16180 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 18(Long)
+2023-05-24 14:15:55.168 DEBUG 16180 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
+2023-05-24 14:15:55.169 DEBUG 16180 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
+2023-05-24 14:15:55.170 DEBUG 16180 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 17(Long)
+2023-05-24 14:15:55.173 DEBUG 16180 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
+2023-05-24 14:15:55.174 DEBUG 16180 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
+2023-05-24 14:15:55.175 DEBUG 16180 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 17(Long)
+2023-05-24 14:15:55.176 DEBUG 16180 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
+2023-05-24 14:15:55.177 DEBUG 16180 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
+2023-05-24 14:15:55.178 DEBUG 16180 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 20(Long)
+2023-05-24 14:15:55.180 DEBUG 16180 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
+2023-05-24 14:15:55.181 DEBUG 16180 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
+2023-05-24 14:15:55.182 DEBUG 16180 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 21(Long)
+2023-05-24 14:15:55.183 DEBUG 16180 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
+2023-05-24 14:15:55.185 DEBUG 16180 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
+2023-05-24 14:15:55.186 DEBUG 16180 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 21(Long)
+2023-05-24 14:15:55.188 DEBUG 16180 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
+2023-05-24 14:15:55.189 DEBUG 16180 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
+2023-05-24 14:15:55.189 DEBUG 16180 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 21(Long)
+2023-05-24 14:15:55.191 DEBUG 16180 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
+2023-05-24 14:15:55.229 DEBUG 16180 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.selectCount      : ==>  Preparing: SELECT COUNT( * ) FROM t_blog
+2023-05-24 14:15:55.229 DEBUG 16180 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.selectCount      : ==> Parameters: 
+2023-05-24 14:15:55.231 DEBUG 16180 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.selectCount      : <==      Total: 1
+2023-05-24 14:15:55.232 DEBUG 16180 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : ==>  Preparing: select SUM(views) from t_blog
+2023-05-24 14:15:55.232 DEBUG 16180 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : ==> Parameters: 
+2023-05-24 14:15:55.235 DEBUG 16180 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : <==      Total: 1
+2023-05-24 14:15:55.250 DEBUG 16180 --- [http-nio-8080-exec-1] c.s.q.mapper.CommentMapper.selectCount   : ==>  Preparing: SELECT COUNT( * ) FROM t_comment
+2023-05-24 14:15:55.250 DEBUG 16180 --- [http-nio-8080-exec-1] c.s.q.mapper.CommentMapper.selectCount   : ==> Parameters: 
+2023-05-24 14:15:55.252 DEBUG 16180 --- [http-nio-8080-exec-1] c.s.q.mapper.CommentMapper.selectCount   : <==      Total: 1
+2023-05-24 14:15:55.955  WARN 16180 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "fghfg"]
+2023-05-24 14:16:00.865  WARN 16180 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "beian.miit.gov.cn"]
+2023-05-24 14:16:00.932  WARN 16180 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "favicon.ico"]
+2023-05-24 14:17:08.352  INFO 16180 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-05-24 14:17:08.377  INFO 16180 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-05-24 14:17:12.760  INFO 12840 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Starting QeemBlogApplication using Java 1.8.0_281 on MSI with PID 12840 (D:\study\QeemBlog\target\classes started by muyiyi in D:\study\QeemBlog)
+2023-05-24 14:17:12.763 DEBUG 12840 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Running with Spring Boot v2.7.3, Spring v5.3.22
+2023-05-24 14:17:12.763  INFO 12840 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : The following 1 profile is active: "dev"
+2023-05-24 14:17:13.854  INFO 12840 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-24 14:17:13.861  INFO 12840 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-24 14:17:13.861  INFO 12840 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-05-24 14:17:13.973  INFO 12840 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-24 14:17:13.973  INFO 12840 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1156 ms
+2023-05-24 14:17:15.070  INFO 12840 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-05-24 14:17:15.263  INFO 12840 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-24 14:17:15.273  INFO 12840 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Started QeemBlogApplication in 3.005 seconds (JVM running for 3.911)
+2023-05-24 14:17:19.057  INFO 12840 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-24 14:17:19.057  INFO 12840 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-24 14:17:19.058  INFO 12840 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-05-24 14:17:19.136  INFO 12840 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-05-24 14:17:19.287  INFO 12840 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-05-24 14:17:19.327 DEBUG 12840 --- [http-nio-8080-exec-1] c.s.q.m.BlogMapper.getSearchList_COUNT   : ==>  Preparing: SELECT count(0) FROM t_blog WHERE title LIKE concat('%', ?, '%')
+2023-05-24 14:17:19.347 DEBUG 12840 --- [http-nio-8080-exec-1] c.s.q.m.BlogMapper.getSearchList_COUNT   : ==> Parameters: (String)
+2023-05-24 14:17:19.367 DEBUG 12840 --- [http-nio-8080-exec-1] c.s.q.m.BlogMapper.getSearchList_COUNT   : <==      Total: 1
+2023-05-24 14:17:19.372 DEBUG 12840 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getSearchList    : ==>  Preparing: SELECT id, title, description, published, recommend, update_time, type_id, views, first_picture FROM t_blog WHERE title LIKE concat('%', ?, '%') order by create_time desc LIMIT ?
+2023-05-24 14:17:19.372 DEBUG 12840 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getSearchList    : ==> Parameters: (String), 8(Integer)
+2023-05-24 14:17:19.380 DEBUG 12840 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getSearchList    : <==      Total: 8
+2023-05-24 14:17:19.383 DEBUG 12840 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
+2023-05-24 14:17:19.383 DEBUG 12840 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 20(Long)
+2023-05-24 14:17:19.386 DEBUG 12840 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
+2023-05-24 14:17:19.387 DEBUG 12840 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
+2023-05-24 14:17:19.388 DEBUG 12840 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 18(Long)
+2023-05-24 14:17:19.390 DEBUG 12840 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
+2023-05-24 14:17:19.390 DEBUG 12840 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
+2023-05-24 14:17:19.391 DEBUG 12840 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 17(Long)
+2023-05-24 14:17:19.392 DEBUG 12840 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
+2023-05-24 14:17:19.392 DEBUG 12840 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
+2023-05-24 14:17:19.393 DEBUG 12840 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 17(Long)
+2023-05-24 14:17:19.393 DEBUG 12840 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
+2023-05-24 14:17:19.394 DEBUG 12840 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
+2023-05-24 14:17:19.394 DEBUG 12840 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 20(Long)
+2023-05-24 14:17:19.396 DEBUG 12840 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
+2023-05-24 14:17:19.397 DEBUG 12840 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
+2023-05-24 14:17:19.397 DEBUG 12840 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 21(Long)
+2023-05-24 14:17:19.398 DEBUG 12840 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
+2023-05-24 14:17:19.398 DEBUG 12840 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
+2023-05-24 14:17:19.398 DEBUG 12840 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 21(Long)
+2023-05-24 14:17:19.399 DEBUG 12840 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
+2023-05-24 14:17:19.399 DEBUG 12840 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==>  Preparing: SELECT id,name FROM t_type WHERE id=?
+2023-05-24 14:17:19.400 DEBUG 12840 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : ==> Parameters: 21(Long)
+2023-05-24 14:17:19.401 DEBUG 12840 --- [http-nio-8080-exec-1] c.s.q.mapper.TypeMapper.selectById       : <==      Total: 1
+2023-05-24 14:17:19.427 DEBUG 12840 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.selectCount      : ==>  Preparing: SELECT COUNT( * ) FROM t_blog
+2023-05-24 14:17:19.428 DEBUG 12840 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.selectCount      : ==> Parameters: 
+2023-05-24 14:17:19.429 DEBUG 12840 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.selectCount      : <==      Total: 1
+2023-05-24 14:17:19.430 DEBUG 12840 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : ==>  Preparing: select SUM(views) from t_blog
+2023-05-24 14:17:19.431 DEBUG 12840 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : ==> Parameters: 
+2023-05-24 14:17:19.432 DEBUG 12840 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : <==      Total: 1
+2023-05-24 14:17:19.441 DEBUG 12840 --- [http-nio-8080-exec-1] c.s.q.mapper.CommentMapper.selectCount   : ==>  Preparing: SELECT COUNT( * ) FROM t_comment
+2023-05-24 14:17:19.442 DEBUG 12840 --- [http-nio-8080-exec-1] c.s.q.mapper.CommentMapper.selectCount   : ==> Parameters: 
+2023-05-24 14:17:19.443 DEBUG 12840 --- [http-nio-8080-exec-1] c.s.q.mapper.CommentMapper.selectCount   : <==      Total: 1
+2023-05-24 14:17:19.884  WARN 12840 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "fghfg"]
+2023-05-24 14:17:21.241 DEBUG 12840 --- [http-nio-8080-exec-3] c.s.q.mapper.BlogMapper.selectCount      : ==>  Preparing: SELECT COUNT( * ) FROM t_blog
+2023-05-24 14:17:21.242 DEBUG 12840 --- [http-nio-8080-exec-3] c.s.q.mapper.BlogMapper.selectCount      : ==> Parameters: 
+2023-05-24 14:17:21.245 DEBUG 12840 --- [http-nio-8080-exec-3] c.s.q.mapper.BlogMapper.selectCount      : <==      Total: 1
+2023-05-24 14:17:21.246 DEBUG 12840 --- [http-nio-8080-exec-3] c.s.q.mapper.BlogMapper.getViewCount     : ==>  Preparing: select SUM(views) from t_blog
+2023-05-24 14:17:21.246 DEBUG 12840 --- [http-nio-8080-exec-3] c.s.q.mapper.BlogMapper.getViewCount     : ==> Parameters: 
+2023-05-24 14:17:21.247 DEBUG 12840 --- [http-nio-8080-exec-3] c.s.q.mapper.BlogMapper.getViewCount     : <==      Total: 1
+2023-05-24 14:17:21.248 DEBUG 12840 --- [http-nio-8080-exec-3] c.s.q.mapper.CommentMapper.selectCount   : ==>  Preparing: SELECT COUNT( * ) FROM t_comment
+2023-05-24 14:17:21.249 DEBUG 12840 --- [http-nio-8080-exec-3] c.s.q.mapper.CommentMapper.selectCount   : ==> Parameters: 
+2023-05-24 14:17:21.252 DEBUG 12840 --- [http-nio-8080-exec-3] c.s.q.mapper.CommentMapper.selectCount   : <==      Total: 1
+2023-05-24 14:17:33.964  INFO 12840 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-05-24 14:17:33.968  INFO 12840 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-05-24 14:17:38.521  INFO 11536 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Starting QeemBlogApplication using Java 1.8.0_281 on MSI with PID 11536 (D:\study\QeemBlog\target\classes started by muyiyi in D:\study\QeemBlog)
+2023-05-24 14:17:38.524 DEBUG 11536 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Running with Spring Boot v2.7.3, Spring v5.3.22
+2023-05-24 14:17:38.525  INFO 11536 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : The following 1 profile is active: "dev"
+2023-05-24 14:17:39.704  INFO 11536 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-24 14:17:39.710  INFO 11536 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-24 14:17:39.710  INFO 11536 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-05-24 14:17:39.828  INFO 11536 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-24 14:17:39.829  INFO 11536 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1243 ms
+2023-05-24 14:17:40.980  INFO 11536 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-05-24 14:17:41.193  INFO 11536 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-24 14:17:41.203  INFO 11536 --- [main] c.starQeem.qeemblog.QeemBlogApplication  : Started QeemBlogApplication in 3.187 seconds (JVM running for 4.139)
+2023-05-24 14:17:45.391  INFO 11536 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-24 14:17:45.392  INFO 11536 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-24 14:17:45.393  INFO 11536 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-05-24 14:17:45.470  INFO 11536 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-05-24 14:17:45.575  INFO 11536 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-05-24 14:17:45.580 DEBUG 11536 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.selectCount      : ==>  Preparing: SELECT COUNT( * ) FROM t_blog
+2023-05-24 14:17:45.596 DEBUG 11536 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.selectCount      : ==> Parameters: 
+2023-05-24 14:17:45.612 DEBUG 11536 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.selectCount      : <==      Total: 1
+2023-05-24 14:17:45.616 DEBUG 11536 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : ==>  Preparing: select SUM(views) from t_blog
+2023-05-24 14:17:45.616 DEBUG 11536 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : ==> Parameters: 
+2023-05-24 14:17:45.617 DEBUG 11536 --- [http-nio-8080-exec-1] c.s.q.mapper.BlogMapper.getViewCount     : <==      Total: 1
+2023-05-24 14:17:45.623 DEBUG 11536 --- [http-nio-8080-exec-1] c.s.q.mapper.CommentMapper.selectCount   : ==>  Preparing: SELECT COUNT( * ) FROM t_comment
+2023-05-24 14:17:45.623 DEBUG 11536 --- [http-nio-8080-exec-1] c.s.q.mapper.CommentMapper.selectCount   : ==> Parameters: 
+2023-05-24 14:17:45.624 DEBUG 11536 --- [http-nio-8080-exec-1] c.s.q.mapper.CommentMapper.selectCount   : <==      Total: 1
+2023-05-24 14:23:37.624  INFO 11536 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-05-24 14:23:37.629  INFO 11536 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
