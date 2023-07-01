@@ -11,4 +11,6 @@ public interface TypeService extends IService<Type> {
     PageInfo<Type> pageTypeList(Integer page,Integer pageSize);
     //获取所有类型
     List<Type> getTypeList();
+    //获取6条分类信息
+    List<Type> getIndexTpeList();
 }

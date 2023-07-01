@@ -15,6 +15,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static com.starQeem.qeemblog.util.constant.PAGE_NUM;
+import static com.starQeem.qeemblog.util.constant.PAGE_SIZE;
+
 /**
  * @Date: 2023/4/26 12:59
  * @author: Qeem
@@ -30,10 +33,13 @@ public class TagServiceImpl extends ServiceImpl<TagMapper, Tag> implements TagSe
     * */
     @Override
     public PageInfo<Tag> pageTagList(Integer page, int pageSize) {
+        if (page==null){
+            page = PAGE_NUM;
+        }
         PageHelper.startPage(page,pageSize);
         PageHelper.orderBy("id desc");
         List<Tag> tagList = tagMapper.selectList(null);
-        return new PageInfo<>(tagList,8);
+        return new PageInfo<>(tagList,PAGE_SIZE);
     }
     /*
     * 标签编辑
@@ -84,5 +90,10 @@ public class TagServiceImpl extends ServiceImpl<TagMapper, Tag> implements TagSe
     @Override
     public List<Tag> getTagList() {
         return tagMapper.getTagList();
+    }
+
+    @Override
+    public List<Tag> getIndexTagList() {
+        return tagMapper.getTenTagList();
     }
 }

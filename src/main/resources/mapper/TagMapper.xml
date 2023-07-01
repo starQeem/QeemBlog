@@ -14,4 +14,13 @@
         select t.id,t.name,b.id b_id
         from t_tag t left join t_blog b on FIND_IN_SET(t.id, b.tag_ids) > 0;
     </select>
+    <select id="getTenTagList" resultMap="BaseResultMap">
+        SELECT t.id, t.name, b.id AS b_id
+        FROM (
+                 SELECT DISTINCT id, name
+                 FROM t_tag
+                          LIMIT 10
+             ) t
+                 LEFT JOIN t_blog b ON FIND_IN_SET(t.id, b.tag_ids) > 0;
+    </select>
 </mapper>

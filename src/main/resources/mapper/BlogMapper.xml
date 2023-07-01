@@ -12,6 +12,7 @@
         <result property="commentabled" column="commentabled" jdbcType="BIT"/>
         <result property="published" column="published" jdbcType="BIT"/>
         <result property="recommend" column="recommend" jdbcType="BIT"/>
+        <result property="commentCount" column="comment_count" jdbcType="INTEGER"/>
         <result property="shareStatement" column="share_statement" jdbcType="BIT"/>
         <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
         <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
@@ -54,14 +55,14 @@
 
     </insert>
     <select id="getBlogListByTypeId" resultMap="BaseResultMap">
-    select b.id,b.title,b.description,b.first_picture,b.commentabled,b.recommend,b.views,
-    b.update_time,b.type_id,t.name type_name
+    select b.id,b.title,b.description,b.first_picture,b.commentabled,b.recommend,b.views,b.comment_count,
+    b.update_time,b.create_time,b.type_id,t.name type_name
     from t_blog b
     join t_type t on b.type_id = t.id
     where b.published = 1 and b.type_id = #{typeId}
     </select>
     <select id="getBlogListByTagId" resultMap="BaseResultMap">
-        SELECT b.id,b.title,b.description,b.first_picture,b.commentabled,b.recommend,b.views,b.update_time,t.name type_name
+        SELECT b.id,b.title,b.description,b.first_picture,b.commentabled,b.recommend,b.views,b.update_time,b.create_time,b.comment_count,t.name type_name
         FROM t_blog b
         join t_type t on b.type_id = t.id
         JOIN t_tag t2 ON FIND_IN_SET(t2.id, b.tag_ids) > 0
@@ -72,7 +73,7 @@
         from t_blog order by update_time desc
     </select>
     <select id="getSearchList" resultMap="BaseResultMap">
-        select id, title, description, published, recommend, update_time, type_id,views,first_picture
+        select id, title, description, published, recommend, update_time, create_time,type_id,views,first_picture,comment_count
         from t_blog where title like concat('%',#{title},'%');
     </select>
     <select id="getBlogDetail" resultMap="BaseResultMap">
@@ -92,7 +93,6 @@
             recommend       = #{recommend},
             description     = #{description},
             share_statement = #{shareStatement},
-            create_time     = #{createTime,jdbcType=TIMESTAMP},
             update_time     = #{updateTime,jdbcType=TIMESTAMP},
             views           = #{views,jdbcType=NUMERIC},
             type_id         = #{type.id},

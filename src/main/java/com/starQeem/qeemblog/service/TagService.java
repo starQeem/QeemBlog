@@ -18,4 +18,5 @@ public interface TagService extends IService<Tag> {
     boolean saveTag(Tag tag);
     List<Tag> getTagByIds(String tagIds);
     List<Tag> getTagList();
+    List<Tag> getIndexTagList();
 }

@@ -3,6 +3,7 @@ package com.starQeem.qeemblog.controller;
 import com.starQeem.qeemblog.pojo.Blog;
 import com.starQeem.qeemblog.service.BlogService;
 import com.starQeem.qeemblog.service.CommentService;
+import com.starQeem.qeemblog.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +18,8 @@ public class ArchivesController {
     private BlogService blogService;
     @Resource
     private CommentService commentService;
+    @Resource
+    private MessageService messageService;
     //归档
     @GetMapping("/archives")
     public String archives(Model model){
@@ -24,10 +27,12 @@ public class ArchivesController {
         Integer blogCount = blogService.getBlogCount();
         Integer viewCount = blogService.getViewCount();
         Integer commentCount = commentService.getCommentCount();
+        Integer messageCount = messageService.getMessageCount();
         model.addAttribute("memoryList",list);
         model.addAttribute("blogCount", blogCount);
         model.addAttribute("viewCount", viewCount);
         model.addAttribute("commentCount", commentCount);
+        model.addAttribute("messageCount", messageCount);
         return "archives";
     }
 }

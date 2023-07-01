@@ -13,6 +13,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.annotation.Resource;
 
+import static com.starQeem.qeemblog.util.constant.PAGE_SIZE;
+
 /**
  * @Date: 2023/4/26 13:00
  * @author: Qeem
@@ -22,17 +24,11 @@ import javax.annotation.Resource;
 public class TagController {
     @Resource
     private TagService tagService;
-    @Resource
-    private TagMapper tagMapper;
-    private final static int PAGE_SIZE = 8;
     /*
      *分页查询
      * */
     @GetMapping(value = {"/tags/{page}","/tags"})
     public String TypeListPage(@PathVariable(value = "page",required = false)  Integer page, Model model){
-        if (page==null){
-            page = 1;
-        }
         PageInfo<Tag> pageInfo = tagService.pageTagList(page, PAGE_SIZE);
         model.addAttribute("page",pageInfo);
         return "admin/tags";

@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="../static/css/login.css" th:href="@{/css/login.css}">
 </head>
 <body class="bj">
-<div class="login-box">
+<div class="login-box" style="font-family: KaiTi;">
 
   <div style="text-align: center">
     <img th:src="@{/images/me.jpg}" style="width: 72px;height: 72px">
@@ -17,26 +17,22 @@
   <span style="color: red" th:text="${message}" th:if="${message!=null}">诶嘿</span><br><br>
   <form action="#" th:action="@{/admin/login}" method="post" id="myForm">
 
-    <input type="text" id="username" name="username" placeholder="用户名">
-    <input type="password" id="password" name="password" placeholder="密码">
+    <input style="font-family: KaiTi;" type="text" id="username" name="username" placeholder="用户名">
+    <input style="font-family: KaiTi;" type="password" id="password" name="password" placeholder="密码">
 
-    <button type="submit" onclick="return validateForm()">登录</button>
+    <button type="submit" onclick="return validateForm()" style="font-family: KaiTi;">登录</button>
 
   </form>
 </div>
 <script>
   function validateForm() {
-    var regex = /^(?!.*[\u4e00-\u9fa5]).{1,16}$/; // 正则表达式
+    var regex = /^(?!.*[\u4e00-\u9fa5]).{1,20}$/; // 正则表达式
     // 获取表单元素的值
     var username = document.forms["myForm"]["username"].value;
     var password = document.forms["myForm"]["password"].value;
     // 检查用户名
     if (username == "") {
       alert("用户名不能为空");
-      return false;
-    }
-    if (!regex.test(username)){
-      alert("用户名不能为中文且必须在16位以内!")
       return false;
     }
     //检查密码

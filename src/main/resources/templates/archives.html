@@ -2,25 +2,30 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=0.9">
   <title>归档</title>
   <link href="../static/images/favicon.ico" th:href="@{/images/me.jpg}" rel="icon" type="image/x-ico">
   <link rel="stylesheet" href="../static/lib/semantic/dist/semantic.min.css" th:href="@{/lib/semantic/dist/semantic.min.css}">
   <link rel="stylesheet" href="../static/css/me.css" th:href="@{/css/me.css}">
   <link rel="stylesheet" href="../static/css/timeline.css" th:href="@{/css/timeline.css}">
   <link rel="stylesheet" href="../static/css/jazz-timeline.css" th:href="@{/css/jazz-timeline.css}">
+  <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css">
+  <!-- 看板娘 -->
+  <script src="../static/live2d-widget/autoload.js" th:src="@{/live2d-widget/autoload.js}"></script>
 </head>
 <body>
 
   <!--导航-->
   <nav th:replace="common :: navigate('archives')" class="gird-header">
     <div class="ui m-container">
-      <div class="ui inverted secondary stackable menu">
-        <a href="#" th:href="@{/}" style="max-width: 200px"><h2 class="ui olive header item" style="font-family: STSong">Qeem</h2></a>
+      <div class="ui inverted secondary stackable menu" style="font-family: KaiTi;">
+        <a href="#" th:href="@{/}" style="max-width: 200px"><h2 class="ui teal header item" style="font-family: KaiTi;">Qeem</h2></a>
           <a href="#" th:href="@{/}" class="m-item item m-mobile-hide "><i class="home icon"></i>首页</a>
           <a href="#" th:href="@{/types/}" class="m-item item m-mobile-hide"><i class="clone outline icon"></i>分类</a>
           <a href="#" th:href="@{/tags/}" class="m-item item m-mobile-hide"><i class="pencil alternate icon"></i>标签</a>
           <a href="#" th:href="@{/archives}" class="active m-item item m-mobile-hide"><i class="clock outline icon"></i>归档</a>
+        <a href="#" th:href="@{/message}" class="m-item item m-mobile-hide" target="_blank"><i class="envelope outline icon"></i>留言</a>
+        <a href="#" th:href="@{/friends}" class="m-item item m-mobile-hide" target="_blank"><i class="heart outline icon"></i>友链</a>
           <a href="#" th:href="@{/about}" class="m-item item m-mobile-hide"><i class="info icon"></i>关于我</a>
          <a href="#" th:href="@{/admin}" class="right m-item item ui secondary basic button m-mobile-hide" target="_blank"><i class="sign in icon"></i>登录</a>
 
@@ -32,17 +37,7 @@
   </nav>
 
 
-
-
-  <!--顶部背景图片-->
-  <div class="m-bg-type_outer" style="width: 100%;height: 55%">
-    <img src="../static/images/61.png" th:src="@{/images/61.png}" alt="" class="ui m-bg image" style="width: 100%;height: 100%">
-    <div class="m-bg-class_cover">
-      <div class="ui container" style="position: relative ;bottom: -540px;">
-        <div class="m-font-size-title" align="center" style="font-family:'STXingkai'">归档</div>
-      </div>
-    </div>
-  </div>
+  <br><br><br><br>
 
 <!--  归档记录-->
   <div class="jazz-timeline-wrapper">
@@ -55,11 +50,15 @@
 
         <div class="timeline-content">
           <a href="#" target="_blank" th:href="@{/blogs/{id}(id=${memory.id})}">
-          <span style="color: #dddddd;font-size: 20px">Qeem ✍️</span>  <span class="" style="color: #dddddd;font-size: 20px" th:text="${#dates.format(memory.createTime,'yyyy-MM-dd HH:mm')}">2020年07月12日10:48:17 </span>
-          <div class="content-details">
-            <p th:text="${memory.title}">标题</p>
-            <img src="../static/images/musicbg.png" th:src="@{${memory.firstPicture}}">
-          </div>
+          <span style="color: #dddddd;font-size: 20px">Qeem ✍️</span>
+            <span class="" style="color: #dddddd;font-size: 20px"
+                  th:text="${#dates.format(memory.createTime,'yyyy-MM-dd HH:mm')}">
+              2020年07月12日10:48:17
+            </span>
+            <div class="content-details">
+              <p th:text="${memory.title}" style="font-family: KaiTi;">标题</p>
+              <img th:attr="data-src=${memory.firstPicture}" src="../static/images/blog.webp" th:src="@{/images/blog.webp}" alt="">
+            </div>
          </a>
         </div>
       </div>
@@ -70,7 +69,7 @@
 
 
   <!--置顶图标-->
-  <div id="toolbar" class="m-padded-tb-large m-fixed m-right-bottom">
+  <div id="toolbar" class="m-padded-tb-large m-fixed m-left-bottom">
     <a href="#" class="ui center aligned basic segment icon"><i class="ui medium m-teal chevron up icon"></i> </a>
   </div>
 
@@ -107,35 +106,109 @@
           </div>
         </div>
         <div class="four wide column">
-          <div style="font-size: large;font-weight: bold" class="ui inverted m-text-thin m-text-spaced m-margin-top-max" >我的博客信息:</div>
-          <div class="ui inverted link list m-teal">
-                    <span class="item m-text-thin m-teal" style="font-size: 15px" th:text="|文章总数:${blogCount}|">
-                    </span>
-            <span class="item m-text-thin m-teal" style="font-size: 15px" th:text="|浏览总数:${viewCount}|">
-                    </span>
-            <span class="item m-text-thin m-teal" style="font-size: 15px" th:text="|评论总数:${commentCount}|">
-                    </span>
+          <div style="font-size: large;font-weight: bold" class="ui inverted m-text-thin m-text-spaced m-margin-top-max" >站点概览</div>
+          <div style="display: flex; justify-content: center;">
+            <div style="text-align: left;">
+              <div style="display: inline-block;">
+                文章总数:&nbsp;
+                <span class="item m-text-thin m-teal" style="font-size: 15px;" th:text="${blogCount}">30</span>&nbsp;篇
+              </div><br>
+              <div style="display: inline-block;">
+                浏览总数:&nbsp;
+                <span class="item m-text-thin m-teal" style="font-size: 15px;" th:text="${viewCount}">3000</span>&nbsp;次
+              </div><br>
+              <div style="display: inline-block;">
+                评论总数:&nbsp;
+                <span class="item m-text-thin m-teal" style="font-size: 15px;" th:text="${commentCount}">3</span>&nbsp;条
+              </div><br>
+              <div style="display: inline-block;">
+                留言总数:&nbsp;
+                <span class="item m-text-thin m-teal" style="font-size: 15px;" th:text="${messageCount}">3</span>&nbsp;条
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div class="ui inverted section divider"></div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <div style="color: teal;margin-top: -18px;font-size: 15px" class="ui inverted m-text-thin m-text-spaced">
+        我的博客已开放:<span id="htmer_time" class="item m-text-thin"></span></div>
+    </div>
     <p style="text-align: center">
       <a rel="nofollow" href="http://beian.miit.gov.cn">桂ICP备2022011074号-1</a>
     </p>
 
 
   </footer>
-  <!--    动态线条-->
-  <script type="text/javascript" color="47,79,79" opacity='0.7' zIndex="-2" count="150" src="https://cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
   <script src="../static/lib/jquery-3.2.1/jquery-3.2.1.min.js" th:src="@{/lib/jquery-3.2.1/jquery-3.2.1.min.js}"></script>
   <script src="../static/lib/semantic/dist/semantic.min.js" th:src="@{/lib/semantic/dist/semantic.min.js}"></script>
   <script src="../static/lib/timeline/timeline.js" th:src="@{/lib/timeline/timeline.js}"></script>
   <script src="../static/lib/waypoints/jquery.waypoints.min.js" th:src="@{/lib/waypoints/jquery.waypoints.min.js}"></script>
-
-
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/unveil/1.3.0/jquery.unveil.min.js"></script>
+  <!-- 雪花特效 -->
+  <script src="../static/lib/snow/jq.snow.js" th:src="@{/lib/snow/jq.snow.js}"></script>
   <script>
+    //雪花特效
+    $(document).ready(function() {
+      // 在屏幕宽度大于 768px 时执行雪花效果
+      if ($(window).width() > 768) {
+        $(document).snow({
+          // 雪花效果的配置参数
+          minSize: 5,//雪花的最小尺寸
+          maxSize: 40,//雪花的最大尺寸
+          newOn: 700,//雪花出现的频率 这个数值越小雪花越多
+        });
+      }
+    });
+
+    $('#blog-message').load(/*[[@{/footer/blogmessage}]]*/"/footer/blogmessage");
+
+
+
+    // 运行时间统计
+    function secondToDate(second) {
+      if (!second) {
+        return 0;
+      }
+      var time = new Array(0, 0, 0, 0, 0);
+      if (second >= 365 * 24 * 3600) {
+        time[0] = parseInt(second / (365 * 24 * 3600));
+        second %= 365 * 24 * 3600;
+      }
+      if (second >= 24 * 3600) {
+        time[1] = parseInt(second / (24 * 3600));
+        second %= 24 * 3600;
+      }
+      if (second >= 3600) {
+        time[2] = parseInt(second / 3600);
+        second %= 3600;
+      }
+      if (second >= 60) {
+        time[3] = parseInt(second / 60);
+        second %= 60;
+      }
+      if (second > 0) {
+        time[4] = second;
+      }
+      return time;
+    }
+    function setTime() {
+      /*此处为网站的创建时间*/
+      var create_time = Math.round(new Date(Date.UTC(2022, 11, 10, 15, 15, 15)).getTime() / 1000);//这里月份以0开始
+      var timestamp = Math.round((new Date().getTime() + 8 * 60 * 60 * 1000) / 1000);
+      currentTime = secondToDate((timestamp - create_time));
+      currentTimeHtml = currentTime[0] + '年' + currentTime[1] + '天'
+              + currentTime[2] + '时' + currentTime[3] + '分' + currentTime[4]
+              + '秒';
+      document.getElementById("htmer_time").innerHTML = currentTimeHtml;
+    }
+    setInterval(setTime, 1000);
+
+    $(document).ready(function() {
+      $('img').unveil();
+    });
+
     var chars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
 
     function generateMixed(n) {

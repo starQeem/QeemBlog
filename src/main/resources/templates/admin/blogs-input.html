@@ -15,11 +15,12 @@
   <!--导航-->
   <nav th:replace="admin/common :: navigate('blog')" class="ui inverted gird-header" >
     <div class="ui container">
-      <div class="ui inverted secondary stackable menu">
-        <h2 class="ui olive header item" style="font-family: STSong">后台</h2>
+      <div class="ui inverted secondary stackable menu" style="font-family: KaiTi;">
+        <h2 class="ui teal header item" style="font-family: KaiTi;">管理后台</h2>
         <a href="#"  class="active m-item item m-mobile-hide"><i class="home icon"></i>文章管理</a>
         <a href="#" th:href="@{/admin/types}" class=" m-item item m-mobile-hide"><i class="clone outline icon"></i>分类管理</a>
         <a href="#" th:href="@{/admin/tags}" class="m-item item m-mobile-hide"><i class="coffee icon"></i>标签管理</a>
+        <a href="#" th:src="@{/admin/friends}" class="m-item item m-mobile-hide"><i class="heart outline icon"></i>友链管理</a>
         <div class="right m-item m-mobile-hide menu">
           <div class="ui dropdown item">
             <div class="text">
@@ -161,9 +162,9 @@
         <div class="ui error message"></div>
 
         <div class="ui right aligned container">
-          <button type="button" class="ui button" onclick="window.history.go(-1)" >返回</button>
-          <button type="button" id="save-btn" class="ui secondary button">保存</button>
-          <button type="button" id="publish-btn" class="ui teal button">发布</button>
+          <button type="button" class="ui button" onclick="window.history.go(-1)" style="font-family: KaiTi;">返回</button>
+          <button type="button" id="save-btn" class="ui secondary button" style="font-family: KaiTi;">保存</button>
+          <button type="button" id="publish-btn" class="ui teal button" style="font-family: KaiTi;">发布</button>
         </div>
 
       </form>

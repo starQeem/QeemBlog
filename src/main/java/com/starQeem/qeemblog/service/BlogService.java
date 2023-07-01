@@ -3,7 +3,6 @@ package com.starQeem.qeemblog.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.github.pagehelper.PageInfo;
 import com.starQeem.qeemblog.pojo.Blog;
-import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
@@ -32,4 +31,6 @@ public interface BlogService extends IService<Blog> {
     Integer getBlogCount();
     //查询博客浏览次数总数
     Integer getViewCount();
+    //最新推荐
+    List<Blog> newBlogList();
 }

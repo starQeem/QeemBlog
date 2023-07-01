@@ -16,6 +16,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.annotation.Resource;
 import java.util.List;
 
+import static com.starQeem.qeemblog.util.constant.PAGE_SIZE;
+import static com.starQeem.qeemblog.util.constant.ZERO;
+
 
 @Controller
 @RequestMapping("/admin")
@@ -32,10 +35,7 @@ public class BlogController {
      * */
     @GetMapping(value = {"/blogs/{pageNum}", "/blogs"})
     public String BlogListPage(@PathVariable(value = "pageNum", required = false) Integer pageNum, Model model) {
-        if (pageNum == null) {
-            pageNum = 1;
-        }
-        PageInfo<Blog> pageInfo = blogService.pageBlogList(pageNum, 8);
+        PageInfo<Blog> pageInfo = blogService.pageBlogList(pageNum, PAGE_SIZE);
         model.addAttribute("page", pageInfo);
         return "admin/blogs";
     }
@@ -58,7 +58,7 @@ public class BlogController {
     public String insertBlogs(Blog blog, RedirectAttributes attributes) {
         if (blog != null) {
             Integer i = blogService.saveBlog(blog);
-            if (i > 0) {
+            if (i > ZERO) {
                 attributes.addFlashAttribute("message", "发布成功");
             } else {
                 attributes.addFlashAttribute("message", "发布失败");
@@ -87,7 +87,7 @@ public class BlogController {
     @PutMapping("/blogs")
     public String updateBlogs(Blog blog,RedirectAttributes attributes){
         Integer i = blogService.updateBlog(blog);
-        if (i > 0){
+        if (i > ZERO){
             attributes.addFlashAttribute("message","修改成功!");
         }else {
             attributes.addFlashAttribute("message","修改失败!");

@@ -35,6 +35,18 @@
             <scope>provided</scope>
         </dependency>
 
+        <!--        邮件发送功能-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
+
+        <!--AOP-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
 
         <!--        mysql连接java驱动-->
         <dependency>

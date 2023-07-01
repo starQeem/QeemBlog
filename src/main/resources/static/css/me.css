@@ -1,13 +1,29 @@
 body{
-    background-image: url("../images/47.png") !important;
+    background-image: url("../images/bj.jpg") !important;
     background-attachment:fixed;
     background-size: 100%;
 
     no-repeat: center top;
-    font: 14px/1.5 Tahoma,Helvetica,Arial,'宋体',sans-serif;
+    font: 14px/1.5 Tahoma,Helvetica,Arial,'KaiTi',sans-serif;
     height: 100%;
     width: 100%;
 }
+@media screen and (max-width: 768px) {
+    body {
+        background-image: url("../images/47.png") !important;
+        /* 在屏幕宽度小于等于 768px 时，替换为手机端背景图片 */
+        /* 添加其他样式 */
+    }
+}
+
+@media screen and (min-width: 769px) {
+    body {
+        background-image: url("../images/bj.jpg") !important;
+        /* 在屏幕宽度大于 768px 时，使用原始背景图片 */
+        /* 添加其他样式 */
+    }
+}
+
 .admin-body{
     background-image: url("../images/bj.webp") !important;
     background-attachment:scroll;
@@ -15,7 +31,7 @@ body{
 
 
     no-repeat: center top;
-    font: 14px/1.5 Tahoma,Helvetica,Arial,'宋体',sans-serif;
+    font: 14px/1.5 Tahoma,Helvetica,Arial,'KaiTi',sans-serif;
     height: 100%;
     width: 100%;
 }
@@ -105,13 +121,13 @@ body{
 .m-font-size-title-large{
     font-size: 40px;
     color: #ffffff;
-    font-family: STSong;
+    font-family: KaiTi;
 }
 
 .m-font-size-title-mediul{
     font-size: 30px;
     color: #ffffff;
-    font-family: STSong;
+    font-family: KaiTi;
 }
 
 .m-font-size-title{
@@ -134,7 +150,7 @@ body{
 .m-font-size-text-friends{
     font-size: 16px;
     color: #000000;
-    font-family: STSong;
+    font-family: KaiTi;
 }
 
 .m-font-size-text-mini{
@@ -215,7 +231,7 @@ body{
     opacity: 0.8 !important;
 }
 .m-opacity-tiny {
-    opacity: 0.6 !important;
+    opacity: 0.7 !important;
 }
 .m-opacity-small {
     opacity: 0.4 !important;
@@ -282,9 +298,13 @@ body{
     bottom: 0 !important;
     right: 0 !important;
 }
+.m-left-bottom {
+    bottom: 0 !important;
+    left: 0 !important;
+}
 
 .m-title-font{
-    font-family: STSong;
+    font-family: 'KaiTi';
     font-weight: 900;
     font-size: x-large;
 }
@@ -325,7 +345,7 @@ body{
 .gird-header {
     width: 100%;
     min-height: 60px;
-    opacity: 0.7;
+    opacity: 0.6;
     position: fixed;
     background-color: rgba(0,0,0,1);
     z-index: 11002;

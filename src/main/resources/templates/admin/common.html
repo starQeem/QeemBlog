@@ -9,11 +9,12 @@
 <!--导航-->
 <nav th:fragment="navigate(active)" class="ui inverted gird-header"  >
     <div class="ui container">
-        <div class="ui inverted secondary stackable menu">
-            <h2 class="ui olive header item" style="font-family: STSong">Qeem</h2>
+        <div class="ui inverted secondary stackable menu" style="font-family: KaiTi;">
+            <h2 class="ui teal header item" style="font-family: STSong">Qeem</h2>
             <a href="#" th:href="@{/admin/blogs}" class="m-item item m-mobile-hide" th:classappend="${active=='blog'} ? active" ><i class="home icon"></i>文章管理</a>
             <a href="#" th:href="@{/admin/types}" class=" m-item item m-mobile-hide" th:classappend="${active=='type'} ? active"><i class="clone outline icon"></i>分类管理</a>
             <a href="#" th:href="@{/admin/tags}" class=" m-item item m-mobile-hide" th:classappend="${active=='tag'} ? active"><i class="pencil alternate icon"></i>标签管理</a>
+            <a href="#" th:href="@{/admin/friends}" class=" m-item item m-mobile-hide" th:classappend="${active=='friends'} ? active"><i class="pencil alternate icon"></i>友链管理</a>
             <div class="right m-item m-mobile-hide menu">
                 <div class="ui dropdown item">
                     <div class="text">

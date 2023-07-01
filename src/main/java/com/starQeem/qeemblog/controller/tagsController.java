@@ -4,10 +4,7 @@ import com.github.pagehelper.PageInfo;
 import com.starQeem.qeemblog.pojo.Blog;
 import com.starQeem.qeemblog.pojo.Tag;
 import com.starQeem.qeemblog.pojo.Type;
-import com.starQeem.qeemblog.service.BlogService;
-import com.starQeem.qeemblog.service.CommentService;
-import com.starQeem.qeemblog.service.TagService;
-import com.starQeem.qeemblog.service.TypeService;
+import com.starQeem.qeemblog.service.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
 import java.util.List;
+
+import static com.starQeem.qeemblog.util.constant.PAGE_SIZE;
 
 /**
  * @Date: 2023/4/27 9:22
@@ -29,7 +28,8 @@ public class tagsController {
     private BlogService blogService;
     @Resource
     private CommentService commentService;
-    private final static int PAGE_SIZE = 8;
+    @Resource
+    private MessageService messageService;
     //标签分页查询
     @GetMapping(value = {"/tags/{tagId}","/tags" })
     public String getTypePage(@PathVariable(value = "tagId", required = false)Long tagId,
@@ -44,10 +44,12 @@ public class tagsController {
         Integer blogCount = blogService.getBlogCount();
         Integer viewCount = blogService.getViewCount();
         Integer commentCount = commentService.getCommentCount();
+        Integer messageCount = messageService.getMessageCount();
         model.addAttribute("page",pageInfo);
         model.addAttribute("blogCount", blogCount);
         model.addAttribute("viewCount", viewCount);
         model.addAttribute("commentCount", commentCount);
+        model.addAttribute("messageCount", messageCount);
         //目前所在的标签添加到model中，使页面可以获取
         model.addAttribute("currTag",tagId);
         return "tags";

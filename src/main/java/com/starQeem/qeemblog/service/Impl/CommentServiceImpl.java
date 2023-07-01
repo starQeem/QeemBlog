@@ -1,8 +1,11 @@
 package com.starQeem.qeemblog.service.Impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.starQeem.qeemblog.mapper.BlogMapper;
 import com.starQeem.qeemblog.pojo.*;
+import com.starQeem.qeemblog.service.BlogService;
 import com.starQeem.qeemblog.service.CommentService;
 import com.starQeem.qeemblog.mapper.CommentMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,12 +14,15 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 
+import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
 
 
 @Service
 public class CommentServiceImpl extends ServiceImpl<CommentMapper, Comment> implements CommentService {
+    @Resource
+    private BlogService blogService;
 
     @Override
     public List<Comment> getRootCommentList(Long blogId) {
@@ -33,6 +39,9 @@ public class CommentServiceImpl extends ServiceImpl<CommentMapper, Comment> impl
     @Transactional
     @Override
     public int saveComment(Comment comment) {
+        UpdateWrapper<Blog> updateWrapper = new UpdateWrapper<>();
+        updateWrapper.setSql("comment_count = comment_count + 1").eq("id",comment.getBlog().getId());
+        blogService.update(updateWrapper);
         comment.setCreateTime(new Date());
         return getBaseMapper().saveComment(comment);
     }

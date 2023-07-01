@@ -14,12 +14,13 @@
 <!--  导航栏-->
 <nav th:replace="admin/common :: navigate('blog')" class="ui inverted gird-header">
     <div class="ui container">
-        <div class="ui inverted secondary stackable menu">
+        <div class="ui inverted secondary stackable menu" style="font-family: KaiTi;">
 
-            <h2 class="ui olive header item" style="font-family: STSong">Qeem</h2>
+            <h2 class="ui teal header item">Qeem</h2>
             <a href="#" class="active m-item item m-mobile-hide"><i class="home icon"></i>文章管理</a>
             <a href="#" th:href="@{/admin/types}" class=" m-item item m-mobile-hide"><i class="clone outline icon"></i>分类管理</a>
             <a href="#" th:href="@{/admin/tags}" class=" m-item item m-mobile-hide"><i class="clone outline icon"></i>标签管理</a>
+            <a href="#" th:src="@{/admin/friends}" class="m-item item m-mobile-hide"><i class="heart outline icon"></i>友链管理</a>
             <div class="right m-item m-mobile-hide menu">
                 <div class="ui dropdown  item">
                     <div class="text">
@@ -77,10 +78,10 @@
                         <td>
                             <!--th:href="@{/admin/types/{id}/input(id=${type.id})}"-->
                             <a href="#" th:href="@{/admin/blogs/{id}/edit(id=${blog.id})}"
-                               class="ui mini teal basic button">编辑</a>
+                               class="ui mini teal basic button" style="font-family: KaiTi;">编辑</a>
                             <a href="#" th:href="@{/admin/blogs/{id}/delete(id=${blog.id})}"
                                onclick="return confirm('确定要删除该文章吗？三思啊! 删了可就没了！')"
-                               class="ui mini red basic button">删除</a>
+                               class="ui mini red basic button" style="font-family: KaiTi;">删除</a>
                         </td>
                     </tr>
                 </th>
@@ -120,7 +121,7 @@
                         </div>
                         <div align="center">
                             <a href="#" th:href="@{/admin/blogs/input}">
-                                <button type="button" class="ui teal button m-mobile-wide m-margin-top"><i
+                                <button style="font-family: KaiTi;" type="button" class="ui teal button m-mobile-wide m-margin-top"><i
                                         class="pencil icon"></i>新增
                                 </button>
                             </a>

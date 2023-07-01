@@ -13,4 +13,5 @@ import java.util.List;
 @Mapper
 public interface TagMapper extends BaseMapper<Tag> {
     List<Tag> getTagList();
+    List<Tag> getTenTagList();
 }

@@ -4,6 +4,7 @@ import com.starQeem.qeemblog.pojo.Blog;
 import com.starQeem.qeemblog.pojo.Tag;
 import com.starQeem.qeemblog.service.BlogService;
 import com.starQeem.qeemblog.service.CommentService;
+import com.starQeem.qeemblog.service.MessageService;
 import com.starQeem.qeemblog.service.TagService;
 import lombok.extern.slf4j.Slf4j;
 import org.omg.CORBA.PRIVATE_MEMBER;
@@ -25,6 +26,8 @@ public class BlogsController {
     private TagService tagService;
     @Resource
     private CommentService commentService;
+    @Resource
+    private MessageService messageService;
     //博客详情
     @GetMapping("/blogs/{id}")
     public String blogs(Model model,@PathVariable("id") Long id){
@@ -34,11 +37,13 @@ public class BlogsController {
         Integer blogCount = blogService.getBlogCount();
         Integer viewCount = blogService.getViewCount();
         Integer commentCount = commentService.getCommentCount();
+        Integer messageCount = messageService.getMessageCount();
         model.addAttribute("blog",blog);
         model.addAttribute("tagList",tagList);
         model.addAttribute("blogCount", blogCount);
         model.addAttribute("viewCount", viewCount);
         model.addAttribute("commentCount", commentCount);
+        model.addAttribute("messageCount", messageCount);
         return "blog";
     }
 }

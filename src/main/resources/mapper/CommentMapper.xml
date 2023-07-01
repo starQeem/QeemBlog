@@ -11,6 +11,7 @@
         <result property="avatar" column="avatar" jdbcType="VARCHAR"/>
         <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
         <result property="adminComment" column="admin_comment" jdbcType="BIT"/>
+        <result property="blogId" column="blog_id" jdbcType="BIT"/>
         <association property="blog" javaType="com.starQeem.qeemblog.pojo.Blog">
             <id property="id" column="blog_id"/>
         </association>

@@ -19,6 +19,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import static com.starQeem.qeemblog.util.constant.*;
+
 @Service
 public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements BlogService {
 
@@ -31,6 +33,9 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements Bl
     //分页查询
     @Override
     public PageInfo<Blog> pageBlogList(Integer pageNum, Integer pageSize) {
+        if (pageNum == null) {
+            pageNum = PAGE_NUM;
+        }
         PageHelper.startPage(pageNum, pageSize);
         PageHelper.orderBy("create_time desc");
         List<Blog> blogList = getBlogsPage();
@@ -54,7 +59,7 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements Bl
     public Integer saveBlog(Blog blog) {
         blog.setUpdateTime(new Date());
         blog.setCreateTime(new Date());
-        blog.setViews(0);
+        blog.setViews(ZERO);
         return getBaseMapper().insertBlog(blog);
     }
 
@@ -62,8 +67,8 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements Bl
     @Override
     public Integer updateBlog(Blog blog) {
         blog.setUpdateTime(new Date());
-        blog.setCreateTime(new Date());
-        blog.setViews(0);
+//        blog.setCreateTime(new Date());
+        blog.setViews(ZERO);
         return getBaseMapper().updateBlogById(blog);
     }
     //获取博客内容
@@ -108,6 +113,16 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements Bl
     public Integer getViewCount() {
         return blogMapper.getViewCount();
     }
+    /*
+    * 最新推荐
+    * */
+    @Override
+    public List<Blog> newBlogList() {
+        QueryWrapper<Blog> queryWrapper = new QueryWrapper<>();
+        queryWrapper.select("id","title").last("order by update_time desc limit 8");
+        return getBaseMapper().selectList(queryWrapper);
+    }
+
     //归档
     @Override
     public List<Blog> getArchivesList() {
@@ -117,10 +132,18 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements Bl
     //首页搜索
     @Override
     public PageInfo<Blog> searchList(Integer pageNum, Integer pageSize, String title) {
+        if (pageNum == null) {
+            pageNum = PAGE_NUM;
+        }
+        if (title == null){
+            title = "";
+        }else {
+            pageSize = SEARCH_PAGE_SIZE;
+        }
         PageHelper.startPage(pageNum, pageSize);
         PageHelper.orderBy("create_time desc");
         List<Blog> blogList = getSearch(title);
-        PageInfo<Blog> pageInfo = new PageInfo<>(blogList, 8);
+        PageInfo<Blog> pageInfo = new PageInfo<>(blogList, PAGE_SIZE);
         return pageInfo;
     }
     //博客详情

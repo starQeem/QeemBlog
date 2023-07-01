@@ -15,11 +15,12 @@
 <!--导航栏-->
 <nav th:replace="admin/common :: navigate('tag')" class="ui inverted gird-header">
     <div class="ui container">
-        <div class="ui inverted secondary stackable menu">
-            <h2 class="ui olive header item" style="font-family: STSong">管理后台</h2>
+        <div class="ui inverted secondary stackable menu" style="font-family: KaiTi;">
+            <h2 class="ui teal header item" style="font-family: KaiTi;">管理后台</h2>
             <a href="#" class="m-item item m-mobile-hide"><i class="home icon"></i>文章管理</a>
             <a href="#" class="m-item item m-mobile-hide"><i class="clone outline icon"></i>分类管理</a>
             <a href="#" class="active m-item item m-mobile-hide"><i class="coffee icon"></i>标签管理</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="heart outline icon"></i>友链管理</a>
             <div class="right m-item m-mobile-hide menu">
                 <div class="ui dropdown  item">
                     <div class="text">
@@ -64,10 +65,10 @@
                 <td th:text="${tag.name}">我的故事</td>
                 <td>
                     <a href="#" th:href="@{/admin/tags/{id}/edit(id=${tag.id})}"
-                       class="ui mini teal basic button">编辑</a>
+                       class="ui mini teal basic button" style="font-family: KaiTi;">编辑</a>
                     <a href="#" th:href="@{/admin/tags/{id}/delete(id=${tag.id})}"
                        onclick="return confirm('确定要删除该分类吗？三思啊! 删了可就没了！')"
-                       class="ui mini red basic button">删除</a>
+                       class="ui mini red basic button" style="font-family: KaiTi;">删除</a>
                 </td>
             </tr>
             </tbody>
@@ -81,10 +82,10 @@
                         </div>
                         <div class="three wide column" align="center">
                             <a class="item" th:href="@{/admin/tags/{page}(page=${page.nextPage})}"
-                               th:if="${page.hasNextPage}">下一页</a>
+                               th:if="${page.hasNextPage}" >下一页</a>
                         </div>
                     </div>
-                    <div align="center">
+                    <div align="center" style="font-family: KaiTi;">
                         <a href="#" th:href="@{/admin/tags/input}">
                             <button type="button" class="ui teal button m-mobile-wide m-margin-top"><i
                                     class="pencil icon"></i>新增

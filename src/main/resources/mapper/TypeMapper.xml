@@ -17,4 +17,14 @@
         select t.id,t.name,b.id b_id
         from t_type t left join t_blog b on t.id = b.type_id;
     </select>
+    <select id="getSixTypeList" resultMap="BaseResultMap">
+        SELECT t.id, t.name, b.id AS b_id
+        FROM (
+                 SELECT DISTINCT id, name
+                 FROM t_type
+                          LIMIT 6
+             ) t
+                 LEFT JOIN t_blog b ON FIND_IN_SET(t.id, b.type_id) > 0;
+
+    </select>
 </mapper>

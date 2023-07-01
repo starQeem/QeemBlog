@@ -18,6 +18,7 @@ public class Blog {
     private String flag; //标记
     private String description; //博客描述
     private Integer views; //浏览次数
+    private Integer commentCount;  //评论数
     private boolean shareStatement; //转载是否开启
     private boolean commentabled; //评论是否开启
     private boolean published; //是否发布
@@ -26,6 +27,7 @@ public class Blog {
     private Date updateTime; //更新时间
 
     private String tagIds;
+    private String typeId;
 
     @TableField(exist = false)
     private Type type;

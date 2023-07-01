@@ -5,6 +5,7 @@ import com.starQeem.qeemblog.pojo.Blog;
 import com.starQeem.qeemblog.pojo.Type;
 import com.starQeem.qeemblog.service.BlogService;
 import com.starQeem.qeemblog.service.CommentService;
+import com.starQeem.qeemblog.service.MessageService;
 import com.starQeem.qeemblog.service.TypeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.annotation.Resource;
 import java.util.List;
 
+import static com.starQeem.qeemblog.util.constant.PAGE_SIZE;
+
 @Controller
 public class TypesController {
     @Resource
@@ -23,7 +26,8 @@ public class TypesController {
     private BlogService blogService;
     @Resource
     private CommentService commentService;
-    private final static int PAGE_SIZE = 8;
+    @Resource
+    private MessageService messageService;
     //分类分页查询
     @GetMapping(value = {"/types/{typeId}","/types" })
     public String getTypePage(@PathVariable(value = "typeId", required = false)Long typeId,
@@ -38,10 +42,12 @@ public class TypesController {
         Integer blogCount = blogService.getBlogCount();
         Integer viewCount = blogService.getViewCount();
         Integer commentCount = commentService.getCommentCount();
+        Integer messageCount = messageService.getMessageCount();
         model.addAttribute("page",pageInfo);
         model.addAttribute("blogCount", blogCount);
         model.addAttribute("viewCount", viewCount);
         model.addAttribute("commentCount", commentCount);
+        model.addAttribute("messageCount", messageCount);
         //目前所在的分类添加到model中，使页面可以获取
         model.addAttribute("currType",typeId);
         return "types";

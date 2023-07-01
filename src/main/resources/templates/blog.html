@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.9">
     <title th:text="${blog.title}"></title>
     <link href="../static/images/favicon.ico" th:href="@{/images/me.jpg}" rel="icon" type="image/x-ico">
     <link rel="stylesheet" href="../static/lib/semantic/dist/semantic.min.css" th:href="@{/lib/semantic/dist/semantic.min.css}">
@@ -12,30 +12,30 @@
     <link rel="stylesheet" href="../static/lib/tocbot/tocbot.css" th:href="@{/lib/tocbot/tocbot.css}">
     <link rel="stylesheet" href="../static/css/me.css" th:href="@{/css/me.css}">
     <link rel="stylesheet" href="../static/css/timeline.css" th:href="@{/css/timeline.css}">
+    <!-- 看板娘 -->
+    <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css">
+    <script src="../static/live2d-widget/autoload.js" th:src="@{/live2d-widget/autoload.js}"></script>
 </head>
 <body>
 
 <!--导航-->
 <nav id="nav" class="gird-header" >
     <div class="ui m-container">
-        <div class="ui inverted secondary stackable menu ">
-            <a href="#" th:href="@{/}" style="max-width: 200px"><h2 class="ui olive header item" style="font-family: STSong">Qeem</h2></a>
+        <div class="ui inverted secondary stackable menu " style="font-family: KaiTi;">
+            <a href="#" th:href="@{/}" style="max-width: 200px;"><h2 class="ui teal header item" style="font-family: KaiTi;">Qeem</h2></a>
             <a href="#" th:href="@{/}" class=" m-item item m-mobile-hide"><i class="home icon"></i>首页</a>
             <a href="#" th:href="@{/types}" class="m-item item m-mobile-hide" target="_blank"><i class="clone outline icon"></i>分类</a>
             <a href="#" th:href="@{/tags}" class="m-item item m-mobile-hide" target="_blank"><i class="pencil alternate icon"></i>标签</a>
             <a href="#" th:href="@{/archives}" class="m-item item m-mobile-hide" target="_blank"><i class="clock outline icon"></i>归档</a>
+            <a href="#" th:href="@{/message}" class="m-item item m-mobile-hide" target="_blank"><i class="envelope outline icon"></i>留言</a>
+            <a href="#" th:href="@{/friends}" class="m-item item m-mobile-hide" target="_blank"><i class="heart outline icon"></i>友链</a>
             <a href="#" th:href="@{/about}" class="m-item item m-mobile-hide" target="_blank"><i class="info icon"></i>关于我</a>
         </div>
     </div>
 </nav>
-
-<!--顶部图片-->
-<div  class="m-bg-type_outer" style="width: 100%;height: 70%">
-    <img src="../static/images/blog.jpg" th:src="@{${blog.firstPicture}}" alt="" class="ui m-bg image"
-         style="width: 100%;height: 100%;">
-    <div class="m-bg-class_cover">
-        <div class="ui container" style="position: relative ;bottom: -540px;">
-            <h2 class="m-font-size-title-large" align="center" th:text="${blog.title}">标题</h2>
+<br><br><br><br>
+<div class="ui container" style="font-family: KaiTi;">
+            <h3 class="m-font-size-title-large" align="center" style="font-family: KaiTi;" th:text="${blog.title}">标题</h3>
             <div class="ui container" align="center">
                 <div class="ui horizontal link list" align="center">
                     <div class="item">
@@ -57,15 +57,16 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
-
+<br><br><br><br>
 <!--中间内容-->
 <div id="waypoint" class="m-margin- animated fadeIn">
     <div class="ui container m-opacity box-shadow-max">
         <!--内容-->
         <div class="ui attached padded segment">
-
+            <a href="#" th:href="@{${blog.firstPicture}}" target="_blank">
+                <img src="../static/images/blog.webp" th:src="@{${blog.firstPicture}}" alt="" class="ui m-bg image"
+                     style="width: 100%;height: 100%;">
+            </a>
             <!--中间主要内容部分-->
             <div id="content" class="typo  typo-selection js-toc-content m-padded-lr-responsive m-padded-tb-large" th:utext="${blog.content}">
 
@@ -499,14 +500,14 @@ h5,h6{font-size:1em;}
             <div id="comment-container" class="ui teal segment">
                 <div th:fragment="commentList" onload="myfunction()">
                     <div class="ui threaded comments" style="max-width: 100%;">
-                        <h3 class="ui dividing header">评论</h3>
+                        <h3 class="ui dividing header" style="font-family: KaiTi;">评论</h3>
                         <div class="comment" th:each="comment : ${commentList}">
                             <a class="avatar">
                                 <img src="../static/images/avatar.png" th:src="@{${comment.avatar}}">
                             </a>
                             <div class="content">
                                 <a class="author">
-                                    <span th:text="${comment.nickname}">Matt</span>
+                                    <span th:text="${comment.nickname}" style="font-family: KaiTi">Matt</span>
                                     <div class="ui mini basic teal left pointing label m-padded-mini" th:if="${comment.adminComment}">栈主
                                     </div>
                                 </a>
@@ -569,20 +570,20 @@ h5,h6{font-size:1em;}
                 <input type="hidden" name="parentComment.id">
                 <input type="hidden" name="rootComment.id">
                 <div class="field">
-                    <textarea name="content" placeholder="请输入评论信息..."></textarea>
+                    <textarea style="font-family: KaiTi;" name="content" placeholder="请输入评论信息..."></textarea>
                 </div>
                 <div class="fields">
                     <div class="field m-mobile-wide m-margin-bottom-small">
                         <div class="ui left icon input">
                             <i class="user icon"></i>
-                            <input type="text" name="nickname" placeholder="昵称"
+                            <input type="text" style="font-family: KaiTi;" name="nickname" placeholder="昵称"
                                    th:value="${session.user}!=null ? ${session.user.nickname}">
                         </div>
                     </div>
                     <div class="field  m-margin-bottom-small m-mobile-wide">
-                        <button id="commentpost-btn" type="button" class="ui teal button m-mobile-wide"
+                        <button  id="commentpost-btn" type="button" class="ui teal button m-mobile-wide"
                                 onclick="javascript:{document.form1.submit();}"
-                                style="width:100px;height: 40px"><i class="edit icon"></i>发布
+                                style="width:100px;height: 40px;font-family: KaiTi;"><i class="edit icon"></i>发布
                         </button>
                     </div>
                 </div>
@@ -591,9 +592,9 @@ h5,h6{font-size:1em;}
     </div>
 </div>
 
-<div id="toolbar" class="m-padded m-fixed m-right-bottom" style="display: none">
+<div id="toolbar" class="m-padded m-fixed m-left-bottom" style="display: none">
     <div class="ui vertical icon buttons ">
-        <a href="#comment-container" class="ui m-teal button">评论</a>
+        <a href="#comment-container" class="ui m-teal button" style="font-family: KaiTi;">评论</a>
         <!--<button class="ui wechat icon button"><i class="weixin icon"></i></button>-->
         <div id="toTop-button" class="ui icon button"><i class="ui medium m-teal chevron up icon"></i></div>
     </div>
@@ -645,26 +646,40 @@ h5,h6{font-size:1em;}
                 </div>
             </div>
             <div class="four wide column">
-                <div style="font-size: large;font-weight: bold" class="ui inverted m-text-thin m-text-spaced m-margin-top-max" >我的博客信息:</div>
-                <div class="ui inverted link list m-teal">
-                    <span class="item m-text-thin m-teal" style="font-size: 15px" th:text="|文章总数:${blogCount}|">
-                    </span>
-                    <span class="item m-text-thin m-teal" style="font-size: 15px" th:text="|浏览总数:${viewCount}|">
-                    </span>
-                    <span class="item m-text-thin m-teal" style="font-size: 15px" th:text="|评论总数:${commentCount}|">
-                    </span>
+                <div style="font-size: large;font-weight: bold" class="ui inverted m-text-thin m-text-spaced m-margin-top-max" >站点概览</div>
+                <div style="display: flex; justify-content: center;">
+                    <div style="text-align: left;">
+                        <div style="display: inline-block;">
+                            文章总数:&nbsp;
+                            <span class="item m-text-thin m-teal" style="font-size: 15px;" th:text="${blogCount}">30</span>&nbsp;篇
+                        </div><br>
+                        <div style="display: inline-block;">
+                            浏览总数:&nbsp;
+                            <span class="item m-text-thin m-teal" style="font-size: 15px;" th:text="${viewCount}">3000</span>&nbsp;次
+                        </div><br>
+                        <div style="display: inline-block;">
+                            评论总数:&nbsp;
+                            <span class="item m-text-thin m-teal" style="font-size: 15px;" th:text="${commentCount}">3</span>&nbsp;条
+                        </div><br>
+                        <div style="display: inline-block;">
+                            留言总数:&nbsp;
+                            <span class="item m-text-thin m-teal" style="font-size: 15px;" th:text="${messageCount}">3</span>&nbsp;条
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="ui inverted section divider"></div>
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <div style="color: teal;margin-top: -18px;font-size: 15px" class="ui inverted m-text-thin m-text-spaced">
+                我的博客已开放:<span id="htmer_time" class="item m-text-thin"></span></div>
+        </div>
     <p style="text-align: center">
         <a rel="nofollow" href="http://beian.miit.gov.cn">桂ICP备2022011074号-1</a>
     </p>
 
     </fo>
 </footer>
-<!--    动态线条-->
-<script type="text/javascript" color="47,79,79" opacity='0.7' zIndex="-2" count="150" src="https://cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
 <script src="../static/lib/jquery-3.2.1/jquery-3.2.1.min.js" th:src="@{/lib/jquery-3.2.1/jquery-3.2.1.min.js}"></script>
 <script src="../static/lib/semantic/dist/semantic.min.js" th:src="@{/lib/semantic/dist/semantic.min.js}"></script>
 <script src="../static/lib/scrollTo/jquery.scrollTo.min.js" th:src="@{/lib/scrollTo/jquery.scrollTo.min.js}"></script>
@@ -672,13 +687,68 @@ h5,h6{font-size:1em;}
 <script src="../static/lib/prism/prism.js" th:src="@{/lib/prism/prism.js}"></script>
 <script src="../static/lib/tocbot/tocbot.min.js" th:src="@{/lib/tocbot/tocbot.min.js}"></script>
 <script src="../static/lib/waypoints/jquery.waypoints.min.js" th:src="@{/lib/waypoints/jquery.waypoints.min.js}"></script>
-
+<!-- 雪花特效 -->
+<script src="../static/lib/snow/jq.snow.js" th:src="@{/lib/snow/jq.snow.js}"></script>
 
 <script th:inline="javascript">
+
+    //雪花特效
+    $(document).ready(function() {
+        // 在屏幕宽度大于 768px 时执行雪花效果
+        if ($(window).width() > 768) {
+            $(document).snow({
+                // 雪花效果的配置参数
+                minSize: 5,//雪花的最小尺寸
+                maxSize: 40,//雪花的最大尺寸
+                newOn: 700,//雪花出现的频率 这个数值越小雪花越多
+            });
+        }
+    });
 
     // $('#newblog-container').load(/*[[@{/footer/newblog}]]*/"/footer/newblog");
 
     $('#blog-message').load(/*[[@{/footer/blogmessage}]]*/"/footer/blogmessage");
+
+
+
+    // 运行时间统计
+    function secondToDate(second) {
+        if (!second) {
+            return 0;
+        }
+        var time = new Array(0, 0, 0, 0, 0);
+        if (second >= 365 * 24 * 3600) {
+            time[0] = parseInt(second / (365 * 24 * 3600));
+            second %= 365 * 24 * 3600;
+        }
+        if (second >= 24 * 3600) {
+            time[1] = parseInt(second / (24 * 3600));
+            second %= 24 * 3600;
+        }
+        if (second >= 3600) {
+            time[2] = parseInt(second / 3600);
+            second %= 3600;
+        }
+        if (second >= 60) {
+            time[3] = parseInt(second / 60);
+            second %= 60;
+        }
+        if (second > 0) {
+            time[4] = second;
+        }
+        return time;
+    }
+    function setTime() {
+        /*此处为网站的创建时间*/
+        var create_time = Math.round(new Date(Date.UTC(2022, 11, 10, 15, 15, 15)).getTime() / 1000);//这里月份以0开始
+        var timestamp = Math.round((new Date().getTime() + 8 * 60 * 60 * 1000) / 1000);
+        currentTime = secondToDate((timestamp - create_time));
+        currentTimeHtml = currentTime[0] + '年' + currentTime[1] + '天'
+            + currentTime[2] + '时' + currentTime[3] + '分' + currentTime[4]
+            + '秒';
+        document.getElementById("htmer_time").innerHTML = currentTimeHtml;
+    }
+    setInterval(setTime, 1000);
 
 
     $('.menu.toggle').click(function () {

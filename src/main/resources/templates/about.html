@@ -2,24 +2,28 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=0.9">
   <title>关于我-Qeem</title>
     <link href="../static/images/favicon.ico" th:href="@{/images/me.jpg}" rel="icon" type="image/x-ico">
     <link rel="stylesheet" href="../static/lib/semantic/dist/semantic.min.css" th:href="@{/lib/semantic/dist/semantic.min.css}">
     <link rel="stylesheet" href="../static/css/me.css" th:href="@{/css/me.css}">
-
+    <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css">
+    <!-- 看板娘 -->
+    <script src="../static/live2d-widget/autoload.js" th:src="@{/live2d-widget/autoload.js}"></script>
 </head>
 <body>
 
 <!--导航-->
 <nav th:replace="common :: navigate('about')" class="gird-header">
     <div class="ui m-container">
-        <div class="ui inverted secondary stackable menu ">
-            <a href="#" th:href="@{/}" style="max-width: 200px"><h2 class="ui olive header item" style="font-family: STSong">Qeem</h2></a>
+        <div class="ui inverted secondary stackable menu " style="font-family: KaiTi;">
+            <a href="#" th:href="@{/}" style="max-width: 200px"><h2 class="ui teal header item" style="font-family: KaiTi;">Qeem</h2></a>
             <a href="#" th:href="@{/}" class=" m-item item m-mobile-hide"><i class="home icon"></i>首页</a>
             <a href="#" th:href="@{/types}" class=" m-item item m-mobile-hide" target="_blank"><i class="clone outline icon"></i>分类</a>
             <a href="#" th:href="@{/tags}" class=" m-item item m-mobile-hide" target="_blank"><i class="pencil alternate icon"></i>标签</a>
             <a href="#" th:href="@{/archives}" class="m-item item m-mobile-hide" target="_blank"><i class="clock outline icon"></i>归档</a>
+            <a href="#" th:href="@{/message}" class="m-item item m-mobile-hide" target="_blank"><i class="envelope outline icon"></i>留言</a>
+            <a href="#" th:href="@{/friends}" class="m-item item m-mobile-hide" target="_blank"><i class="heart outline icon"></i>友链</a>
             <a href="#" th:href="@{/about}" class="active m-item item m-mobile-hide" target="_blank"><i class="info icon"></i>关于我</a>
         </div>
     </div>
@@ -28,42 +32,26 @@
     </a>
 </nav>
 
-
-<!--顶部背景图片-->
-<div class="m-bg-type_outer" style="width: 100%;height: 55%">
-    <img src="../static/images/60.jpg" th:src="@{/images/60.jpg}" alt="" class="ui m-bg image" style="width: 100%;height: 100%">
-    <div class="m-bg-class_cover">
-        <div class="ui container" style="position: relative ;bottom: -540px;">
-            <div class="m-font-size-title" align="center" style="font-family:'STXingkai'">关于我</div>
-        </div>
-    </div>
-</div>
+<br><br><br><br>
 
 <!--个人资料描述-->
-<div class="m-container m-padded-tb-big">
+<div class="m-container m-padded-tb-big m-opacity">
     <div class="ui container">
         <!-- stackable:堆叠自适应(手机端大用) -->
         <div class="ui stackable grid">
 
             <div class="ui top attached segment">
-                <img th:src="@{/images/me.jpg}" alt="" class="ui rounded image m-container" style="width: 100px;">
+                <img th:src="@{/images/me.jpg}" src="../static/images/me.jpg" alt="" class="ui rounded image m-container" style="width: 100px;">
                 <div class="ui center aligned header zt zt-maxx">Qeem</div>
                 <div class="ui center aligned bottom attached segment m-rgba">
-                    <a href="#" class="ui email circular icon button" data-content="2572277647@qq.com"><i class="envelope outline icon"></i></a>
-                    <a href="#" class="ui wechat circular icon button" id="wechat"><i class="weixin icon"></i></a>
-                    <a href="#" class="ui qq circular icon button" data-content="2572277647" data-position="bottom center"><i class="qq icon"></i></a>
+                    <a class="ui email circular icon button" data-content="2572277647@qq.com"><i class="envelope outline icon"></i></a>
+                    <a class="ui wechat circular icon button" id="wechat"><i class="weixin icon"></i></a>
+                    <a class="ui qq circular icon button" data-content="2572277647" data-position="bottom center"><i class="qq icon"></i></a>
                     <a href="https://github.com/starQeem" target="_blank" class="ui github circular icon button" data-content="点击跳转GitHub" data-position="bottom center"><i class="github icon"></i></a>
                 </div>
                 <div class="ui center aligned attached segment m-rgba zt zt-max">
-                    <p>欢迎光临本站</p>
-                    <p>"我是Qeem&nbsp;摆烂人&nbsp;目前大三"</p>
-                    <p>热爱摆烂&nbsp;喜欢音乐&nbsp;喜欢打游戏&nbsp;是条咸鱼</p>
-                    <p>一名Ctrl-CV工程师</p>
-                    <p>自学半年Java的萌新</p>
-                    <p>希望在学习路上能够一起进步</p>
-                    <br>
-                    <br>
-                    <br>
+                    <p>关于我</p>
+                    <p>一名大三的预备程序员</p>
                     <br>
                 </div>
 
@@ -82,7 +70,7 @@
 
 
 <!--置顶图标-->
-<div id="toolbar" class="m-padded-tb-large m-fixed m-right-bottom">
+<div id="toolbar" class="m-padded-tb-large m-fixed m-left-bottom">
     <a href="#" class="ui center aligned basic segment icon"><i class="ui medium m-teal chevron up icon"></i> </a>
 </div>
 
@@ -122,34 +110,104 @@
                 </div>
             </div>
             <div class="four wide column">
-                <div style="font-size: large;font-weight: bold" class="ui inverted m-text-thin m-text-spaced m-margin-top-max" >我的博客信息:</div>
-                <div class="ui inverted link list m-teal">
-                    <span class="item m-text-thin m-teal" style="font-size: 15px" th:text="|文章总数:${blogCount}|">
-                    </span>
-                    <span class="item m-text-thin m-teal" style="font-size: 15px" th:text="|浏览总数:${viewCount}|">
-                    </span>
-                    <span class="item m-text-thin m-teal" style="font-size: 15px" th:text="|评论总数:${commentCount}|">
-                    </span>
+                <div style="font-size: large;font-weight: bold" class="ui inverted m-text-thin m-text-spaced m-margin-top-max" >站点概览</div>
+                <div style="display: flex; justify-content: center;">
+                    <div style="text-align: left;">
+                        <div style="display: inline-block;">
+                            文章总数:&nbsp;
+                            <span class="item m-text-thin m-teal" style="font-size: 15px;" th:text="${blogCount}">30</span>&nbsp;篇
+                        </div><br>
+                        <div style="display: inline-block;">
+                            浏览总数:&nbsp;
+                            <span class="item m-text-thin m-teal" style="font-size: 15px;" th:text="${viewCount}">3000</span>&nbsp;次
+                        </div><br>
+                        <div style="display: inline-block;">
+                            评论总数:&nbsp;
+                            <span class="item m-text-thin m-teal" style="font-size: 15px;" th:text="${commentCount}">3</span>&nbsp;条
+                        </div><br>
+                        <div style="display: inline-block;">
+                            留言总数:&nbsp;
+                            <span class="item m-text-thin m-teal" style="font-size: 15px;" th:text="${messageCount}">3</span>&nbsp;条
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="ui inverted section divider"></div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <div style="color: teal;margin-top: -18px;font-size: 15px" class="ui inverted m-text-thin m-text-spaced">
+            我的博客已开放:<span id="htmer_time" class="item m-text-thin"></span></div>
+    </div>
     <p style="text-align: center">
         <a rel="nofollow" href="http://beian.miit.gov.cn">桂ICP备2022011074号-1</a>
     </p>
 
 
 </footer>
-<!--    动态线条-->
-<script type="text/javascript" color="47,79,79" opacity='0.7' zIndex="-2" count="150" src="https://cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
 <script src="../static/lib/jquery-3.2.1/jquery-3.2.1.min.js" th:src="@{/lib/jquery-3.2.1/jquery-3.2.1.min.js}"></script>
 <script src="../static/lib/semantic/dist/semantic.min.js" th:src="@{/lib/semantic/dist/semantic.min.js}"></script>
-
+<!-- 雪花特效 -->
+<script src="../static/lib/snow/jq.snow.js" th:src="@{/lib/snow/jq.snow.js}"></script>
   <script>
+      //雪花特效
+      $(document).ready(function() {
+          // 在屏幕宽度大于 768px 时执行雪花效果
+          if ($(window).width() > 768) {
+              $(document).snow({
+                  // 雪花效果的配置参数
+                  minSize: 5,//雪花的最小尺寸
+                  maxSize: 40,//雪花的最大尺寸
+                  newOn: 700,//雪花出现的频率 这个数值越小雪花越多
+              });
+          }
+      });
+
       // $('#newblog-container').load(/*[[@{/footer/newblog}]]*/"/footer/newblog");
 
       $('#blog-message').load(/*[[@{/footer/blogmessage}]]*/"/footer/blogmessage");
+
+
+
+      // 运行时间统计
+      function secondToDate(second) {
+          if (!second) {
+              return 0;
+          }
+          var time = new Array(0, 0, 0, 0, 0);
+          if (second >= 365 * 24 * 3600) {
+              time[0] = parseInt(second / (365 * 24 * 3600));
+              second %= 365 * 24 * 3600;
+          }
+          if (second >= 24 * 3600) {
+              time[1] = parseInt(second / (24 * 3600));
+              second %= 24 * 3600;
+          }
+          if (second >= 3600) {
+              time[2] = parseInt(second / 3600);
+              second %= 3600;
+          }
+          if (second >= 60) {
+              time[3] = parseInt(second / 60);
+              second %= 60;
+          }
+          if (second > 0) {
+              time[4] = second;
+          }
+          return time;
+      }
+      function setTime() {
+          /*此处为网站的创建时间*/
+          var create_time = Math.round(new Date(Date.UTC(2022, 11, 10, 15, 15, 15)).getTime() / 1000);//这里月份以0开始
+          var timestamp = Math.round((new Date().getTime() + 8 * 60 * 60 * 1000) / 1000);
+          currentTime = secondToDate((timestamp - create_time));
+          currentTimeHtml = currentTime[0] + '年' + currentTime[1] + '天'
+              + currentTime[2] + '时' + currentTime[3] + '分' + currentTime[4]
+              + '秒';
+          document.getElementById("htmer_time").innerHTML = currentTimeHtml;
+      }
+      setInterval(setTime, 1000);
 
 
     $('.menu.toggle').click(function () {

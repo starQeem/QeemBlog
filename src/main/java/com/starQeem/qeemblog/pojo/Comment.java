@@ -16,10 +16,25 @@ public class Comment implements Serializable {
     @TableId(type = IdType.AUTO)
     private Long id;
     private String nickname;
+    @TableField(exist = false)
     private String email;
+
+    public Long getBlogId() {
+        return blogId;
+    }
+
+    public void setBlogId(Long blogId) {
+        this.blogId = blogId;
+    }
+
+    public void setAdminComment(boolean adminComment) {
+        this.adminComment = adminComment;
+    }
+
     private String content;
     private String avatar;
     private Date createTime;
+    private Long blogId;
     private boolean adminComment;//是否为管理员评论
 
     @TableField(exist = false)

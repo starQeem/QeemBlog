@@ -12,4 +12,5 @@ public interface TypeMapper extends BaseMapper<Type> {
     Type getName(String name);
     //获取所有类型
     List<Type> getTypeList();
+    List<Type> getSixTypeList();
 }

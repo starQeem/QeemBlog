@@ -4,13 +4,14 @@ import com.github.pagehelper.PageInfo;
 import com.starQeem.qeemblog.mapper.TypeMapper;
 import com.starQeem.qeemblog.pojo.Type;
 import com.starQeem.qeemblog.service.TypeService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.annotation.Resource;
+
+import static com.starQeem.qeemblog.util.constant.PAGE_SIZE;
 
 
 @Controller
@@ -25,10 +26,7 @@ public class TypeController {
     * */
     @GetMapping(value = {"/types/{page}","/types"})
     public String TypeListPage(@PathVariable(value = "page",required = false)  Integer page,Model model){
-        if (page==null){
-            page = 1;
-        }
-        PageInfo<Type> pageInfo = typeService.pageTypeList(page, 8);
+        PageInfo<Type> pageInfo = typeService.pageTypeList(page, PAGE_SIZE);
         model.addAttribute("page",pageInfo);
         return "admin/types";
     }
