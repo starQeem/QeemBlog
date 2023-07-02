@@ -4,6 +4,7 @@ import com.github.pagehelper.PageInfo;
 import com.starQeem.qeemblog.pojo.Blog;
 import com.starQeem.qeemblog.pojo.Tag;
 import com.starQeem.qeemblog.pojo.Type;
+import com.starQeem.qeemblog.pojo.friends;
 import com.starQeem.qeemblog.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,6 +31,8 @@ public class IndexController {
     private TagService tagService;
     @Resource
     private MessageService messageService;
+    @Resource
+    private friendsService friendsService;
 
     @GetMapping(value = {"/", "/{pageNum}"})
     public String index(@PathVariable(value = "pageNum", required = false) Integer pageNum, Model model,String title) {
@@ -41,6 +44,7 @@ public class IndexController {
         Integer viewCount = blogService.getViewCount();
         Integer commentCount = commentService.getCommentCount();
         Integer messageCount = messageService.getMessageCount();
+        List<friends> friendsList = friendsService.getRecommendFriends();
         model.addAttribute("page", pageInfo);
         model.addAttribute("blogCount", blogCount);
         model.addAttribute("viewCount", viewCount);
@@ -49,6 +53,7 @@ public class IndexController {
         model.addAttribute("typeList", typeList);
         model.addAttribute("tagList", tagList);
         model.addAttribute("newBlogList", newBlogList);
+        model.addAttribute("friendsList", friendsList);
         return "/index";
     }
     //跳转到关于我页面
@@ -58,10 +63,12 @@ public class IndexController {
         Integer viewCount = blogService.getViewCount();
         Integer commentCount = commentService.getCommentCount();
         Integer messageCount = messageService.getMessageCount();
+        List<friends> friendsList = friendsService.getRecommendFriends();
         model.addAttribute("blogCount", blogCount);
         model.addAttribute("viewCount", viewCount);
         model.addAttribute("commentCount", commentCount);
         model.addAttribute("messageCount", messageCount);
+        model.addAttribute("friendsList", friendsList);
         return "about";
     }
 }

@@ -154,7 +154,7 @@
                                 </h1>
                             </div>
                             <div style="display: flex;justify-content: center;align-items: center;color: black;font-size: 15px;font-family: 'STXingkai';">
-                                <p >谢谢你来过我的博客</p>
+                                <p >阿巴阿巴阿巴...</p>
                             </div><br>
                             <div style="display: flex;justify-content: center;align-items: center;">
                                 <a class="ui email circular icon button" data-content="2572277647@qq.com"><i class="envelope outline icon"></i></a>
@@ -226,11 +226,7 @@
                     </div>
 
 
-                    <!--二维码-->
-                    <a href="http://wohaqeem.top" target="_blank" class="ui horizontal divider header m-margin-top-large" style="font-family: KaiTi;color: teal">喔哈星</a>
-                    <a href="http://wohaqeem.top" target="_blank" style="display: flex; justify-content: center; align-items: center;color: teal">
-                        http://wohaqeem.top
-                    </a>
+
                     <div class="ui wechat-qr flowing popup transition hidden">
                         <img th:src="@{/images/wechat.png}" alt="" class="ui rounded image" style="width: 100px">
                     </div>
@@ -261,10 +257,26 @@
     <div class="ui center aligned container">
         <div class="ui inverted divided stackable grid">
             <div class="four wide column">
-                <div style="font-size: large;font-weight: bold" class="ui inverted m-text-thin m-text-spaced m-margin-top-max" >联系我</div>
-                <div class="ui inverted link list">
-                    <div href="#" class="m-text-thin">Email：2572277647@qq.com</div>
-                    <div href="#" class="m-text-thin">QQ：2572277647</div>
+                <div style="font-size: large;font-weight: bold" class="ui inverted m-text-thin m-text-spaced m-margin-top-max" >站点概览</div>
+                <div style="display: flex; justify-content: center;">
+                    <div style="text-align: left;">
+                        <div style="display: inline-block;">
+                            文章总数:&nbsp;
+                            <span class="item m-text-thin m-teal" style="font-size: 15px" th:text="${blogCount}">30</span>&nbsp;篇
+                        </div><br>
+                        <div style="display: inline-block;">
+                            浏览总数:&nbsp;
+                            <span class="item m-text-thin m-teal" style="font-size: 15px;" th:text="${viewCount}">3000</span>&nbsp;次
+                        </div><br>
+                        <div style="display: inline-block;">
+                            评论总数:&nbsp;
+                            <span class="item m-text-thin m-teal" style="font-size: 15px;" th:text="${commentCount}">3</span>&nbsp;条
+                        </div><br>
+                        <div style="display: inline-block;">
+                            留言总数:&nbsp;
+                            <span class="item m-text-thin m-teal" style="font-size: 15px;" th:text="${messageCount}">3</span>&nbsp;条
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -288,26 +300,11 @@
                 </div>
             </div>
             <div class="four wide column">
-                <div style="font-size: large;font-weight: bold" class="ui inverted m-text-thin m-text-spaced m-margin-top-max" >站点概览</div>
-                <div style="display: flex; justify-content: center;">
-                    <div style="text-align: left;">
-                        <div style="display: inline-block;">
-                            文章总数:&nbsp;
-                            <span class="item m-text-thin m-teal" style="font-size: 15px;" th:text="${blogCount}">30</span>&nbsp;篇
-                        </div><br>
-                        <div style="display: inline-block;">
-                            浏览总数:&nbsp;
-                            <span class="item m-text-thin m-teal" style="font-size: 15px;" th:text="${viewCount}">3000</span>&nbsp;次
-                        </div><br>
-                        <div style="display: inline-block;">
-                            评论总数:&nbsp;
-                            <span class="item m-text-thin m-teal" style="font-size: 15px;" th:text="${commentCount}">3</span>&nbsp;条
-                        </div><br>
-                        <div style="display: inline-block;">
-                            留言总数:&nbsp;
-                            <span class="item m-text-thin m-teal" style="font-size: 15px;" th:text="${messageCount}">3</span>&nbsp;条
-                        </div>
-                    </div>
+                <div style="font-size: large;font-weight: bold" class="ui inverted m-text-thin m-text-spaced m-margin-top-max" >推荐友链</div>
+                <div th:each="friend : ${friendsList}">
+                    <a href="#" target="_blank" th:href="@{${friend.address}}" style="color:teal;"  class="m-text-thin" >
+                        <span class="item m-text-thin m-teal" style="font-size: 15px;" th:text="${friend.name}">喔哈星</span>
+                    </a><br>
                 </div>
             </div>
         </div>

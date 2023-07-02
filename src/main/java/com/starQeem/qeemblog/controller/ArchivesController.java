@@ -1,9 +1,11 @@
 package com.starQeem.qeemblog.controller;
 
 import com.starQeem.qeemblog.pojo.Blog;
+import com.starQeem.qeemblog.pojo.friends;
 import com.starQeem.qeemblog.service.BlogService;
 import com.starQeem.qeemblog.service.CommentService;
 import com.starQeem.qeemblog.service.MessageService;
+import com.starQeem.qeemblog.service.friendsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,6 +22,8 @@ public class ArchivesController {
     private CommentService commentService;
     @Resource
     private MessageService messageService;
+    @Resource
+    private friendsService friendsService;
     //归档
     @GetMapping("/archives")
     public String archives(Model model){
@@ -28,11 +32,13 @@ public class ArchivesController {
         Integer viewCount = blogService.getViewCount();
         Integer commentCount = commentService.getCommentCount();
         Integer messageCount = messageService.getMessageCount();
+        List<friends> friendsList = friendsService.getRecommendFriends();
         model.addAttribute("memoryList",list);
         model.addAttribute("blogCount", blogCount);
         model.addAttribute("viewCount", viewCount);
         model.addAttribute("commentCount", commentCount);
         model.addAttribute("messageCount", messageCount);
+        model.addAttribute("friendsList", friendsList);
         return "archives";
     }
 }

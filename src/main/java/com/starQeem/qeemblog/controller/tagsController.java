@@ -4,6 +4,7 @@ import com.github.pagehelper.PageInfo;
 import com.starQeem.qeemblog.pojo.Blog;
 import com.starQeem.qeemblog.pojo.Tag;
 import com.starQeem.qeemblog.pojo.Type;
+import com.starQeem.qeemblog.pojo.friends;
 import com.starQeem.qeemblog.service.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,6 +31,8 @@ public class tagsController {
     private CommentService commentService;
     @Resource
     private MessageService messageService;
+    @Resource
+    private friendsService friendsService;
     //标签分页查询
     @GetMapping(value = {"/tags/{tagId}","/tags" })
     public String getTypePage(@PathVariable(value = "tagId", required = false)Long tagId,
@@ -45,11 +48,13 @@ public class tagsController {
         Integer viewCount = blogService.getViewCount();
         Integer commentCount = commentService.getCommentCount();
         Integer messageCount = messageService.getMessageCount();
+        List<friends> friendsList = friendsService.getRecommendFriends();
         model.addAttribute("page",pageInfo);
         model.addAttribute("blogCount", blogCount);
         model.addAttribute("viewCount", viewCount);
         model.addAttribute("commentCount", commentCount);
         model.addAttribute("messageCount", messageCount);
+        model.addAttribute("friendsList", friendsList);
         //目前所在的标签添加到model中，使页面可以获取
         model.addAttribute("currTag",tagId);
         return "tags";

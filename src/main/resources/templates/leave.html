@@ -175,15 +175,31 @@
 
 
 <!--底部栏-->
-<footer class="ui inverted vertical segment m-padded-tb-massive m-opacity">
+<footer class="ui inverted vertical segment m-padded-tb-massive m-opacity" >
     <!--容器-->
     <div class="ui center aligned container">
         <div class="ui inverted divided stackable grid">
             <div class="four wide column">
-                <div style="font-size: large;font-weight: bold" class="ui inverted m-text-thin m-text-spaced m-margin-top-max" >联系我</div>
-                <div class="ui inverted link list">
-                    <div href="#" class="m-text-thin">Email：2572277647@qq.com</div>
-                    <div href="#" class="m-text-thin">QQ：2572277647</div>
+                <div style="font-size: large;font-weight: bold" class="ui inverted m-text-thin m-text-spaced m-margin-top-max" >站点概览</div>
+                <div style="display: flex; justify-content: center;">
+                    <div style="text-align: left;">
+                        <div style="display: inline-block;">
+                            文章总数:&nbsp;
+                            <span class="item m-text-thin m-teal" style="font-size: 15px" th:text="${blogCount}">30</span>&nbsp;篇
+                        </div><br>
+                        <div style="display: inline-block;">
+                            浏览总数:&nbsp;
+                            <span class="item m-text-thin m-teal" style="font-size: 15px;" th:text="${viewCount}">3000</span>&nbsp;次
+                        </div><br>
+                        <div style="display: inline-block;">
+                            评论总数:&nbsp;
+                            <span class="item m-text-thin m-teal" style="font-size: 15px;" th:text="${commentCount}">3</span>&nbsp;条
+                        </div><br>
+                        <div style="display: inline-block;">
+                            留言总数:&nbsp;
+                            <span class="item m-text-thin m-teal" style="font-size: 15px;" th:text="${messageCount}">3</span>&nbsp;条
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -207,26 +223,11 @@
                 </div>
             </div>
             <div class="four wide column">
-                <div style="font-size: large;font-weight: bold" class="ui inverted m-text-thin m-text-spaced m-margin-top-max" >站点概览</div>
-                <div style="display: flex; justify-content: center;">
-                    <div style="text-align: left;">
-                        <div style="display: inline-block;">
-                            文章总数:&nbsp;
-                            <span class="item m-text-thin m-teal" style="font-size: 15px;" th:text="${blogCount}">30</span>&nbsp;篇
-                        </div><br>
-                        <div style="display: inline-block;">
-                            浏览总数:&nbsp;
-                            <span class="item m-text-thin m-teal" style="font-size: 15px;" th:text="${viewCount}">3000</span>&nbsp;次
-                        </div><br>
-                        <div style="display: inline-block;">
-                            评论总数:&nbsp;
-                            <span class="item m-text-thin m-teal" style="font-size: 15px;" th:text="${commentCount}">3</span>&nbsp;条
-                        </div><br>
-                        <div style="display: inline-block;">
-                            留言总数:&nbsp;
-                            <span class="item m-text-thin m-teal" style="font-size: 15px;" th:text="${messageCount}">3</span>&nbsp;条
-                        </div>
-                    </div>
+                <div style="font-size: large;font-weight: bold" class="ui inverted m-text-thin m-text-spaced m-margin-top-max" >推荐友链</div>
+                <div th:each="friend : ${friendsList}">
+                    <a href="#" target="_blank" th:href="@{${friend.address}}" style="color:teal;"  class="m-text-thin" >
+                        <span class="item m-text-thin m-teal" style="font-size: 15px;" th:text="${friend.name}">喔哈星</span>
+                    </a><br>
                 </div>
             </div>
         </div>
@@ -242,6 +243,7 @@
 
 
 </footer>
+
 <script src="../static/lib/jquery-3.2.1/jquery-3.2.1.min.js" th:src="@{/lib/jquery-3.2.1/jquery-3.2.1.min.js}"></script>
 <script src="../static/lib/semantic/dist/semantic.min.js" th:src="@{/lib/semantic/dist/semantic.min.js}"></script>
 <!-- 雪花特效 -->

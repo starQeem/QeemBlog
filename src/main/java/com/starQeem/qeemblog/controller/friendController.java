@@ -30,11 +30,13 @@ public class friendController {
         Integer viewCount = blogService.getViewCount();
         Integer commentCount = commentService.getCommentCount();
         Integer messageCount = messageService.getMessageCount();
+        List<friends> recommendFriendsList = friendsService.getRecommendFriends();
         model.addAttribute("friendsList",friendsList);
         model.addAttribute("blogCount", blogCount);
         model.addAttribute("viewCount", viewCount);
         model.addAttribute("commentCount", commentCount);
         model.addAttribute("messageCount", messageCount);
+        model.addAttribute("recommendFriendsList", recommendFriendsList);
         return "friends";
     }
 }

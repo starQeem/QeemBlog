@@ -1,9 +1,11 @@
 package com.starQeem.qeemblog.service.Impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.starQeem.qeemblog.mapper.friendsMapper;
+import com.starQeem.qeemblog.pojo.Blog;
 import com.starQeem.qeemblog.pojo.friends;
 import com.starQeem.qeemblog.service.friendsService;
 import org.springframework.stereotype.Service;
@@ -38,5 +40,12 @@ public class friendsServiceImpl extends ServiceImpl<friendsMapper, friends> impl
         PageHelper.orderBy("create_time");
         List<friends> friendsList = friendsService.list();
         return new PageInfo<>(friendsList);
+    }
+
+    @Override
+    public List<friends> getRecommendFriends() {
+        QueryWrapper<friends> queryWrapper = new QueryWrapper<>();
+        queryWrapper.select("id","name","address").last("order by id limit 4");
+        return getBaseMapper().selectList(queryWrapper);
     }
 }

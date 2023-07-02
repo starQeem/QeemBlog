@@ -3,9 +3,11 @@ package com.starQeem.qeemblog.controller;
 import com.github.pagehelper.PageInfo;
 import com.starQeem.qeemblog.pojo.Message;
 import com.starQeem.qeemblog.pojo.User;
+import com.starQeem.qeemblog.pojo.friends;
 import com.starQeem.qeemblog.service.BlogService;
 import com.starQeem.qeemblog.service.CommentService;
 import com.starQeem.qeemblog.service.MessageService;
+import com.starQeem.qeemblog.service.friendsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -19,6 +21,7 @@ import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  * @Date: 2023/6/17 17:53
@@ -32,6 +35,8 @@ public class MessageController {
     private BlogService blogService;
     @Resource
     private CommentService commentService;
+    @Resource
+    private friendsService friendsService;
     @Value("${comment.avatar}")
     private String avatar;
 
@@ -43,11 +48,13 @@ public class MessageController {
         Integer viewCount = blogService.getViewCount();
         Integer commentCount = commentService.getCommentCount();
         Integer messageCount = messageService.getMessageCount();
+        List<friends> friendsList = friendsService.getRecommendFriends();
         model.addAttribute("page",pageInfo);
         model.addAttribute("blogCount", blogCount);
         model.addAttribute("viewCount", viewCount);
         model.addAttribute("commentCount", commentCount);
         model.addAttribute("messageCount", messageCount);
+        model.addAttribute("friendsList", friendsList);
         return "leave";
     }
 
