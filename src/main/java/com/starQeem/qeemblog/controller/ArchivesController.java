@@ -33,12 +33,14 @@ public class ArchivesController {
         Integer commentCount = commentService.getCommentCount();
         Integer messageCount = messageService.getMessageCount();
         List<friends> friendsList = friendsService.getRecommendFriends();
+        List<Blog> newBlogList = blogService.newBlogList();
         model.addAttribute("memoryList",list);
         model.addAttribute("blogCount", blogCount);
         model.addAttribute("viewCount", viewCount);
         model.addAttribute("commentCount", commentCount);
         model.addAttribute("messageCount", messageCount);
         model.addAttribute("friendsList", friendsList);
+        model.addAttribute("newBlogList", newBlogList);
         return "archives";
     }
 }

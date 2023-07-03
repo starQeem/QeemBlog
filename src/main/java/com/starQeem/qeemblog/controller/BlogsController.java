@@ -39,6 +39,7 @@ public class BlogsController {
         Integer commentCount = commentService.getCommentCount();
         Integer messageCount = messageService.getMessageCount();
         List<friends> friendsList = friendsService.getRecommendFriends();
+        List<Blog> newBlogList = blogService.newBlogList();
         model.addAttribute("blog",blog);
         model.addAttribute("tagList",tagList);
         model.addAttribute("blogCount", blogCount);
@@ -46,6 +47,7 @@ public class BlogsController {
         model.addAttribute("commentCount", commentCount);
         model.addAttribute("messageCount", messageCount);
         model.addAttribute("friendsList", friendsList);
+        model.addAttribute("newBlogList", newBlogList);
         return "blog";
     }
 }

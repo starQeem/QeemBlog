@@ -179,6 +179,29 @@
     <!--容器-->
     <div class="ui center aligned container">
         <div class="ui inverted divided stackable grid">
+            <div class="four wide column" >
+                <div class="ui inverted link list"><br>
+                    <div class="item">
+                        <img src="../static/images/me.jpg" th:src="@{/images/me.jpg}"  class="ui m-margin-top rounded image" alt="" style="width: 110px">
+                    </div>
+                </div>
+            </div>
+            <div class="four wide column">
+                <div style="font-size: large;font-weight: bold" class="ui inverted m-text-thin m-text-spaced m-margin-top-max" >最新文章</div>
+                <div th:each="blog , stat : ${newBlogList}" th:if="${stat.count} &lt;= 4">
+                    <a href="#" target="_blank" th:href="@{/blogs/{id}(id=${blog.id})}" style="color:teal;"  class="m-text-thin m-opacity" >
+                        <span class="item m-text-thin m-opacity" style="font-size: 14px;color: whitesmoke;" th:text="${blog.title}">喔哈星</span>
+                    </a><br>
+                </div>
+            </div>
+            <div class="four wide column">
+                <div style="font-size: large;font-weight: bold" class="ui inverted m-text-thin m-text-spaced m-margin-top-max" >推荐友链</div>
+                <div th:each="friend : ${friendsList}">
+                    <a href="#" target="_blank" th:href="@{${friend.address}}" style="color:teal;"  class="m-text-thin m-opacity" >
+                        <span class="item m-text-thin m-opacity" style="font-size: 14px;color: whitesmoke" th:text="${friend.name}">喔哈星</span>
+                    </a><br>
+                </div>
+            </div>
             <div class="four wide column">
                 <div style="font-size: large;font-weight: bold" class="ui inverted m-text-thin m-text-spaced m-margin-top-max" >站点概览</div>
                 <div style="display: flex; justify-content: center;">
@@ -202,44 +225,19 @@
                     </div>
                 </div>
             </div>
-
-            <div class="four wide column" >
-                <div class="ui inverted link list">
-                    <div class="item">
-                        <!--微信二维码-->
-                        <div style="font-size: large;font-weight: bold" class="ui inverted m-text-thin m-text-spaced " >微信</div>
-                        <img src="../static/images/wechat.png" th:src="@{/images/wechat.png}"  class="ui m-margin-top rounded image" alt="" style="width: 110px">
-                    </div>
-                </div>
-            </div>
-
-            <div class="four wide column">
-                <div class="ui inverted link list">
-                    <div class="item">
-                        <!--qq维码-->
-                        <div style="font-size: large;font-weight: bold" class="ui inverted m-text-thin m-text-spaced " >QQ</div>
-                        <img src="../static/images/qq.jpg" th:src="@{/images/qq.jpg}"  class="ui m-margin-top rounded image" alt="" style="width: 110px">
-                    </div>
-                </div>
-            </div>
-            <div class="four wide column">
-                <div style="font-size: large;font-weight: bold" class="ui inverted m-text-thin m-text-spaced m-margin-top-max" >推荐友链</div>
-                <div th:each="friend : ${friendsList}">
-                    <a href="#" target="_blank" th:href="@{${friend.address}}" style="color:teal;"  class="m-text-thin" >
-                        <span class="item m-text-thin m-teal" style="font-size: 15px;" th:text="${friend.name}">喔哈星</span>
-                    </a><br>
-                </div>
-            </div>
         </div>
     </div>
     <div class="ui inverted section divider"></div>
+    <p style="text-align: center;opacity: 0.8;font-size: 13px">Copyright © 2022 - 2023 Qeem</p>
+    <div style="height: 10px"></div>
     <div style="display: flex; justify-content: center; align-items: center;">
+
         <div style="color: teal;margin-top: -18px;font-size: 15px" class="ui inverted m-text-thin m-text-spaced">
-            我的博客已开放:<span id="htmer_time" class="item m-text-thin"></span></div>
+            本站已运行:<span id="htmer_time" class="item m-text-thin"></span></div>
     </div>
     <p style="text-align: center">
         <a rel="nofollow" href="http://beian.miit.gov.cn">桂ICP备2022011074号-1</a>
-    </p>
+    </p><br>
 
 
 </footer>
@@ -309,16 +307,6 @@
     }
     setInterval(setTime, 1000);
 
-
-    $('.menu.toggle').click(function () {
-        $('.m-item').toggleClass('m-mobile-hide');
-    });
-
-    $('.wechat').popup({
-        popup : $('.wechat-qr'),
-        position: 'bottom center'
-    });
-    $('.qq').popup();
 
 
     //评论表单验证

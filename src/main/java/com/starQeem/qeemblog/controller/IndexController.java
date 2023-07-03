@@ -64,11 +64,13 @@ public class IndexController {
         Integer commentCount = commentService.getCommentCount();
         Integer messageCount = messageService.getMessageCount();
         List<friends> friendsList = friendsService.getRecommendFriends();
+        List<Blog> newBlogList = blogService.newBlogList();
         model.addAttribute("blogCount", blogCount);
         model.addAttribute("viewCount", viewCount);
         model.addAttribute("commentCount", commentCount);
         model.addAttribute("messageCount", messageCount);
         model.addAttribute("friendsList", friendsList);
+        model.addAttribute("newBlogList", newBlogList);
         return "about";
     }
 }

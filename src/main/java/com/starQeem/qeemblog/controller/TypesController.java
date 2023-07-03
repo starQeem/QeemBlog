@@ -44,12 +44,14 @@ public class TypesController {
         Integer commentCount = commentService.getCommentCount();
         Integer messageCount = messageService.getMessageCount();
         List<friends> friendsList = friendsService.getRecommendFriends();
+        List<Blog> newBlogList = blogService.newBlogList();
         model.addAttribute("page",pageInfo);
         model.addAttribute("blogCount", blogCount);
         model.addAttribute("viewCount", viewCount);
         model.addAttribute("commentCount", commentCount);
         model.addAttribute("messageCount", messageCount);
         model.addAttribute("friendsList", friendsList);
+        model.addAttribute("newBlogList", newBlogList);
         //目前所在的分类添加到model中，使页面可以获取
         model.addAttribute("currType",typeId);
         return "types";

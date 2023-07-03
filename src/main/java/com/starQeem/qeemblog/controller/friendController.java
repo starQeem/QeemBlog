@@ -1,5 +1,6 @@
 package com.starQeem.qeemblog.controller;
 
+import com.starQeem.qeemblog.pojo.Blog;
 import com.starQeem.qeemblog.pojo.friends;
 import com.starQeem.qeemblog.service.*;
 import org.springframework.stereotype.Controller;
@@ -31,12 +32,14 @@ public class friendController {
         Integer commentCount = commentService.getCommentCount();
         Integer messageCount = messageService.getMessageCount();
         List<friends> recommendFriendsList = friendsService.getRecommendFriends();
+        List<Blog> newBlogList = blogService.newBlogList();
         model.addAttribute("friendsList",friendsList);
         model.addAttribute("blogCount", blogCount);
         model.addAttribute("viewCount", viewCount);
         model.addAttribute("commentCount", commentCount);
         model.addAttribute("messageCount", messageCount);
         model.addAttribute("recommendFriendsList", recommendFriendsList);
+        model.addAttribute("newBlogList", newBlogList);
         return "friends";
     }
 }

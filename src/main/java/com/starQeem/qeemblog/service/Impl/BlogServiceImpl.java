@@ -39,7 +39,7 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements Bl
         PageHelper.startPage(pageNum, pageSize);
         PageHelper.orderBy("create_time desc");
         List<Blog> blogList = getBlogsPage();
-        PageInfo<Blog> pageInfo = new PageInfo<>(blogList, 8);
+        PageInfo<Blog> pageInfo = new PageInfo<>(blogList, PAGE_SIZE);
         return pageInfo;
     }
 

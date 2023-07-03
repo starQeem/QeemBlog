@@ -1,6 +1,7 @@
 package com.starQeem.qeemblog.controller;
 
 import com.github.pagehelper.PageInfo;
+import com.starQeem.qeemblog.pojo.Blog;
 import com.starQeem.qeemblog.pojo.Message;
 import com.starQeem.qeemblog.pojo.User;
 import com.starQeem.qeemblog.pojo.friends;
@@ -49,12 +50,14 @@ public class MessageController {
         Integer commentCount = commentService.getCommentCount();
         Integer messageCount = messageService.getMessageCount();
         List<friends> friendsList = friendsService.getRecommendFriends();
+        List<Blog> newBlogList = blogService.newBlogList();
         model.addAttribute("page",pageInfo);
         model.addAttribute("blogCount", blogCount);
         model.addAttribute("viewCount", viewCount);
         model.addAttribute("commentCount", commentCount);
         model.addAttribute("messageCount", messageCount);
         model.addAttribute("friendsList", friendsList);
+        model.addAttribute("newBlogList", newBlogList);
         return "leave";
     }
 
