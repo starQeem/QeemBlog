@@ -42,7 +42,7 @@
             <a href="#" th:href="@{/archives}" class="m-item item m-mobile-hide" target="_blank" style="font-family: KaiTi;"><i class="clock outline icon"></i>归档</a>
             <a href="#" th:href="@{/message}" class="m-item item m-mobile-hide" target="_blank"><i class="envelope outline icon"></i>留言</a>
             <a href="#" th:href="@{/friends}" class="m-item item m-mobile-hide" target="_blank"><i class="heart outline icon"></i>友链</a>
-            <a href="#" th:href="@{/about}" class="m-item item m-mobile-hide" target="_blank" style="font-family: KaiTi;"><i class="info icon"></i>关于我</a>
+            <a href="#" th:href="@{/about}" class="m-item item m-mobile-hide" target="_blank" style="font-family: KaiTi;"><i class="info icon"></i>关于</a>
             <form name="search" action="#" th:action="@{/}" method="get" target="_blank"
                   class="right m-item item ui secondary basic  m-mobile-hide">
                 <div class="ui icon transparent input m-margin-tb-tiny" style="color: white">
@@ -61,7 +61,7 @@
     </a>
 </nav>
 <!--顶部图片-->
-<br><br><br><br>
+<br><br>
 <!--中间内容-->
     <div class="m-container m-padded-tb-big animated fadeIn">
         <div class="ui container">
@@ -85,15 +85,18 @@
                                         <div class="eleven wide column">
                                             <div class="ui mini horizontal link list">
                                                 <div class="item">
-                                                    <img src="../static/images/me.jpg" alt="" th:src="@{/images/me.jpg}"
-                                                         class="ui avatar image">
-                                                    <div class="content"><a href="#" target="_blank" th:href="@{/about}"
-                                                                            class="header">Qeem</a>
-                                                    </div>
+<!--                                                    <img src="../static/images/me.jpg" alt="" th:src="@{/images/me.jpg}"-->
+<!--                                                         class="ui avatar image">-->
+<!--                                                    <div class="content">-->
+<!--                                                        <a href="#" target="_blank" th:href="@{/about}"-->
+<!--                                                                            class="header">Qeem</a>-->
+<!--                                                    </div>-->
+                                                    <i class="calendar icon"></i><span
+                                                        th:text="${#dates.format(blogs.createTime,'yyyy-MM-dd')}">2020-01-01</span>
                                                 </div>
                                                 <div class="item">
-                                                    <i class="calendar icon"></i><span
-                                                        th:text="${#dates.format(blogs.createTime,'yyyy-MM-dd HH:mm')}">2020-01-01</span>
+                                                    <i class="calendar check outline icon"></i><span
+                                                        th:text="${#dates.format(blogs.updateTime,'yyyy-MM-dd')}">2020-01-01</span>
                                                 </div>
                                                 <div class="item">
                                                     <i class="eye icon"></i> <span th:text="${blogs.views}">2222</span>
@@ -144,7 +147,7 @@
                 </div>
 
                 <div class="four wide column m-opacity">
-
+                    <div style="height: 0px"></div>
                     <div class="ui segments">
                         <div class="ui secondary segment">
                             <img src="../static/images/me.jpg" th:src="@{/images/me.jpg}" alt="" class="ui rounded image m-container" style="width: 70px;border-radius: 50%;">
@@ -200,10 +203,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="ui teal segment" style="font-size: 2px">
-                            <a href="#" th:each="tag : ${tagList}" th:href="@{/tags/{id}(id=${tag.id})}" target="_blank" class="ui teal basic left pointing label m-margin-tb-tiny">
+                        <div class="ui teal segment" style="font-size: 12px;">
+                            <a href="#" th:each="tag : ${tagList}" th:href="@{/tags/{id}(id=${tag.id})}"
+                               target="_blank" class="ui teal basic left pointing label m-margin-tb-tiny">
                                 <span th:text="${tag.name}">方法论</span>
-                                <div class="detail" th:text="${tag.blogList.size()}">23</div>
+<!--                                <div class="detail" th:text="${tag.blogList.size()}">23</div>-->
                             </a>
                         </div>
 
@@ -213,7 +217,7 @@
                         <div class="ui secondary segment">
                             <div class="ui two column grid">
                                 <div class="column">
-                                    <i class="file alternate outline icon"></i>最新推荐
+                                    <i class="file alternate outline icon"></i>最新文章
                                 </div>
                             </div>
                         </div>
@@ -339,7 +343,7 @@ $(document).ready(function() {
     if ($(window).width() > 768) {
         $(document).snow({
             // 雪花效果的配置参数
-            minSize: 5,//雪花的最小尺寸
+            minSize: 10,//雪花的最小尺寸
             maxSize: 40,//雪花的最大尺寸
             newOn: 700,//雪花出现的频率 这个数值越小雪花越多
         });

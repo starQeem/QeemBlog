@@ -10,9 +10,6 @@
             <id property="id" column="b_id"/>
         </collection>
     </resultMap>
-    <select id="getName" resultType="com.starQeem.qeemblog.pojo.Type">
-        select id,name from t_type where name = #{name};
-    </select>
     <select id="getTypeList" resultMap="BaseResultMap">
         select t.id,t.name,b.id b_id
         from t_type t left join t_blog b on t.id = b.type_id;

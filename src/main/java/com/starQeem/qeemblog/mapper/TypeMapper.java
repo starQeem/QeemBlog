@@ -8,8 +8,6 @@ import java.util.List;
 
 @Mapper
 public interface TypeMapper extends BaseMapper<Type> {
-    //根据名字查询分类
-    Type getName(String name);
     //获取所有类型
     List<Type> getTypeList();
     List<Type> getSixTypeList();

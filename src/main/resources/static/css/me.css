@@ -165,6 +165,10 @@ body{
     font-family:'Adobe 仿宋 Std R';
 }
 
+.m-font-kaiti{
+    font-family: KaiTi, serif;
+}
+
 /*-----margin------*/
 .m-margin-top-null {
     margin-top:0em !important;
@@ -291,7 +295,7 @@ body{
 
 .m-fixed {
     position: fixed !important;
-    z-index: 10 !important;
+    z-index: 1 !important;
 }
 
 .m-right-bottom {

@@ -6,6 +6,10 @@ import org.springframework.beans.BeanWrapperImpl;
 import java.beans.PropertyDescriptor;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import static com.starQeem.qeemblog.util.constant.EMAIL_REGEX;
 
 public class MyBeanUtils {
 
@@ -26,6 +30,18 @@ public class MyBeanUtils {
             }
         }
         return nullPropertyNames.toArray(new String[nullPropertyNames.size()]);
+    }
+
+    /**
+     * 验证电子邮件
+     *
+     * @param email 电子邮件
+     * @return boolean
+     */
+    public static boolean validateEmail(String email) {
+        Pattern pattern = Pattern.compile(EMAIL_REGEX);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
     }
 
 }

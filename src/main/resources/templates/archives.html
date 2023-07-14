@@ -26,8 +26,18 @@
           <a href="#" th:href="@{/archives}" class="active m-item item m-mobile-hide"><i class="clock outline icon"></i>归档</a>
         <a href="#" th:href="@{/message}" class="m-item item m-mobile-hide" target="_blank"><i class="envelope outline icon"></i>留言</a>
         <a href="#" th:href="@{/friends}" class="m-item item m-mobile-hide" target="_blank"><i class="heart outline icon"></i>友链</a>
-          <a href="#" th:href="@{/about}" class="m-item item m-mobile-hide"><i class="info icon"></i>关于我</a>
-         <a href="#" th:href="@{/admin}" class="right m-item item ui secondary basic button m-mobile-hide" target="_blank"><i class="sign in icon"></i>登录</a>
+          <a href="#" th:href="@{/about}" class="m-item item m-mobile-hide"><i class="info icon"></i>关于</a>
+        <form name="search" action="#" th:action="@{/}" method="get" target="_blank"
+              class="right m-item item ui secondary basic  m-mobile-hide">
+          <div class="ui icon transparent input m-margin-tb-tiny" style="color: white">
+            <input style="color: white" type="text" name="title" placeholder="search...." th:value="${title}">
+            <i onclick="document.forms['search'].submit()" class="search link icon"></i>
+          </div>
+        </form>
+        <a href="#" th:href="@{/admin}" class="right m-item item ui secondary basic button m-mobile-hide"
+           target="_blank" style="font-family: KaiTi;">
+          <i class="sign in icon"></i>登录
+        </a>
 
       </div>
     </div>
@@ -50,13 +60,21 @@
 
         <div class="timeline-content">
           <a href="#" target="_blank" th:href="@{/blogs/{id}(id=${memory.id})}">
-          <span style="color: #dddddd;font-size: 20px">Qeem ✍️</span>
-            <span class="" style="color: #dddddd;font-size: 20px"
+            <div class="content-details">
+              <span style="color: whitesmoke;font-size: 20px;">Qeem&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+              <span th:text="${memory.title}" style="font-family: KaiTi;font-size: 21px;color: whitesmoke">标题</span>
+            </div>
+            <i class="calendar icon"></i>
+            <span class="" style="color: whitesmoke;font-size: 21px"
                   th:text="${#dates.format(memory.createTime,'yyyy-MM-dd HH:mm')}">
-              2020年07月12日10:48:17
+              2020-07-12 10:48
+            </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <i class="calendar check outline icon"></i>
+            <span class="" style="color: whitesmoke;font-size: 21px"
+                  th:text="${#dates.format(memory.updateTime,'yyyy-MM-dd HH:mm')}">
+              2020-07-12 10:48
             </span>
             <div class="content-details">
-              <p th:text="${memory.title}" style="font-family: KaiTi;">标题</p>
               <img th:attr="data-src=${memory.firstPicture}" src="../static/images/blog.webp" th:src="@{/images/blog.webp}" alt="">
             </div>
          </a>
@@ -155,7 +173,7 @@
       if ($(window).width() > 768) {
         $(document).snow({
           // 雪花效果的配置参数
-          minSize: 5,//雪花的最小尺寸
+          minSize: 10,//雪花的最小尺寸
           maxSize: 40,//雪花的最大尺寸
           newOn: 700,//雪花出现的频率 这个数值越小雪花越多
         });

@@ -23,7 +23,14 @@
             <a href="#" th:href="@{/archives}" class="m-item item m-mobile-hide" target="_blank"><i class="clock outline icon"></i>归档</a>
             <a href="#" th:href="@{/message}" class="m-item item m-mobile-hide" target="_blank"><i class="envelope outline icon"></i>留言</a>
             <a href="#" th:href="@{/friends}" class="active m-item item m-mobile-hide" target="_blank"><i class="heart outline icon"></i>友链</a>
-            <a href="#" th:href="@{/about}" class="m-item item m-mobile-hide" target="_blank"><i class="info icon"></i>关于我</a>
+            <a href="#" th:href="@{/about}" class="m-item item m-mobile-hide" target="_blank"><i class="info icon"></i>关于</a>
+            <form name="search" action="#" th:action="@{/}" method="get" target="_blank"
+                  class="right m-item item ui secondary basic  m-mobile-hide">
+                <div class="ui icon transparent input m-margin-tb-tiny" style="color: white">
+                    <input style="color: white" type="text" name="title" placeholder="search...." th:value="${title}">
+                    <i onclick="document.forms['search'].submit()" class="search link icon"></i>
+                </div>
+            </form>
             <a href="#" th:href="@{/admin}" class="right m-item item ui secondary basic button m-mobile-hide"
                target="_blank" style="font-family: KaiTi;">
                 <i class="sign in icon"></i>登录
@@ -35,31 +42,11 @@
     </a>
 </nav>
 
-<br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br>
 
 <!--中间内容-->
-<div  class="m-margin- animated fadeIn">
+<div  class="m-container m-margin-animated fadeIn">
     <div class="ui m-opacity container">
-        <div class="box-shadow-max">
-        <div class="ui segment m-padded-tb-large m-opacity">
-            <div class="ui container">
-                <h1 class="" align="center" style="font-family: KaiTi">友链申请须知</h1>
-                    <ui class="list">
-                        <div class="m-margin-left-mini m-margin-tb-tiny" style="font-size: large;font-weight: bold">网站要求</div>
-                        <br>
-                        <li class="m-margin-left-big m-margin-tb-tiny" style="font-size: medium">无色情内容，无政治敏感内容，网站要能长期正常访问</li>
-                        <li class="m-margin-left-big m-margin-tb-tiny" style="font-size: medium">需要交换友链，先把本站添加到你的网站中，然后根据下面的格式，给我发邮件或在留言板给我留言~</li>
-                        <br>
-                        <div class="m-margin-left-mini m-margin-tb-tiny" style="font-size: large;font-weight: bold">申请格式</div>
-                        <br>
-                        <li class="m-margin-left-big m-margin-tb-tiny" style="font-size: medium">网站名称：Qeem</li>
-                        <li class="m-margin-left-big m-margin-tb-tiny" style="font-size: medium">网站地址：https://itstarqeem.space</li>
-                        <li class="m-margin-left-big m-margin-tb-tiny" style="font-size: medium">头像地址：https://pic.imgdb.cn/item/648d84ccb8a4cf094072de1a.webp</li><br>
-                    </ui>
-            </div>
-        </div>
-        </div>
-
         <!--友链-->
         <div class="box-shadow-max">
         <div class="ui top attached teal m-opacity segment box-shadow-max">
@@ -82,9 +69,22 @@
                 </div>
             </div>
         </div>
-        </div>
-
     </div>
+    </div>
+    <div class="ui m-opacity container">
+    <div class="ui segment m-padded-tb-large">
+        <div class="ui container">
+            <h1 class="" align="center" style="font-family: KaiTi">本站信息</h1>
+            <ui class="list">
+                <li class="m-margin-left-big m-margin-tb-tiny" style="font-size: medium">网站名称：Qeem</li>
+                <li class="m-margin-left-big m-margin-tb-tiny" style="font-size: medium">网站地址：https://itstarqeem.space</li>
+                <li class="m-margin-left-big m-margin-tb-tiny" style="font-size: medium">头像地址：https://pic.imgdb.cn/item/648d84ccb8a4cf094072de1a.webp</li>
+                <li class="m-margin-left-big m-margin-tb-tiny" style="font-size: medium">友链申请：先把本站添加到你的网站中，然后在留言版留言，备注网站名称、地址和头像地址</li><br>
+            </ui>
+        </div>
+    </div>
+    </div>
+</div>
 </div>
 
 <br>
@@ -179,7 +179,7 @@
         if ($(window).width() > 768) {
             $(document).snow({
                 // 雪花效果的配置参数
-                minSize: 5,//雪花的最小尺寸
+                minSize: 10,//雪花的最小尺寸
                 maxSize: 40,//雪花的最大尺寸
                 newOn: 700,//雪花出现的频率 这个数值越小雪花越多
             });

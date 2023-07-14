@@ -11,4 +11,5 @@ public class constant {
     public final static int SEARCH_PAGE_SIZE = 10000000; //搜索的默认数据条数
     public final static int PAGE_NUM = 1;  //默认页码
     public final static int ZERO = 0;
+    public static final String EMAIL_REGEX = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
 }

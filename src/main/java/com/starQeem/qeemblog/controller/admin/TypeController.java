@@ -1,7 +1,9 @@
 package com.starQeem.qeemblog.controller.admin;
 
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.github.pagehelper.PageInfo;
 import com.starQeem.qeemblog.mapper.TypeMapper;
+import com.starQeem.qeemblog.pojo.Tag;
 import com.starQeem.qeemblog.pojo.Type;
 import com.starQeem.qeemblog.service.TypeService;
 import org.springframework.stereotype.Controller;
@@ -42,11 +44,12 @@ public class TypeController {
     * */
     @PostMapping("/types")
     public String insertType(Type type, RedirectAttributes attributes){
+        Type getTypeName = typeService.getName(type.getName());
         if (type == null){
             attributes.addFlashAttribute("message","新增失败!");
             return "redirect:/admin/types";
         }
-        if (typeMapper.getName(type.getName()) != null){
+        if (getTypeName != null){
             attributes.addFlashAttribute("message","不能添加重复的分类!");
             return "redirect:/admin/types/input";
         }else {
@@ -69,7 +72,8 @@ public class TypeController {
     * */
     @PutMapping("/types")
     public String updateType(Type type,RedirectAttributes attributes){
-        if (typeMapper.getName(type.getName()) != null){
+        Type getTypeName = typeService.getName(type.getName());
+        if ( getTypeName != null){
             attributes.addFlashAttribute("message","不能添加重复的分类!");
             return "redirect:/admin/types";
         }else {

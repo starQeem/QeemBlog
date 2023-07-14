@@ -24,6 +24,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
+import static com.starQeem.qeemblog.util.MyBeanUtils.validateEmail;
+
 /**
  * @Date: 2023/6/17 17:53
  * @author: Qeem
@@ -64,20 +66,14 @@ public class MessageController {
     //查询评论列表
     @GetMapping(value = {"/messagecomment","/messagecomment/{pageNum}"})
     public String messageComment(@PathVariable(value = "pageNum",required = false) Integer pageNum, Model model) {
-        if (pageNum == null){
-            pageNum = 1;
-        }
         PageInfo<Message> pageInfo = messageService.getMessageList(pageNum);
         model.addAttribute("page",pageInfo);
-
         return "leave :: messageList";
     }
 
     //新增评论
     @PostMapping("/message")
-    public String message(Message message, HttpSession session, Integer pageNum,
-                          HttpServletRequest request,
-                          HttpServletResponse response) throws MessagingException {
+    public String message(Message message, HttpSession session, Integer pageNum) throws MessagingException {
         User user = (User) session.getAttribute("user");
         if (user != null) {//如果是管理员，设置管理员的权限
             message.setAvatar(user.getAvatar());
@@ -86,10 +82,12 @@ public class MessageController {
             //设置头像
             message.setAvatar(avatar);
         }
-        int i = messageService.saveMessage(message);//将评论信息保存数据库
+        messageService.saveMessage(message);//将评论信息保存数据库
 
-        messageService.sendMail(user,message);//发送评论提醒邮件
+        if (message.getEmail() != null && !message.getEmail().equals("") && validateEmail(message.getEmail())){
+            messageService.sendMail(user,message);//发送评论提醒邮件
 
+        }
 
         return "redirect:/messagecomment/"+pageNum;
 
@@ -101,7 +99,7 @@ public class MessageController {
     public String delete(@PathVariable("id")Long id,HttpSession session,Integer pageNum){
         User user = (User) session.getAttribute("user");
         if(user != null){
-            boolean b = messageService.removeById(id);
+            messageService.removeById(id);
         }
         return "redirect:/message/"+pageNum;
 

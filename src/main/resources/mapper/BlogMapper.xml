@@ -39,21 +39,6 @@
         select id, title, description, published, recommend, update_time, type_id,views,first_picture
         from t_blog
     </select>
-    <insert id="insertBlog">
-        insert into t_blog
-        (id, title, content,
-         first_picture, commentabled,
-         published, recommend, description,
-         share_statement, create_time,
-         update_time, views, type_id,tag_ids )
-        values (#{id,jdbcType=NUMERIC}, #{title,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR},
-                #{firstPicture,jdbcType=VARCHAR}, #{commentabled},
-                #{published}, #{recommend}, #{description},
-                #{shareStatement}, #{createTime,jdbcType=TIMESTAMP},
-                #{updateTime,jdbcType=TIMESTAMP}, #{views,jdbcType=NUMERIC},
-                #{type.id},#{tagIds})
-
-    </insert>
     <select id="getBlogListByTypeId" resultMap="BaseResultMap">
     select b.id,b.title,b.description,b.first_picture,b.commentabled,b.recommend,b.views,b.comment_count,
     b.update_time,b.create_time,b.type_id,t.name type_name
@@ -68,42 +53,10 @@
         JOIN t_tag t2 ON FIND_IN_SET(t2.id, b.tag_ids) > 0
         WHERE b.published = 1 AND t2.id = #{tagId};
     </select>
-    <select id="getArchivesList" resultMap="BaseResultMap">
-        select id, title, update_time,create_time ,first_picture
-        from t_blog order by update_time desc
-    </select>
     <select id="getSearchList" resultMap="BaseResultMap">
         select id, title, description, published, recommend, update_time, create_time,type_id,views,first_picture,comment_count
         from t_blog where title like concat('%',#{title},'%');
     </select>
-    <select id="getBlogDetail" resultMap="BaseResultMap">
-        select id,title,content,description,first_picture,published,
-               recommend,share_statement,views,update_time,create_time,type_id,tag_ids
-        from t_blog
-        where id = #{id} and published = 1
-    </select>
-    <update id="updateBlogById">
-        update t_blog
-        set id              = #{id,jdbcType=NUMERIC},
-            title           = #{title,jdbcType=VARCHAR},
-            content         = #{content,jdbcType=VARCHAR},
-            first_picture   = #{firstPicture,jdbcType=VARCHAR},
-            commentabled    = #{commentabled},
-            published       = #{published},
-            recommend       = #{recommend},
-            description     = #{description},
-            share_statement = #{shareStatement},
-            update_time     = #{updateTime,jdbcType=TIMESTAMP},
-            views           = #{views,jdbcType=NUMERIC},
-            type_id         = #{type.id},
-            tag_ids         = #{tagIds}
-        where id = #{id}
-    </update>
-    <update id="updateViews">
-        update t_blog
-        set views = views + 1
-        where id = #{blogId}
-    </update>
     <select id="getViewCount" resultType="integer">
         select SUM(views) from t_blog
     </select>

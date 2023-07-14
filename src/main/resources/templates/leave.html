@@ -10,6 +10,17 @@
     <!-- 看板娘 -->
     <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css">
     <script src="../static/live2d-widget/autoload.js" th:src="@{/live2d-widget/autoload.js}"></script>
+
+    <link rel="stylesheet" href="../static/css/jquery.emoji.css" th:href="@{/css/jquery.emoji.css}">
+    <style>
+        .test:empty::before{
+            color:lightgrey;
+            content:attr(placeholder);
+            padding-left: 6px;
+            font-size: 15px;
+        }
+    </style>
+
 </head>
 <body  >
 
@@ -24,7 +35,18 @@
             <a href="#" th:href="@{/archives}" class="m-item item m-mobile-hide" target="_blank"><i class="clock outline icon"></i>归档</a>
             <a href="#" th:href="@{/message}" class="active m-item item m-mobile-hide" target="_blank"><i class="envelope outline icon"></i>留言</a>
             <a href="#" th:href="@{/friends}" class="m-item item m-mobile-hide" target="_blank"><i class="heart outline icon"></i>友链</a>
-            <a href="#" th:href="@{/about}" class="m-item item m-mobile-hide" target="_blank"><i class="info icon"></i>关于我</a>
+            <a href="#" th:href="@{/about}" class="m-item item m-mobile-hide" target="_blank"><i class="info icon"></i>关于</a>
+            <form name="search" action="#" th:action="@{/}" method="get" target="_blank"
+                  class="right m-item item ui secondary basic  m-mobile-hide">
+                <div class="ui icon transparent input m-margin-tb-tiny" style="color: white">
+                    <input style="color: white" type="text" name="title" placeholder="search...." th:value="${title}">
+                    <i onclick="document.forms['search'].submit()" class="search link icon"></i>
+                </div>
+            </form>
+            <a href="#" th:href="@{/admin}" class="right m-item item ui secondary basic button m-mobile-hide"
+               target="_blank" style="font-family: KaiTi;">
+                <i class="sign in icon"></i>登录
+            </a>
         </div>
     </div>
     <a  class="ui menu toggle black icon button m-right-top m-mobile-show" >
@@ -32,29 +54,31 @@
     </a>
 </nav>
 
-<br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br>
 
-<span></span>
 
 <!--中间内容-->
-<div id="waypoint" class="m-margin- animated fadeIn">
+<div id="waypoint" class="m-container m-margin-animated fadeIn">
   <div class="ui container m-opacity box-shadow-max">
       <!--                新增留言-->
       <div class="ui bottom attached segment">
       <div id="message-form" class="ui form">
+          <h3 class="ui header teal" style="font-family: KaiTi;"><i class="mini comment outline icon" style="width: 18px"></i>留言板</h3>
           <input type="hidden" name="parentMessage.id" >
           <input type="hidden" name="rootMessage.id">
           <!--                    留言区-->
-          <div class="field">
-              <textarea name="content" placeholder="请输入留言信息..."></textarea>
-          </div>
+<!--          <div class="field">-->
+<!--              <textarea name="content" placeholder="请输入留言信息..."></textarea>-->
+<!--          </div>-->
+          <div  id="commentEditor" class="field test" contenteditable="true" placeholder="请输入留言信息..."
+                style="height: 200px;border: 1px solid 	#E0E0E0;font-family: KaiTi,serif;"></div>
 
           <div class="fields">
               <!--                    输入姓名-->
               <div class="field m-mobile-wide m-margin-bottom-small">
                   <div class="ui left icon input">
                       <i class="user icon"></i>
-                      <input style="font-family: KaiTi;" type="text" name="nickname" placeholder="昵称" th:value="${session.user}!=null ? ${session.user.nickname}">
+                      <input style="font-family: KaiTi;" type="text" name="nickname" placeholder="昵称(必填)" th:value="${session.user}!=null ? ${session.user.nickname}">
                   </div>
               </div>
 
@@ -63,8 +87,14 @@
               <div class="field m-mobile-wide m-margin-bottom-small">
                   <div class="ui left icon input">
                       <i class="mail icon"></i>
-                      <input style="font-family: KaiTi;" type="text" name="email" placeholder="邮箱" th:value="${session.user}!=null ? ${session.user.email}">
+                      <input style="font-family: KaiTi;" type="text" name="email" placeholder="邮箱(选填)" th:value="${session.user}!=null ? ${session.user.email}">
                   </div>
+              </div>
+
+              <!--表情按钮-->
+              <div class="field  m-margin-bottom-small m-mobile-wide" data-tooltip="表情未加载完全或点击无响应可刷新页面重试">
+                  <button id="emojiBtn" type="button" class="ui yellow button m-mobile-wide" style="width:100px;height: 40px;font-family: KaiTi;">
+                      <i class="large smile outline icon"></i>表情</button>
               </div>
 
 
@@ -74,20 +104,19 @@
                   <button id="messagepost-btn" type="button" class="ui teal button m-mobile-wide" onclick="javascript:{document.form1.submit();}" style="width:100px;height: 40px;font-family: KaiTi;"><i class="edit icon"></i>发布</button>
               </div>
               </div>
-              <div class="aligned five wide column" style="margin: 10px">
-                  <!--                  <div class="ui active inline loader"></div>-->
-                  <p style="color: teal">为了能够及时接收到回复提醒，请输入正确的邮箱地址哦~</p>
-              </div>
+<!--              <div class="aligned five wide column" style="margin: 10px">-->
+<!--                  &lt;!&ndash;                  <div class="ui active inline loader"></div>&ndash;&gt;-->
+<!--                  <p style="color: teal">为了能够及时接收到回复提醒，请输入正确的邮箱地址哦~</p>-->
+<!--              </div>-->
 
       </div>
 
       </div>
       <!--留言区-->
-          <div class="ui teal segment" id="message-container" >
+          <div class="ui segment" id="message-container" >
 <!--              onload="myfunction()"-->
-              <div th:fragment="messageList" >
+              <div th:fragment="messageList" onload="myfunction()">
                   <div class="ui threaded comments" style="max-width: 100%;" >
-                      <h3 class="ui dividing header" style="font-family: KaiTi;">留言</h3>
 <!--                      <div class="comment" th:each="message : ${messages}">-->
                       <div class="comment"  th:each="message : ${page.list}">
                           <a class="avatar" th:if="${message.adminMessage}">
@@ -100,14 +129,14 @@
                               <a class="author">
                                   <span th:text="${message.nickname}">Matt</span>
                                   <div class="ui mini basic teal left pointing label m-padded-mini" th:if="${message.adminMessage}">栈主</div>
-                              </a>
-                              <div class="metadata">
-                                  <span class="date" th:text="${#dates.format(message.createTime,'yyyy-MM-dd HH:mm')}">今天下午 5:42</span>
-                              </div>
-                              <div class="text" th:text="${message.content}">太赞了！ </div>
+                              </a><br>
+<!--                              <div class="metadata">-->
+                                  <span class="date m-opacity-mini" style="font-size: 12px"  th:text="${#dates.format(message.createTime,'yyyy-MM-dd HH:mm')}">今天下午 5:42</span>
+<!--                              </div>-->
+                              <div  class="text" th:utext="${message.content}">太赞了！ </div>
                               <div class="actions">
                                   <a class="reply" data-parentmessageid="1" data-messagenickname="Matt" data-rootmessageid="1" th:attr="data-parentmessageid=${message.id},data-messagenickname=${message.nickname},data-rootmessageid=${message.id}" onclick="reply(this)">回复</a>
-                                  <a class="delete" href="#" th:href="@{/message/{id}/delete(id=${message.id},pageNum=${page.pageNum})}" onclick="return confirm('确定要删除该评论吗？三思啊! 删了可就没了！')" th:if="${session.user}">删除</a>
+                                  <a class="delete" href="#" th:href="@{/message/{id}/delete(id=${message.id},pageNum=${page.pageNum})}" onclick="return confirm('确定要删除该留言吗？三思啊! 删了可就没了！')" th:if="${session.user}">删除</a>
                               </div>
                           </div>
                           <!--子集留言-->
@@ -121,14 +150,14 @@
                                           <span th:text="${reply.nickname}">小红</span>
                                           <div class="ui mini basic teal left pointing label m-padded-mini" th:if="${reply.adminMessage}">栈主</div>
                                           &nbsp;<span th:text="|@ ${reply.parentMessage.nickname}|" class="m-teal">@ 小白</span>
-                                      </a>
-                                      <div class="metadata">
-                                          <span class="date" th:text="${#dates.format(reply.createTime,'yyyy-MM-dd HH:mm')}">今天下午 5:42</span>
-                                      </div>
-                                      <div class="text" th:text="${reply.content}">太赞了！ </div>
+                                      </a><br>
+<!--                                      <div class="metadata">-->
+                                          <span class="date m-opacity-mini" style="font-size: 12px"  th:text="${#dates.format(reply.createTime,'yyyy-MM-dd HH:mm')}">今天下午 5:42</span>
+<!--                                      </div>-->
+                                      <div class="text" th:utext="${reply.content}">太赞了！ </div>
                                       <div class="actions">
                                           <a class="reply" data-parentmessageid="1" data-messagenickname="Matt" data-rootmessageid="1" th:attr="data-parentmessageid=${reply.id},data-messagenickname=${reply.nickname},data-rootmessageid=${message.id}" onclick="reply(this)">回复</a>
-                                          <a class="delete" href="#" th:href="@{/message/{id}/delete(id=${reply.id},pageNum=${page.pageNum})}" onclick="return confirm('确定要删除该评论吗？三思啊! 删了可就没了！')" th:if="${session.user}">删除</a>
+                                          <a class="delete" href="#" th:href="@{/message/{id}/delete(id=${reply.id},pageNum=${page.pageNum})}" onclick="return confirm('确定要删除该留言吗？三思啊! 删了可就没了！')" th:if="${session.user}">删除</a>
                                       </div>
                                   </div>
                               </div>
@@ -247,15 +276,28 @@
 <!-- 雪花特效 -->
 <script src="../static/lib/snow/jq.snow.js" th:src="@{/lib/snow/jq.snow.js}"></script>
 
+<script src="../static/lib/emoji/jquery.emoji.js" th:src="@{/lib/emoji/jquery.emoji.js}"></script>
+<script src="../static/lib/emoji/emoji.list.js" th:src="@{/lib/emoji/emoji.list.js}"></script>
 
 <script th:inline="javascript">
+    // /*加载emoji表情*/
+    onload = function () {
+        $("#commentEditor").emoji({
+            button: "#emojiBtn",  //评论表情
+            showTab: false,
+            animation: 'slide',
+            basePath: '/images/emoji',
+            icons: emojiLists
+        });
+    }
+
     //雪花特效
     $(document).ready(function() {
         // 在屏幕宽度大于 768px 时执行雪花效果
         if ($(window).width() > 768) {
             $(document).snow({
                 // 雪花效果的配置参数
-                minSize: 5,//雪花的最小尺寸
+                minSize: 10,//雪花的最小尺寸
                 maxSize: 40,//雪花的最大尺寸
                 newOn: 700,//雪花出现的频率 这个数值越小雪花越多
             });
@@ -309,14 +351,14 @@
 
 
 
-    //评论表单验证
+    //留言表单验证
     $('.ui.form').form({
         fields: {
             title: {
                 identifier: 'content',
                 rules: [{
                     type: 'empty',
-                    prompt: '请输入评论内容'
+                    prompt: '请输入留言内容'
                 }
                 ]
             },
@@ -327,20 +369,20 @@
                     prompt: '请输入你的大名'
                 }]
             },
-            type: {
-                identifier: 'email',
-                rules: [{
-                    type: 'email',
-                    prompt: '请填写正确的邮箱地址'
-                }]
-            }
+            // type: {
+            //     identifier: 'email',
+            //     rules: [{
+            //         type: 'email',
+            //         prompt: '请填写正确的邮箱地址'
+            //     }]
+            // }
         }
     });
 
-    // function myfunction(){
-    //     $("#message-container").load(/*[[@{/messagecomment}]]*/);
-    // }
-    //
+    function myfunction(){
+        $("#message-container").load(/*[[@{/messagecomment}]]*/);
+    }
+
 
 
     // 校验信息
@@ -364,7 +406,8 @@
             // "blog.id" : $("[name='blog.id']").val(),
             "nickname": $("[name='nickname']").val(),
             "email"   : $("[name='email']").val(),
-            "content" : $("[name='content']").val()
+            // "content" : $("[name='content']").val()
+            "content" : document.getElementById("commentEditor").innerHTML
         },function (responseTxt, statusTxt, xhr) {
 //        $(window).scrollTo($('#message-container'),500);
             clearContent();
@@ -374,22 +417,26 @@
 
     // 清除表单
     function clearContent() {
-        $("[name='content']").val('');
+        // $("[name='content']").val('');
         $("[name='parentMessage.id']").val(null);
         $("[name='rootMessage.id']").val(null);
-        $("[name='content']").attr("placeholder", "请输入评论信息...");
+        // $("[name='content']").attr("placeholder", "请输入留言信息...");
+        document.getElementById("commentEditor").innerText='';
+        $("[id='commentEditor']").attr("placeholder", "请输入留言信息...");
     }
 
     function reply(obj) {
         var rootMessageId = $(obj).data('rootmessageid');
         var parentmessageId = $(obj).data('parentmessageid');
         var messageNickname = $(obj).data('messagenickname');
-        $("[name='content']").attr("placeholder", "@"+messageNickname).focus();
+        $("[id='commentEditor']").attr("placeholder", "@"+messageNickname).focus();
         $("[name='parentMessage.id']").val(parentmessageId);
         $("[name='rootMessage.id']").val(rootMessageId);
         $(window).scrollTo(0,500);
     }
-
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
 </script>
 </body>
 </html>

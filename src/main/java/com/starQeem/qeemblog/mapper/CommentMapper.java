@@ -14,7 +14,7 @@ public interface CommentMapper extends BaseMapper<Comment> {
 
     List<Comment> getRootCommentList(@Param("blogId") Long blogId);
 
-    int saveComment(Comment comment);
+    void saveComment(Comment comment);
 
     List<Comment> getReplyList(@Param("rootCommentId") Long rootCommentId,@Param("blogId") Long blogId);
 }

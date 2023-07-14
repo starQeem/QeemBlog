@@ -16,15 +16,26 @@
 <!--导航-->
 <nav th:replace="common :: navigate('about')" class="gird-header">
     <div class="ui m-container">
-        <div class="ui inverted secondary stackable menu " style="font-family: KaiTi;">
+        <div class="ui inverted secondary stackable menu">
             <a href="#" th:href="@{/}" style="max-width: 200px"><h2 class="ui teal header item" style="font-family: KaiTi;">Qeem</h2></a>
-            <a href="#" th:href="@{/}" class=" m-item item m-mobile-hide"><i class="home icon"></i>首页</a>
-            <a href="#" th:href="@{/types}" class=" m-item item m-mobile-hide" target="_blank"><i class="clone outline icon"></i>分类</a>
-            <a href="#" th:href="@{/tags}" class=" m-item item m-mobile-hide" target="_blank"><i class="pencil alternate icon"></i>标签</a>
-            <a href="#" th:href="@{/archives}" class="m-item item m-mobile-hide" target="_blank"><i class="clock outline icon"></i>归档</a>
-            <a href="#" th:href="@{/message}" class="m-item item m-mobile-hide" target="_blank"><i class="envelope outline icon"></i>留言</a>
-            <a href="#" th:href="@{/friends}" class="m-item item m-mobile-hide" target="_blank"><i class="heart outline icon"></i>友链</a>
-            <a href="#" th:href="@{/about}" class="active m-item item m-mobile-hide" target="_blank"><i class="info icon"></i>关于我</a>
+            <a href="#" th:href="@{/}" class=" m-item item m-mobile-hide m-font-kaiti"><i class="home icon"></i>首页</a>
+            <a href="#" th:href="@{/types}" class=" m-item item m-mobile-hide m-font-kaiti" target="_blank"><i class="clone outline icon"></i>分类</a>
+            <a href="#" th:href="@{/tags}" class=" m-item item m-mobile-hide m-font-kaiti" target="_blank"><i class="pencil alternate icon"></i>标签</a>
+            <a href="#" th:href="@{/archives}" class="m-item item m-mobile-hide m-font-kaiti" target="_blank"><i class="clock outline icon"></i>归档</a>
+            <a href="#" th:href="@{/message}" class="m-item item m-mobile-hide m-font-kaiti" target="_blank"><i class="envelope outline icon"></i>留言</a>
+            <a href="#" th:href="@{/friends}" class="m-item item m-mobile-hide m-font-kaiti" target="_blank"><i class="heart outline icon"></i>友链</a>
+            <a href="#" th:href="@{/about}" class="active m-item item m-mobile-hide m-font-kaiti" target="_blank"><i class="info icon"></i>关于</a>
+            <form name="search" action="#" th:action="@{/}" method="get" target="_blank"
+                  class="right m-item item ui secondary basic  m-mobile-hide">
+                <div class="ui icon transparent input m-margin-tb-tiny" style="color: white">
+                    <input style="color: white" type="text" name="title" placeholder="search...." th:value="${title}">
+                    <i onclick="document.forms['search'].submit()" class="search link icon"></i>
+                </div>
+            </form>
+            <a href="#" th:href="@{/admin}" class="right m-item item ui secondary basic button m-mobile-hide"
+               target="_blank" style="font-family: KaiTi;">
+                <i class="sign in icon"></i>登录
+            </a>
         </div>
     </div>
     <a  class="ui menu toggle black icon button m-right-top m-mobile-show" >
@@ -156,7 +167,7 @@
           if ($(window).width() > 768) {
               $(document).snow({
                   // 雪花效果的配置参数
-                  minSize: 5,//雪花的最小尺寸
+                  minSize: 10,//雪花的最小尺寸
                   maxSize: 40,//雪花的最大尺寸
                   newOn: 700,//雪花出现的频率 这个数值越小雪花越多
               });

@@ -1,6 +1,7 @@
 package com.starQeem.qeemblog.service.Impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -46,9 +47,7 @@ public class TagServiceImpl extends ServiceImpl<TagMapper, Tag> implements TagSe
     * */
     @Override
     public boolean updateTagById(Tag tag) {
-        QueryWrapper<Tag> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("name",tag.getName());
-        Tag tagByName = tagMapper.selectOne(queryWrapper);
+        Tag tagByName = tagMapper.selectOne(Wrappers.<Tag>lambdaQuery().eq(Tag::getName,tag.getName()));
         if (tagByName != null){
             return false;
         }else {
@@ -60,9 +59,7 @@ public class TagServiceImpl extends ServiceImpl<TagMapper, Tag> implements TagSe
     * */
     @Override
     public boolean saveTag(Tag tag) {
-        QueryWrapper<Tag> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("name",tag.getName());
-        Tag tagByName = tagMapper.selectOne(queryWrapper);
+        Tag tagByName = tagMapper.selectOne(Wrappers.<Tag>lambdaQuery().eq(Tag::getName,tag.getName()));
         if (tagByName != null){
             return false;
         }else {

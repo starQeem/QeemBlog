@@ -17,7 +17,14 @@
             <a href="#" th:href="@{/archives}" class="m-item item m-mobile-hide" th:classappend="${active=='archives'} ? active" target="_blank"><i class="clock outline icon"></i>归档</a>
             <a href="#" th:href="@{/message}" class="m-item item m-mobile-hide" th:classappend="${active=='leave'} ? active" target="_blank"><i class="envelope outline icon"></i>留言</a>
             <a href="#" th:href="@{/friends}" class="m-item item m-mobile-hide" th:classappend="${active=='friends'} ? active" target="_blank"><i class="heart outline icon"></i>友链</a>
-            <a href="#" th:href="@{/about}" class="m-item item m-mobile-hide" th:classappend="${active=='about'} ? active" target="_blank"><i class="info icon"></i>关于我</a>
+            <a href="#" th:href="@{/about}" class="m-item item m-mobile-hide" th:classappend="${active=='about'} ? active" target="_blank"><i class="info icon"></i>关于</a>
+            <form name="search" action="#" th:action="@{/}" method="get" target="_blank"
+                  class="right m-item item ui secondary basic  m-mobile-hide">
+                <div class="ui icon transparent input m-margin-tb-tiny" style="color: white">
+                    <input style="color: white" type="text" name="title" placeholder="search...." th:value="${title}">
+                    <i onclick="document.forms['search'].submit()" class="search link icon"></i>
+                </div>
+            </form>
             <a href="#" th:href="@{/admin}" class="right m-item item ui secondary basic button m-mobile-hide" target="_blank"><i class="sign in icon"></i>登录</a>
         </div>
     </div>

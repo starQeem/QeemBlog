@@ -15,7 +15,6 @@ public class Blog {
     private String title; //标题
     private String content; //博客内容
     private String firstPicture;//首图
-    private String flag; //标记
     private String description; //博客描述
     private Integer views; //浏览次数
     private Integer commentCount;  //评论数

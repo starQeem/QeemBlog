@@ -54,7 +54,7 @@
 <!--                                                            <p style="background-color: #f5f5f5;border: 0 solid #ddd;padding: 10px 15px;margin: 18px 0"></p>-->
 
                                                             <p  style="background-color:#f5f5f5;padding: 10px 15px;margin: 18px 18px 32px;line-height: 24px; overflow-wrap: break-word; word-break: break-all;">
-                                                                <span style="color: rgb(51, 51, 51); font-size: 14px;" th:text="${comment}">
+                                                                <span style="color: rgb(51, 51, 51); font-size: 14px;" th:utext="${comment}">
                                                                     评论内容巴拉巴拉
                                                                 </span>
                                                             </p>
@@ -62,13 +62,13 @@
 
 
                                                             <p  style="line-height: 24px; margin: 6px 0px 0px; overflow-wrap: break-word; word-break: break-all;">
-                                                                <span style="color: rgb(51, 51, 51); font-size: 14px;" th:text="${respondent}+'给您的回复：'">
+                                                                <span style="color: rgb(51, 51, 51); font-size: 14px;" th:utext="${respondent}+'给您的回复：'">
                                                                     XXX给你的回复:
                                                                 </span>
                                                             </p>
 
                                                              <p  style="background-color:#f5f5f5;padding: 10px 15px;margin: 18px 18px 32px;line-height: 24px; overflow-wrap: break-word; word-break: break-all;">
-                                                                <span style="color: rgb(51, 51, 51); font-size: 14px;" th:text="${reply}">
+                                                                <span style="color: rgb(51, 51, 51); font-size: 14px;" th:utext="${reply}">
                                                                     评论内容巴拉巴拉
                                                                 </span>
                                                                 </p>

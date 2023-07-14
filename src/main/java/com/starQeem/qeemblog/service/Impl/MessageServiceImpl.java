@@ -61,9 +61,7 @@ public class MessageServiceImpl extends ServiceImpl<MessageMapper, Message>
     @Transactional
     public int saveMessage(Message message) {
         message.setCreateTime(new Date());//设置留言日期
-        int i = messageMapper.saveMessage(message);//新增留言
-
-        return i;
+        return messageMapper.saveMessage(message);//新增留言
     }
 
     @Override
@@ -113,8 +111,7 @@ public class MessageServiceImpl extends ServiceImpl<MessageMapper, Message>
 
     @Override
     public Integer getMessageCount() {
-        Long count = messageMapper.selectCount(null);
-        return Integer.valueOf(Math.toIntExact(count));
+        return Math.toIntExact(messageMapper.selectCount(null));
     }
 }
 

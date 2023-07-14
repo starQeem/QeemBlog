@@ -1,6 +1,7 @@
 package com.starQeem.qeemblog.service.Impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -44,8 +45,6 @@ public class friendsServiceImpl extends ServiceImpl<friendsMapper, friends> impl
 
     @Override
     public List<friends> getRecommendFriends() {
-        QueryWrapper<friends> queryWrapper = new QueryWrapper<>();
-        queryWrapper.select("id","name","address").last("order by id limit 4");
-        return getBaseMapper().selectList(queryWrapper);
+        return getBaseMapper().selectList(Wrappers.<friends>lambdaQuery().last("order by id limit 4"));
     }
 }

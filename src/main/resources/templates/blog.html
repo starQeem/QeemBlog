@@ -15,6 +15,17 @@
     <!-- 看板娘 -->
     <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css">
     <script src="../static/live2d-widget/autoload.js" th:src="@{/live2d-widget/autoload.js}"></script>
+
+    <link rel="stylesheet" href="../static/css/jquery.emoji.css" th:href="@{/css/jquery.emoji.css}">
+
+    <style>
+        .test:empty::before{
+            color:lightgrey;
+            content:attr(placeholder);
+            padding-left: 6px;
+            font-size: 15px;
+        }
+    </style>
 </head>
 <body>
 
@@ -29,7 +40,11 @@
             <a href="#" th:href="@{/archives}" class="m-item item m-mobile-hide" target="_blank"><i class="clock outline icon"></i>归档</a>
             <a href="#" th:href="@{/message}" class="m-item item m-mobile-hide" target="_blank"><i class="envelope outline icon"></i>留言</a>
             <a href="#" th:href="@{/friends}" class="m-item item m-mobile-hide" target="_blank"><i class="heart outline icon"></i>友链</a>
-            <a href="#" th:href="@{/about}" class="m-item item m-mobile-hide" target="_blank"><i class="info icon"></i>关于我</a>
+            <a href="#" th:href="@{/about}" class="m-item item m-mobile-hide" target="_blank"><i class="info icon"></i>关于</a>
+            <a href="#" th:href="@{/admin}" class="right m-item item ui secondary basic button m-mobile-hide"
+               target="_blank" style="font-family: KaiTi;">
+                <i class="sign in icon"></i>登录
+            </a>
         </div>
     </div>
 </nav>
@@ -44,6 +59,11 @@
                     </div>
                     <div class="item">
                         <i class="calendar icon m-font-size-text-mini" style="vertical-align: top" ></i>
+                        <span th:text="${#dates.format(blog.createTime,'yyyy-MM-dd HH:mm')}"
+                              class="m-font-size-text-mini">2020-01-01</span>
+                    </div>
+                    <div class="item">
+                        <i class="calendar check outline icon m-font-size-text-mini" style="vertical-align: top" ></i>
                         <span th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd HH:mm')}"
                               class="m-font-size-text-mini">2020-01-01</span>
                     </div>
@@ -57,9 +77,9 @@
                 </div>
             </div>
         </div>
-<br><br><br><br>
+<br><br>
 <!--中间内容-->
-<div id="waypoint" class="m-margin- animated fadeIn">
+<div id="waypoint" class="m-container m-margin-animated fadeIn">
     <div class="ui container m-opacity box-shadow-max">
         <!--内容-->
         <div class="ui attached padded segment">
@@ -497,10 +517,44 @@ h5,h6{font-size:1em;}
 <!--        th:if="${blog.commentabled}"-->
         <div class="ui bottom attached segment" >
             <!--评论区域列表-->
-            <div id="comment-container" class="ui teal segment">
-                <div th:fragment="commentList" onload="myfunction()">
+            <div id="comment-form" class="ui form">
+                <h3 class="ui header" style="font-family: KaiTi;color: teal"><i class="mini comment outline icon" style="width: 18px"></i>评论区</h3>
+                <input type="hidden" name="blogId" th:value="${blog.id}">
+                <input type="hidden" name="parentComment.id">
+                <input type="hidden" name="rootComment.id">
+<!--                <div class="field">-->
+<!--                    <textarea style="font-family: KaiTi;" name="content" placeholder="请输入评论信息..."></textarea>-->
+<!--                </div>-->
+                <div  id="commentEditor" class="field test" contenteditable="true" placeholder="请输入评论信息..."
+                style="height: 200px;border: 1px solid 	#E0E0E0;font-family: KaiTi,serif;"></div>
+                            <div class="fields">
+                                    <div class="field m-mobile-wide m-margin-bottom-small">
+                                        <div class="ui left icon input">
+                                            <i class="user icon"></i>
+                                            <input type="text" style="font-family: KaiTi;" name="nickname" placeholder="昵称"
+                                                   th:value="${session.user}!=null ? ${session.user.nickname}">
+                                        </div>
+                                    </div>
+                                    <!--表情按钮-->
+                                    <div class="field  m-margin-bottom-small m-mobile-wide right" data-tooltip="表情未加载完全或点击无响应可刷新页面重试">
+                                        <button id="emojiBtn" type="button" class="ui yellow button m-mobile-wide" style="width:100px;height: 40px;font-family: KaiTi;">
+                                            <i class="large smile outline icon"></i>表情</button>
+                                    </div>
+                                    <div class="field  m-margin-bottom-small m-mobile-wide">
+                                        <button  id="commentpost-btn" type="button" class="ui teal button m-mobile-wide"
+                                                 onclick="javascript:{document.form1.submit();}"
+                                                 style="width:100px;height: 40px;font-family: KaiTi;"><i class="edit icon"></i>发布
+                                        </button>
+                                    </div>
+
+                            </div>
+            </div>
+            <div id="comment-container" class="ui segment">
+                <div th:fragment="commentList">
                     <div class="ui threaded comments" style="max-width: 100%;">
-                        <h3 class="ui dividing header" style="font-family: KaiTi;">评论</h3>
+                        <div style="text-align: center" th:if="${#lists.isEmpty(commentList)}">
+                            <span style="color: teal">暂无评论</span>
+                        </div>
                         <div class="comment" th:each="comment : ${commentList}">
                             <a class="avatar">
                                 <img src="../static/images/avatar.png" th:src="@{${comment.avatar}}">
@@ -510,11 +564,11 @@ h5,h6{font-size:1em;}
                                     <span th:text="${comment.nickname}" style="font-family: KaiTi">Matt</span>
                                     <div class="ui mini basic teal left pointing label m-padded-mini" th:if="${comment.adminComment}">栈主
                                     </div>
-                                </a>
-                                <div class="metadata">
-                                    <span class="date" th:text="${#dates.format(comment.createTime,'yyyy-MM-dd HH:mm')}">Today at 5:42PM</span>
-                                </div>
-                                <div class="text" th:text="${comment.content}">
+                                </a><br>
+<!--                                <div class="metadata">-->
+                                    <span class="date m-opacity-mini" style="font-size: 12px" th:text="${#dates.format(comment.createTime,'yyyy-MM-dd HH:mm')}">Today at 5:42PM</span>
+<!--                                </div>-->
+                                <div class="text" th:utext="${comment.content}">
                                     How artistic!
                                 </div>
                                 <div class="actions">
@@ -539,12 +593,12 @@ h5,h6{font-size:1em;}
                                                  th:if="${reply.adminComment}">栈主
                                             </div>
                                             <span th:text="|@ ${reply.parentComment.nickname}|" class="m-teal">@ 小白</span>
-                                        </a>
-                                        <div class="metadata">
-                                            <span class="date"
+                                        </a><br>
+<!--                                        <div class="metadata">-->
+                                            <span class="date m-opacity-mini" style="font-size: 12px;"
                                                   th:text="${#dates.format(reply.createTime,'yyyy-MM-dd HH:mm')}">Today at 5:42PM</span>
-                                        </div>
-                                        <div class="text" th:text="${reply.content}">
+<!--                                        </div>-->
+                                        <div class="text" th:utext="${reply.content}">
                                             How artistic!
                                         </div>
                                         <div class="actions">
@@ -565,39 +619,17 @@ h5,h6{font-size:1em;}
                     </div>
                 </div>
             </div>
-            <div id="comment-form" class="ui form">
-                <input type="hidden" name="blogId" th:value="${blog.id}">
-                <input type="hidden" name="parentComment.id">
-                <input type="hidden" name="rootComment.id">
-                <div class="field">
-                    <textarea style="font-family: KaiTi;" name="content" placeholder="请输入评论信息..."></textarea>
-                </div>
-                <div class="fields">
-                    <div class="field m-mobile-wide m-margin-bottom-small">
-                        <div class="ui left icon input">
-                            <i class="user icon"></i>
-                            <input type="text" style="font-family: KaiTi;" name="nickname" placeholder="昵称"
-                                   th:value="${session.user}!=null ? ${session.user.nickname}">
-                        </div>
-                    </div>
-                    <div class="field  m-margin-bottom-small m-mobile-wide">
-                        <button  id="commentpost-btn" type="button" class="ui teal button m-mobile-wide"
-                                onclick="javascript:{document.form1.submit();}"
-                                style="width:100px;height: 40px;font-family: KaiTi;"><i class="edit icon"></i>发布
-                        </button>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>
 
 <div id="toolbar" class="m-padded m-fixed m-left-bottom" style="display: none">
     <div class="ui vertical icon buttons ">
+        <button type="button" class="ui toc m-teal button" style="font-family: KaiTi;">目录</button>
         <a href="#comment-container" class="ui m-teal button" style="font-family: KaiTi;">评论</a>
         <!--<button class="ui wechat icon button"><i class="weixin icon"></i></button>-->
         <div id="toTop-button" class="ui icon button"><i class="ui medium m-teal chevron up icon"></i></div>
-    </div>
+    </div><br><br>
 </div>
 
 <div class="ui toc-container  flowing popup transition hidden" style="width: 250px!important;">
@@ -680,7 +712,6 @@ h5,h6{font-size:1em;}
 
 
 </footer>
-
 <script src="../static/lib/jquery-3.2.1/jquery-3.2.1.min.js" th:src="@{/lib/jquery-3.2.1/jquery-3.2.1.min.js}"></script>
 <script src="../static/lib/semantic/dist/semantic.min.js" th:src="@{/lib/semantic/dist/semantic.min.js}"></script>
 <script src="../static/lib/scrollTo/jquery.scrollTo.min.js" th:src="@{/lib/scrollTo/jquery.scrollTo.min.js}"></script>
@@ -691,21 +722,32 @@ h5,h6{font-size:1em;}
 <!-- 雪花特效 -->
 <script src="../static/lib/snow/jq.snow.js" th:src="@{/lib/snow/jq.snow.js}"></script>
 
-<script th:inline="javascript">
+<script src="../static/lib/emoji/jquery.emoji.js" th:src="@{/lib/emoji/jquery.emoji.js}"></script>
+<script src="../static/lib/emoji/emoji.list.js" th:src="@{/lib/emoji/emoji.list.js}"></script>
 
+<script th:inline="javascript">
+    // /*加载emoji表情*/
+    onload = function () {
+        $("#commentEditor").emoji({
+            button: "#emojiBtn",  //评论表情
+            showTab: false,
+            animation: 'slide',
+            basePath: '/images/emoji',
+            icons: emojiLists
+        });
+    }
     //雪花特效
     $(document).ready(function() {
         // 在屏幕宽度大于 768px 时执行雪花效果
         if ($(window).width() > 768) {
             $(document).snow({
                 // 雪花效果的配置参数
-                minSize: 5,//雪花的最小尺寸
+                minSize: 10,//雪花的最小尺寸
                 maxSize: 40,//雪花的最大尺寸
                 newOn: 700,//雪花出现的频率 这个数值越小雪花越多
             });
         }
     });
-
     // $('#newblog-container').load(/*[[@{/footer/newblog}]]*/"/footer/newblog");
 
     $('#blog-message').load(/*[[@{/footer/blogmessage}]]*/"/footer/blogmessage");
@@ -774,7 +816,7 @@ h5,h6{font-size:1em;}
     $('.toc.button').popup({
         popup: $('.toc-container.popup'),
         on: 'click',
-        position: 'left center'
+        position: 'right center'
     });
 
     $('.wechat').popup({
@@ -826,7 +868,7 @@ h5,h6{font-size:1em;}
                 identifier: 'nickname',
                 rules: [{
                     type: 'empty',
-                    prompt: '请输入你的大名'
+                    prompt: '请输入你的昵称'
                 }]
             },
         }
@@ -854,7 +896,8 @@ h5,h6{font-size:1em;}
             "blog.id": $("[name='blogId']").val(),
             "nickname": $("[name='nickname']").val(),
             "email": $("[name='email']").val(),
-            "content": $("[name='content']").val()
+            // "content": $("[name='content']").val()
+            "content" : document.getElementById("commentEditor").innerHTML
         }, function (responseTxt, statusTxt, xhr) {
             $(window).scrollTo($('#goto'), 500);
             clearContent();
@@ -862,17 +905,19 @@ h5,h6{font-size:1em;}
     }
 
     function clearContent() {
-        $("[name='content']").val('');
+        // $("[name='content']").val('');
         $("[name='parentComment.id']").val(null);
         $("[name='rootComment.id']").val(null);
-        $("[name='content']").attr("placeholder", "请输入评论信息...");
+        // $("[name='content']").attr("placeholder", "请输入评论信息...");
+        document.getElementById("commentEditor").innerText='';
+        $("[id='commentEditor']").attr("data-placeholder", "请输入评论信息...");
     }
 
     function reply(obj) {
         var commentId = $(obj).data('commentid');
         var rootCommentId = $(obj).data('rootcommentid');
         var commentNickname = $(obj).data('commentnickname');
-        $("[name='content']").attr("placeholder", "@" + commentNickname).focus();
+        $("[id='commentEditor']").attr("placeholder", "@" + commentNickname).focus();
         $("[name='parentComment.id']").val(commentId);
         $("[name='rootComment.id']").val(rootCommentId);
         $(window).scrollTo($('#comment-form'), 500);

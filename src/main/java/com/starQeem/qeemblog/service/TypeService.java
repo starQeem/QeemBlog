@@ -13,4 +13,6 @@ public interface TypeService extends IService<Type> {
     List<Type> getTypeList();
     //获取6条分类信息
     List<Type> getIndexTpeList();
+
+    Type getName(String name);
 }

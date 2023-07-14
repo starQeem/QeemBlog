@@ -12,7 +12,7 @@ public interface CommentService extends IService<Comment> {
 
     List<Comment> getRootCommentList(Long blogId);
 
-    int saveComment(Comment comment);
+    void saveComment(Comment comment);
 
     List<Comment> getReplyList(Long rootCommentId,Long blogId);
 
