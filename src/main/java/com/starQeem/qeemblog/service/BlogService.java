@@ -33,4 +33,5 @@ public interface BlogService extends IService<Blog> {
     Integer getViewCount();
     //最新推荐
     List<Blog> newBlogList();
+    boolean removeBlogById(Long id);
 }
