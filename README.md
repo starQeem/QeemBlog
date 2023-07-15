@@ -14,5 +14,5 @@
 
 **所用技术**
 
-- 前端：html，css，JavaScript，jQuery，ajax
-- 后端：SpringBoot、SpringMVC、MyBatisPlus、MySQL、thymeleaf
+- 前端：html，css，JavaScript，jQuery，ajax、
+- 后端：SpringBoot、SpringMVC、MyBatisPlus、MySQL、thymeleaf、redis
