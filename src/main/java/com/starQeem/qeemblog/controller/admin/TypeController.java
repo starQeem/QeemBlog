@@ -21,8 +21,6 @@ import static com.starQeem.qeemblog.util.constant.PAGE_SIZE;
 public class TypeController {
     @Resource
     private TypeService typeService;
-    @Resource
-    private TypeMapper typeMapper;
     /*
     *分页查询
     * */
@@ -53,7 +51,7 @@ public class TypeController {
             attributes.addFlashAttribute("message","不能添加重复的分类!");
             return "redirect:/admin/types/input";
         }else {
-            typeService.save(type);
+            typeService.saveType(type);
             attributes.addFlashAttribute("message","添加成功!");
             return "redirect:/admin/types";
         }
@@ -77,7 +75,7 @@ public class TypeController {
             attributes.addFlashAttribute("message","不能添加重复的分类!");
             return "redirect:/admin/types";
         }else {
-            typeService.updateById(type);
+            typeService.updateTypeById(type);
             attributes.addFlashAttribute("message","修改分类成功!");
             return "redirect:/admin/types";
         }
@@ -87,7 +85,7 @@ public class TypeController {
     * */
     @RequestMapping ("/types/{id}/delete")
     public String deleteType(@PathVariable("id") Long id,RedirectAttributes attributes){
-        boolean remove = typeService.removeById(id);
+        boolean remove = typeService.removeTypeById(id);
         if (remove){
             attributes.addFlashAttribute("message","删除成功!");
         }else {
