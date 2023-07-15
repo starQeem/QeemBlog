@@ -12,7 +12,7 @@
 - 博客详情的查看
 - 博客评论
 
-**所用技术**
+**项目架构**
 
 - 前端：html，css，JavaScript，jQuery，ajax、segment ui、typo、prism
 - 后端：SpringBoot、SpringMVC、MyBatisPlus、MySQL、thymeleaf、redis
