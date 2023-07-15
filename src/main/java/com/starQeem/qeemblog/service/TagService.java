@@ -19,4 +19,5 @@ public interface TagService extends IService<Tag> {
     List<Tag> getTagByIds(String tagIds);
     List<Tag> getTagList();
     List<Tag> getIndexTagList();
+    boolean removeTagById(Long id);
 }
