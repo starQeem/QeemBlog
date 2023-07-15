@@ -1,5 +1,8 @@
 package com.starQeem.qeemblog.service.Impl;
 
+import cn.hutool.core.util.RandomUtil;
+import cn.hutool.core.util.StrUtil;
+import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.github.pagehelper.PageHelper;
@@ -10,12 +13,14 @@ import com.starQeem.qeemblog.pojo.Blog;
 import com.starQeem.qeemblog.pojo.Type;
 import com.starQeem.qeemblog.service.BlogService;
 import com.starQeem.qeemblog.util.MarkdownUtil;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 import static com.starQeem.qeemblog.util.constant.*;
@@ -28,6 +33,8 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements Bl
     private BlogService blogService;
     @Resource
     private BlogMapper blogMapper;
+    @Resource
+    private StringRedisTemplate stringRedisTemplate;
     //分页查询
     @Override
     public PageInfo<Blog> pageBlogList(Integer pageNum, Integer pageSize) {
@@ -65,6 +72,10 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements Bl
     //修改
     @Override
     public Integer updateBlog(Blog blog) {
+        String getBlogDetail = stringRedisTemplate.opsForValue().get(BLOG_DETAIL_KEY + blog.getId());
+        if (StrUtil.isNotBlank(getBlogDetail)){
+            stringRedisTemplate.delete(BLOG_DETAIL_KEY + blog.getId());
+        }
         blog.setUpdateTime(new Date());
         return blogMapper.updateById(blog);
     }
@@ -116,6 +127,14 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements Bl
                 .last("order by create_time desc limit 8"));
     }
 
+    @Override
+    public boolean removeBlogById(Long id) {
+        String getBlogDetail = stringRedisTemplate.opsForValue().get(BLOG_DETAIL_KEY + id);
+        if (StrUtil.isNotBlank(getBlogDetail)){
+            stringRedisTemplate.delete(BLOG_DETAIL_KEY + id);
+        }
+        return blogService.removeById(id);
+    }
     //归档
     @Override
     public List<Blog> getArchivesList() {
@@ -143,11 +162,25 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements Bl
     @Override
     @Transactional
     public Blog getBlogDetail(Long id) {
+        String getBlogDetail = stringRedisTemplate.opsForValue().get(BLOG_DETAIL_KEY + id);
+        if (StrUtil.isNotBlank(getBlogDetail)){
+            //不为空,直接返回
+            Blog blog = JSONUtil.toBean(getBlogDetail, Blog.class);
+            String html = MarkdownUtil.markdownToHtml(blog.getContent());
+            blog.setContent(html);
+            Type type = typeMapper.selectById(blog.getTypeId());//注入type
+            blog.setType(type);
+            blogMapper.update(blog,Wrappers.<Blog>lambdaUpdate().eq(Blog::getId, blog.getId()).set(Blog::getViews, blog.getViews() + 1));
+            return blog;
+        }
+        //为空,查询数据库
         Blog blog = blogMapper.selectOne(Wrappers.<Blog>lambdaQuery().eq(Blog::getId, id));
+        String html = MarkdownUtil.markdownToHtml(blog.getContent());//Markdown语法转html
+        stringRedisTemplate.opsForValue()
+                .set(BLOG_DETAIL_KEY + id, JSONUtil.toJsonStr(blog), BLOG_DETAIL_TTL + RandomUtil.randomInt(0, 300), TimeUnit.SECONDS);
+        blog.setContent(html);
         Type type = typeMapper.selectById(blog.getTypeId());//注入type
         blog.setType(type);
-        String html = MarkdownUtil.markdownToHtml(blog.getContent());//Markdown语法转html
-        blog.setContent(html);
         blogMapper.update(blog,Wrappers.<Blog>lambdaUpdate().eq(Blog::getId, blog.getId()).set(Blog::getViews, blog.getViews() + 1));
         return blog;
     }
