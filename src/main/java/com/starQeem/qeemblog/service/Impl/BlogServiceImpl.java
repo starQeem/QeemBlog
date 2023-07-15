@@ -158,30 +158,28 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements Bl
         List<Blog> blogList = getSearch(title);
         return new PageInfo<>(blogList, PAGE_SIZE);
     }
-    //博客详情
+   //博客详情
     @Override
     @Transactional
     public Blog getBlogDetail(Long id) {
+        Blog blog;
         String getBlogDetail = stringRedisTemplate.opsForValue().get(BLOG_DETAIL_KEY + id);
         if (StrUtil.isNotBlank(getBlogDetail)){
             //不为空,直接返回
-            Blog blog = JSONUtil.toBean(getBlogDetail, Blog.class);
-            String html = MarkdownUtil.markdownToHtml(blog.getContent());
-            blog.setContent(html);
-            Type type = typeMapper.selectById(blog.getTypeId());//注入type
-            blog.setType(type);
-            blogMapper.update(blog,Wrappers.<Blog>lambdaUpdate().eq(Blog::getId, blog.getId()).set(Blog::getViews, blog.getViews() + 1));
-            return blog;
+            blog = JSONUtil.toBean(getBlogDetail, Blog.class);
+        }else {
+            //为空,查询数据库
+            blog = blogMapper.selectOne(Wrappers.<Blog>lambdaQuery()
+                    .select(Blog::getId,Blog::getTitle,Blog::getTagIds,Blog::getTypeId,Blog::getCreateTime,Blog::getUpdateTime,Blog::getContent,Blog::getFirstPicture)
+                    .eq(Blog::getId, id));
+            stringRedisTemplate.opsForValue()
+                    .set(BLOG_DETAIL_KEY + id, JSONUtil.toJsonStr(blog), BLOG_DETAIL_TTL + RandomUtil.randomInt(0, 300), TimeUnit.SECONDS);
         }
-        //为空,查询数据库
-        Blog blog = blogMapper.selectOne(Wrappers.<Blog>lambdaQuery().eq(Blog::getId, id));
-        String html = MarkdownUtil.markdownToHtml(blog.getContent());//Markdown语法转html
-        stringRedisTemplate.opsForValue()
-                .set(BLOG_DETAIL_KEY + id, JSONUtil.toJsonStr(blog), BLOG_DETAIL_TTL + RandomUtil.randomInt(0, 300), TimeUnit.SECONDS);
+        String html = MarkdownUtil.markdownToHtml(blog.getContent());
         blog.setContent(html);
         Type type = typeMapper.selectById(blog.getTypeId());//注入type
         blog.setType(type);
-        blogMapper.update(blog,Wrappers.<Blog>lambdaUpdate().eq(Blog::getId, blog.getId()).set(Blog::getViews, blog.getViews() + 1));
+        blogMapper.update(null,Wrappers.<Blog>lambdaUpdate().eq(Blog::getId, blog.getId()).setSql("views = views + 1"));
         return blog;
     }
     private List<Blog> getSearch(String title) {
