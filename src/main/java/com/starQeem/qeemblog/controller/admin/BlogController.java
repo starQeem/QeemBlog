@@ -99,7 +99,7 @@ public class BlogController {
     * */
     @RequestMapping("/blogs/{id}/delete")
     public String deleteBlogs(@PathVariable("id") Long id,RedirectAttributes attributes){
-        boolean remove = blogService.removeById(id);
+        boolean remove = blogService.removeBlogById(id);
         if (remove){
             attributes.addFlashAttribute("message","删除成功!");
         }else {
