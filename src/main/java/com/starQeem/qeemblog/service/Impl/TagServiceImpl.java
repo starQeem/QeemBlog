@@ -1,5 +1,7 @@
 package com.starQeem.qeemblog.service.Impl;
 
+import cn.hutool.core.util.StrUtil;
+import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -9,15 +11,16 @@ import com.starQeem.qeemblog.mapper.TagMapper;
 import com.starQeem.qeemblog.pojo.Tag;
 import com.starQeem.qeemblog.pojo.Type;
 import com.starQeem.qeemblog.service.TagService;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
-import static com.starQeem.qeemblog.util.constant.PAGE_NUM;
-import static com.starQeem.qeemblog.util.constant.PAGE_SIZE;
+import static com.starQeem.qeemblog.util.constant.*;
 
 /**
  * @Date: 2023/4/26 12:59
@@ -29,6 +32,8 @@ public class TagServiceImpl extends ServiceImpl<TagMapper, Tag> implements TagSe
     private TagService tagService;
     @Resource
     private TagMapper tagMapper;
+    @Resource
+    private StringRedisTemplate stringRedisTemplate;
     /*
     * 标签列表分页查询
     * */
@@ -51,6 +56,10 @@ public class TagServiceImpl extends ServiceImpl<TagMapper, Tag> implements TagSe
         if (tagByName != null){
             return false;
         }else {
+            String getTag = stringRedisTemplate.opsForValue().get(TAG_KEY);
+            if (StrUtil.isNotBlank(getTag)){
+                stringRedisTemplate.delete(TAG_KEY);
+            }
             return tagService.updateById(tag);
         }
     }
@@ -63,6 +72,10 @@ public class TagServiceImpl extends ServiceImpl<TagMapper, Tag> implements TagSe
         if (tagByName != null){
             return false;
         }else {
+            String getTag = stringRedisTemplate.opsForValue().get(TAG_KEY);
+            if (StrUtil.isNotBlank(getTag)){
+                stringRedisTemplate.delete(TAG_KEY);
+            }
             return tagService.save(tag);
         }
     }
@@ -86,11 +99,26 @@ public class TagServiceImpl extends ServiceImpl<TagMapper, Tag> implements TagSe
     * */
     @Override
     public List<Tag> getTagList() {
-        return tagMapper.getTagList();
+        String getTag = stringRedisTemplate.opsForValue().get(TAG_KEY);
+        if (StrUtil.isNotBlank(getTag)){
+            return JSONUtil.toList(getTag,Tag.class);
+        }
+        List<Tag> tagList = tagMapper.getTagList();
+        stringRedisTemplate.opsForValue().set(TAG_KEY,JSONUtil.toJsonStr(tagList),TAG_TTL, TimeUnit.SECONDS);
+        return tagList;
     }
 
     @Override
     public List<Tag> getIndexTagList() {
         return tagMapper.getTenTagList();
+    }
+
+    @Override
+    public boolean removeTagById(Long id) {
+        String getTag = stringRedisTemplate.opsForValue().get(TAG_KEY);
+        if (StrUtil.isNotBlank(getTag)){
+            stringRedisTemplate.delete(TAG_KEY);
+        }
+        return tagService.removeById(id);
     }
 }
