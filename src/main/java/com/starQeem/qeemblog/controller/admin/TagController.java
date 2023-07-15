@@ -80,7 +80,7 @@ public class TagController {
     * */
     @RequestMapping("tags/{id}/delete")
     public String tagDeleteById(@PathVariable("id")Long id,RedirectAttributes attributes){
-        boolean success = tagService.removeById(id);
+        boolean success = tagService.removeTagById(id);
         if (success){
             attributes.addFlashAttribute("message","删除成功!");
         }else {
