@@ -15,4 +15,10 @@ public interface TypeService extends IService<Type> {
     List<Type> getIndexTpeList();
 
     Type getName(String name);
+    
+    void saveType(Type type);
+
+    void updateTypeById(Type type);
+
+    boolean removeTypeById(Long id);
 }
